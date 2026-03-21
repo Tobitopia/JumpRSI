@@ -125,7 +125,7 @@ class JumpCalculator {
 
             case STATE_IN_AIR:
                 var timeInAirRaw = (timestamp - _takeOffTime).toFloat() / 1000.0;
-                var landingThreshold = 1.8f; 
+                var landingThreshold = 1.5f; // Refined from 1.8G for better initial contact detection
                 
                 if (timeInAirRaw > 0.15 && _filteredMag > landingThreshold) {
                     _state = STATE_LANDED;
