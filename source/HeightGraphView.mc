@@ -70,9 +70,10 @@ class HeightGraphView extends WatchUi.View {
     }
 }
 
-class HeightGraphDelegate extends WatchUi.BehaviorDelegate {
+class HeightGraphDelegate extends BaseDelegate {
+
     function initialize() {
-        BehaviorDelegate.initialize();
+        BaseDelegate.initialize();
     }
 
     function onNextPage() as Boolean {
@@ -87,3 +88,4 @@ class HeightGraphDelegate extends WatchUi.BehaviorDelegate {
         return true;
     }
 }
+

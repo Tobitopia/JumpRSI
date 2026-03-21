@@ -75,9 +75,9 @@ class SummaryView extends WatchUi.View {
     }
 }
 
-class SummaryDelegate extends WatchUi.BehaviorDelegate {
+class SummaryDelegate extends BaseDelegate {
     function initialize() {
-        BehaviorDelegate.initialize();
+        BaseDelegate.initialize();
     }
 
     function onSelect() as Boolean {

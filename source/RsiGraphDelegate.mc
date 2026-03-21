@@ -1,10 +1,10 @@
 import Toybox.WatchUi;
 import Toybox.Lang;
 
-class RsiGraphDelegate extends WatchUi.BehaviorDelegate {
+class RsiGraphDelegate extends BaseDelegate {
 
     function initialize() {
-        BehaviorDelegate.initialize();
+        BaseDelegate.initialize();
     }
 
     function onSelect() as Boolean {

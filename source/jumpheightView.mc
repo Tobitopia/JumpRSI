@@ -24,8 +24,8 @@ class jumpheightView extends WatchUi.View {
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
 
         if (state == STATE_START) {
-            dc.drawText(width / 2, height_dc / 2 - 20, Graphics.FONT_MEDIUM, "Ready?", Graphics.TEXT_JUSTIFY_CENTER);
-            dc.drawText(width / 2, height_dc / 2 + 20, Graphics.FONT_SMALL, "Press START", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(width / 2, height_dc / 2 - 20, Graphics.FONT_MEDIUM, "Perform Tests", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(width / 2, height_dc / 2 + 20, Graphics.FONT_SMALL, "Press START to begin", Graphics.TEXT_JUSTIFY_CENTER);
         } 
         else if (state == STATE_PREPARING) {
             var count = _calculator.getCountdown();
@@ -54,6 +54,8 @@ class jumpheightView extends WatchUi.View {
         dc.drawText(width / 2, height_dc - 45, Graphics.FONT_XTINY, "Jump " + (_session.getJumpCount() + 1) + "/3", Graphics.TEXT_JUSTIFY_CENTER);
         
         // Use UIUtils from the module
-        UIUtils.drawPagination(dc, 0, 4);
+        if (state == STATE_START) {
+            UIUtils.drawPagination(dc, 0, 4);
+        }
     }
 }

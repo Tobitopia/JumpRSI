@@ -546,8 +546,8 @@ _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_SummaryView_mc
 _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_SummaryView_mc_46_40_75_4_stop:
     }
 }
-[ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SummaryView.mc"; @line = 78; @symbol_classdef = [SummaryDelegate,78,6,21]; @symbol_extends<0> = [WatchUi,78,30,37]; @symbol_extends<1> = [BehaviorDelegate,78,38,54]; ]
-class SummaryDelegate extends WatchUi.BehaviorDelegate {
+[ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SummaryView.mc"; @line = 78; @symbol_classdef = [SummaryDelegate,78,6,21]; @symbol_extends<0> = [BaseDelegate,78,30,42]; ]
+class SummaryDelegate extends BaseDelegate {
     [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SummaryView.mc"; @line = 78; ]
     <init> {
     }
@@ -559,9 +559,9 @@ class SummaryDelegate extends WatchUi.BehaviorDelegate {
     function initialize() as Void {
 _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_SummaryView_mc_79_26_81_4_start:
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SummaryView.mc" 80 8 ]
-        symbol [ BehaviorDelegate %tmp.2 80 8 24 ];
-        %tmp.2 = getv ? :BehaviorDelegate;
-        symbol [ initialize %tmp.3 80 25 35 ];
+        symbol [ BaseDelegate %tmp.2 80 8 20 ];
+        %tmp.2 = getv ? :BaseDelegate;
+        symbol [ initialize %tmp.3 80 21 31 ];
         %tmp.3 = getv function %tmp.2 :initialize;
         invoke %tmp.2 %tmp.3();
 _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_SummaryView_mc_79_26_81_4_stop:

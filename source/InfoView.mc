@@ -36,10 +36,12 @@ class InfoView extends WatchUi.View {
     }
 }
 
-class InfoDelegate extends WatchUi.BehaviorDelegate {
+class InfoDelegate extends BaseDelegate {
+
     function initialize() {
-        BehaviorDelegate.initialize();
+        BaseDelegate.initialize();
     }
+
 
     function onNextPage() as Boolean {
         var view = new jumpheightView();

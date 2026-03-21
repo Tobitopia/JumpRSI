@@ -1,0 +1,130 @@
+[ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/BaseDelegate.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [WatchUi,1,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/BaseDelegate.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Application,2,14,25]; ]
+import Toybox.Application;
+[ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/BaseDelegate.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Lang,3,14,18]; ]
+import Toybox.Lang;
+[ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/BaseDelegate.mc"; @line = 5; @symbol_classdef = [BaseDelegate,5,6,18]; @symbol_extends<0> = [WatchUi,5,27,34]; @symbol_extends<1> = [BehaviorDelegate,5,35,51]; ]
+class BaseDelegate extends WatchUi.BehaviorDelegate {
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/BaseDelegate.mc"; @line = 5; ]
+    <init> {
+    }
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/BaseDelegate.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/BaseDelegate.mc"; @line = 6; @symbol_functiondef = [initialize,6,13,23]; ]
+    function initialize() as Void {
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_BaseDelegate_mc_6_26_8_4_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/BaseDelegate.mc" 7 8 ]
+        symbol [ BehaviorDelegate %tmp.2 7 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 7 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_BaseDelegate_mc_6_26_8_4_stop:
+    }
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/BaseDelegate.mc"; @line = 10; @symbol_functiondef = [onMenu,10,13,19]; @symbol_return<0> = [Boolean,10,25,32]; ]
+    function onMenu() as Boolean {
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_BaseDelegate_mc_10_33_14_4_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/BaseDelegate.mc" 11 8 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_BaseDelegate_mc_10_33_14_4_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_BaseDelegate_mc_10_33_14_4_stop" ]
+        %confirm.1 = local;
+        symbol [ confirm %confirm.1 11 12 19 ];
+        symbol [ WatchUi %tmp.3 11 26 33 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ Confirmation %tmp.4 11 34 46 ];
+        %tmp.4 = getv function ? %tmp.3 :Confirmation;
+        %tmp.5 = "Clear History?";
+        %tmp.1 = newc %tmp.4 (%tmp.5);
+        lputv %confirm.1 %tmp.1;
+        symbol [ confirm %confirm.1 11 12 19 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/BaseDelegate.mc" 12 8 ]
+        symbol [ WatchUi %tmp.6 12 8 15 ];
+        %tmp.6 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.7 12 16 24 ];
+        %tmp.7 = getv function %tmp.6 :pushView;
+        %tmp.8 = lgetv %confirm.1;
+        symbol [ confirm %tmp.8 12 25 32 ];
+        symbol [ ClearHistoryConfirmationDelegate %tmp.12 12 38 70 ];
+        %tmp.12 = getv ? :ClearHistoryConfirmationDelegate;
+        %tmp.9 = newc %tmp.12 ();
+        symbol [ WatchUi %tmp.13 12 74 81 ];
+        %tmp.13 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_IMMEDIATE %tmp.14 12 82 97 ];
+        %tmp.14 = getv %tmp.13 :SLIDE_IMMEDIATE;
+        invoke %tmp.6 %tmp.7(%tmp.8, %tmp.9, %tmp.14);
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/BaseDelegate.mc" 13 8 ]
+        %tmp.15 = true;
+        ret %tmp.15;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_BaseDelegate_mc_10_33_14_4_stop:
+    }
+}
+[ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/BaseDelegate.mc"; @line = 17; @symbol_classdef = [ClearHistoryConfirmationDelegate,17,6,38]; @symbol_extends<0> = [WatchUi,17,47,54]; @symbol_extends<1> = [ConfirmationDelegate,17,55,75]; ]
+class ClearHistoryConfirmationDelegate extends WatchUi.ConfirmationDelegate {
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/BaseDelegate.mc"; @line = 17; ]
+    <init> {
+    }
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/BaseDelegate.mc"; @line = 17; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/BaseDelegate.mc"; @line = 18; @symbol_functiondef = [initialize,18,13,23]; ]
+    function initialize() as Void {
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_BaseDelegate_mc_18_26_20_4_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/BaseDelegate.mc" 19 8 ]
+        symbol [ ConfirmationDelegate %tmp.2 19 8 28 ];
+        %tmp.2 = getv ? :ConfirmationDelegate;
+        symbol [ initialize %tmp.3 19 29 39 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_BaseDelegate_mc_18_26_20_4_stop:
+    }
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/BaseDelegate.mc"; @line = 22; @symbol_functiondef = [onResponse,22,13,23]; @symbol_param<0> = [response,22,24,32]; @symbol_return<0> = [Boolean,22,37,44]; ]
+    function onResponse(response) as Boolean {
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_BaseDelegate_mc_22_45_28_4_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/BaseDelegate.mc" 23 8 ]
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_BaseDelegate_mc_23_8_26_8_if_stmt:
+        %tmp.1 = lgetv %response;
+        symbol [ response %tmp.1 23 12 20 ];
+        symbol [ WatchUi %tmp.2 23 24 31 ];
+        %tmp.2 = getm $.Toybox.WatchUi;
+        symbol [ CONFIRM_YES %tmp.3 23 32 43 ];
+        %tmp.3 = getv %tmp.2 :CONFIRM_YES;
+        %tmp.4 = eq %tmp.1 %tmp.3;
+        bf %tmp.4 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_BaseDelegate_mc_23_8_26_8_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_BaseDelegate_mc_23_8_26_8_if_true:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_BaseDelegate_mc_23_45_26_8_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/BaseDelegate.mc" 24 12 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_BaseDelegate_mc_23_45_26_8_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_BaseDelegate_mc_23_45_26_8_stop" ]
+        %app.1 = local;
+        symbol [ app %app.1 24 16 19 ];
+        symbol [ Application %tmp.5 24 22 33 ];
+        %tmp.5 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.6 24 34 40 ];
+        %tmp.6 = getv function %tmp.5 :getApp;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        %tmp.8 = as %tmp.7 jumpheightApp;
+        symbol [ jumpheightApp %tmp.8 24 46 59 ];
+        lputv %app.1 %tmp.8;
+        symbol [ app %app.1 24 16 19 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/BaseDelegate.mc" 25 12 ]
+        %tmp.9 = lgetv %app.1;
+        symbol [ app %tmp.9 25 12 15 ];
+        symbol [ storageService %tmp.10 25 16 30 ];
+        %tmp.10 = getv %tmp.9 :storageService;
+        symbol [ clearHistory %tmp.11 25 31 43 ];
+        %tmp.11 = getv function %tmp.10 :clearHistory;
+        invoke %tmp.10 %tmp.11();
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_BaseDelegate_mc_23_45_26_8_stop:
+        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_BaseDelegate_mc_23_8_26_8_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_BaseDelegate_mc_23_8_26_8_if_end:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/BaseDelegate.mc" 27 8 ]
+        %tmp.12 = true;
+        ret %tmp.12;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_BaseDelegate_mc_22_45_28_4_stop:
+    }
+}
+[ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/BaseDelegate.mc"; @line = 1; ]
+<init> {
+}

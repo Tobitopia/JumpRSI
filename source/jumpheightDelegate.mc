@@ -3,10 +3,10 @@ import Toybox.WatchUi;
 import Toybox.System;
 import Toybox.Application;
 
-class jumpheightDelegate extends WatchUi.BehaviorDelegate {
+class jumpheightDelegate extends BaseDelegate {
 
     function initialize(view as jumpheightView) {
-        BehaviorDelegate.initialize();
+        BaseDelegate.initialize();
     }
 
     function onSelect() as Boolean {
@@ -14,7 +14,7 @@ class jumpheightDelegate extends WatchUi.BehaviorDelegate {
         var state = app.calculator.getState();
 
         if (state == STATE_START) {
-            app.calculator.startCountdown();
+            WatchUi.switchToView(new InstructionsView(), new InstructionsDelegate(), WatchUi.SLIDE_LEFT);
         } 
         else if (state == STATE_LANDED) {
             var h = app.calculator.getHeight();
@@ -31,7 +31,7 @@ class jumpheightDelegate extends WatchUi.BehaviorDelegate {
                 // Switch to SummaryView instead of resetting immediately
                 WatchUi.switchToView(new SummaryView(avgRsi, avgHeight), new SummaryDelegate(), WatchUi.SLIDE_LEFT);
             } else {
-                app.calculator.resetToStart();
+                app.calculator.startCountdown();
             }
         }
         
@@ -71,26 +71,6 @@ class jumpheightDelegate extends WatchUi.BehaviorDelegate {
         app.session.reset();
         app.calculator.resetToStart();
         WatchUi.requestUpdate();
-        return true;
-    }
-
-    function onMenu() as Boolean {
-        var confirm = new WatchUi.Confirmation("Clear History?");
-        WatchUi.pushView(confirm, new ClearHistoryConfirmationDelegate(), WatchUi.SLIDE_IMMEDIATE);
-        return true;
-    }
-}
-
-class ClearHistoryConfirmationDelegate extends WatchUi.ConfirmationDelegate {
-    function initialize() {
-        ConfirmationDelegate.initialize();
-    }
-
-    function onResponse(response) as Boolean {
-        if (response == WatchUi.CONFIRM_YES) {
-            var app = Application.getApp() as jumpheightApp;
-            app.storageService.clearHistory();
-        }
         return true;
     }
 }

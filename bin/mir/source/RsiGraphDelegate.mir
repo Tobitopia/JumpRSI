@@ -2,8 +2,8 @@
 import Toybox.WatchUi;
 [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Lang,2,14,18]; ]
 import Toybox.Lang;
-[ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc"; @line = 4; @symbol_classdef = [RsiGraphDelegate,4,6,22]; @symbol_extends<0> = [WatchUi,4,31,38]; @symbol_extends<1> = [BehaviorDelegate,4,39,55]; ]
-class RsiGraphDelegate extends WatchUi.BehaviorDelegate {
+[ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc"; @line = 4; @symbol_classdef = [RsiGraphDelegate,4,6,22]; @symbol_extends<0> = [BaseDelegate,4,31,43]; ]
+class RsiGraphDelegate extends BaseDelegate {
     [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc"; @line = 4; ]
     <init> {
     }
@@ -15,9 +15,9 @@ class RsiGraphDelegate extends WatchUi.BehaviorDelegate {
     function initialize() as Void {
 _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphDelegate_mc_6_26_8_4_start:
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc" 7 8 ]
-        symbol [ BehaviorDelegate %tmp.2 7 8 24 ];
-        %tmp.2 = getv ? :BehaviorDelegate;
-        symbol [ initialize %tmp.3 7 25 35 ];
+        symbol [ BaseDelegate %tmp.2 7 8 20 ];
+        %tmp.2 = getv ? :BaseDelegate;
+        symbol [ initialize %tmp.3 7 21 31 ];
         %tmp.3 = getv function %tmp.2 :initialize;
         invoke %tmp.2 %tmp.3();
 _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphDelegate_mc_6_26_8_4_stop:
