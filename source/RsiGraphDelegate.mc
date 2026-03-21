@@ -2,11 +2,9 @@ import Toybox.WatchUi;
 import Toybox.Lang;
 
 class RsiGraphDelegate extends WatchUi.BehaviorDelegate {
-    private var _view as RsiGraphView;
 
-    function initialize(view as RsiGraphView) {
+    function initialize() {
         BehaviorDelegate.initialize();
-        _view = view;
     }
 
     function onSelect() as Boolean {

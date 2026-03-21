@@ -366,29 +366,32 @@ _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_SensorService_
         symbol [ baseTime %tmp.76 55 24 32 ];
         %tmp.77 = lgetv %i.7;
         symbol [ i %tmp.77 55 36 37 ];
-        %tmp.78 = lgetv %msPerSample.6;
-        symbol [ msPerSample %tmp.78 55 40 51 ];
-        %tmp.79 = mul %tmp.77 %tmp.78;
-        %tmp.80 = add %tmp.76 %tmp.79;
-        lputv %t.12 %tmp.80;
+        symbol [ toLong %tmp.78 55 38 44 ];
+        %tmp.78 = getv function %tmp.77 :toLong;
+        %tmp.79 = invoke %tmp.77 %tmp.78();
+        %tmp.80 = lgetv %msPerSample.6;
+        symbol [ msPerSample %tmp.80 55 49 60 ];
+        %tmp.81 = mul %tmp.79 %tmp.80;
+        %tmp.82 = add %tmp.76 %tmp.81;
+        lputv %t.12 %tmp.82;
         symbol [ t %t.12 55 20 21 ];
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" 56 16 ]
-        symbol [ _calculator %tmp.82 56 16 27 ];
-        %tmp.82 = getv ? :_calculator;
-        symbol [ processSample %tmp.83 56 28 41 ];
-        %tmp.83 = getv function %tmp.82 :processSample;
-        %tmp.84 = lgetv %magG.11;
-        symbol [ magG %tmp.84 56 42 46 ];
-        %tmp.85 = lgetv %t.12;
-        symbol [ t %tmp.85 56 48 49 ];
-        invoke %tmp.82 %tmp.83(%tmp.84, %tmp.85);
+        symbol [ _calculator %tmp.84 56 16 27 ];
+        %tmp.84 = getv ? :_calculator;
+        symbol [ processSample %tmp.85 56 28 41 ];
+        %tmp.85 = getv function %tmp.84 :processSample;
+        %tmp.86 = lgetv %magG.11;
+        symbol [ magG %tmp.86 56 42 46 ];
+        %tmp.87 = lgetv %t.12;
+        symbol [ t %tmp.87 56 48 49 ];
+        invoke %tmp.84 %tmp.85(%tmp.86, %tmp.87);
 _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_SensorService_mc_49_47_57_12_stop:
 _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_SensorService_mc_49_12_57_12_for_incr:
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" 49 ]
-        %tmp.88 = lgetv %i.7;
-        symbol [ i %tmp.88 49 42 43 ];
-        %tmp.89 = add %tmp.88 1;
-        lputv %i.7 %tmp.89;
+        %tmp.90 = lgetv %i.7;
+        symbol [ i %tmp.90 49 42 43 ];
+        %tmp.91 = add %tmp.90 1;
+        lputv %i.7 %tmp.91;
         symbol [ i %i.7 49 42 43 ];
         goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_SensorService_mc_49_12_57_12_for_test;
 _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_SensorService_mc_49_12_57_12_for_end:

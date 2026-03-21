@@ -13,7 +13,6 @@ class InfoView extends WatchUi.View {
         dc.clear();
 
         var width = dc.getWidth();
-        var height = dc.getHeight();
         
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
         dc.drawText(width / 2, 25, Graphics.FONT_SMALL, "About Jump RSI", Graphics.TEXT_JUSTIFY_CENTER);

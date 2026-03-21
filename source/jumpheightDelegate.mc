@@ -40,8 +40,7 @@ class jumpheightDelegate extends WatchUi.BehaviorDelegate {
     }
 
     function onNextPage() as Boolean {
-        var view = new RsiGraphView();
-        WatchUi.switchToView(view, new RsiGraphDelegate(view), WatchUi.SLIDE_UP);
+        WatchUi.switchToView(new RsiGraphView(), new RsiGraphDelegate(), WatchUi.SLIDE_UP);
         return true;
     }
 

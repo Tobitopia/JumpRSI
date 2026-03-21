@@ -11,8 +11,7 @@ class jumpheightMenuDelegate extends WatchUi.MenuInputDelegate {
 
     function onMenuItem(item as Symbol) as Void {
         if (item == :item_history) {
-            var view = new RsiGraphView();
-            WatchUi.pushView(view, new RsiGraphDelegate(view), WatchUi.SLIDE_LEFT);
+            WatchUi.pushView(new RsiGraphView(), new RsiGraphDelegate(), WatchUi.SLIDE_LEFT);
         }
     }
 

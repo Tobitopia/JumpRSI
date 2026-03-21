@@ -52,7 +52,7 @@ class SensorService {
                 var zF = z[i].toFloat();
                 var magG = Math.sqrt(xF*xF + yF*yF + zF*zF).toFloat() / 1000.0f;
                 
-                var t = baseTime + (i * msPerSample);
+                var t = baseTime + (i.toLong() * msPerSample);
                 _calculator.processSample(magG, t);
             }
         }

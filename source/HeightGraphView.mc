@@ -83,7 +83,7 @@ class HeightGraphDelegate extends WatchUi.BehaviorDelegate {
 
     function onPreviousPage() as Boolean {
         var view = new RsiGraphView();
-        WatchUi.switchToView(view, new RsiGraphDelegate(view), WatchUi.SLIDE_DOWN);
+        WatchUi.switchToView(view, new RsiGraphDelegate(), WatchUi.SLIDE_DOWN);
         return true;
     }
 }

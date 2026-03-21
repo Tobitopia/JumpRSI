@@ -646,17 +646,15 @@ _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_HeightGraphVie
         symbol [ view %tmp.7 86 29 33 ];
         symbol [ RsiGraphDelegate %tmp.11 86 39 55 ];
         %tmp.11 = getv ? :RsiGraphDelegate;
-        %tmp.12 = lgetv %view.1;
-        symbol [ view %tmp.12 86 56 60 ];
-        %tmp.8 = newc %tmp.11 (%tmp.12);
-        symbol [ WatchUi %tmp.13 86 63 70 ];
-        %tmp.13 = getm $.Toybox.WatchUi;
-        symbol [ SLIDE_DOWN %tmp.14 86 71 81 ];
-        %tmp.14 = getv %tmp.13 :SLIDE_DOWN;
-        invoke %tmp.5 %tmp.6(%tmp.7, %tmp.8, %tmp.14);
+        %tmp.8 = newc %tmp.11 ();
+        symbol [ WatchUi %tmp.12 86 59 66 ];
+        %tmp.12 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_DOWN %tmp.13 86 67 77 ];
+        %tmp.13 = getv %tmp.12 :SLIDE_DOWN;
+        invoke %tmp.5 %tmp.6(%tmp.7, %tmp.8, %tmp.13);
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/HeightGraphView.mc" 87 8 ]
-        %tmp.15 = true;
-        ret %tmp.15;
+        %tmp.14 = true;
+        ret %tmp.14;
 _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_HeightGraphView_mc_84_41_88_4_stop:
     }
 }
