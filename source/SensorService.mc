@@ -41,7 +41,6 @@ class SensorService {
             var x = accel.x;
             var y = accel.y;
             var z = accel.z;
-            if (x == null || y == null || z == null) { return; }
             
             var baseTime = Time.now().value() * 1000L; 
             var msPerSample = 20; // 50Hz = 20ms
