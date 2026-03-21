@@ -128,16 +128,16 @@ class JumpCalculator {
                     
                     // Linear interpolation for more precise landing time
                     var diff = _filteredMag - _lastMag;
-                    var preciseLandingTimeMs;
+                    var preciseLandingTimeLong;
                     if (diff > 0.0001f || diff < -0.0001f) {
                         var ratio = (landingThreshold - _lastMag) / diff;
                         var offset = (dt * ratio).toLong();
-                        preciseLandingTimeMs = (_lastTimestamp + offset).toFloat();
+                        preciseLandingTimeLong = _lastTimestamp + offset;
                     } else {
-                        preciseLandingTimeMs = timestamp.toFloat();
+                        preciseLandingTimeLong = timestamp;
                     }
                     
-                    _flightTime = (preciseLandingTimeMs - _takeOffTime.toFloat()) / 1000.0;
+                    _flightTime = (preciseLandingTimeLong - _takeOffTime).toFloat() / 1000.0;
                     calculateResults();
                     System.println("Jump: H=" + _height + " RSI=" + _rsiMod + " FT=" + _flightTime);
                 }
