@@ -25,22 +25,16 @@ class JumpCalculator {
     // Pro Filter & Calibration
     private var _emaAlpha = 0.35f; 
     private var _filteredMag = 1.0f;
-    private var _lastMag = 1.0f;
     private var _restingG = 1.0f;
     private var _calibCount = 0;
-    private var _emaDelayMs = 0.0f;
 
     function initialize() {
-        // EMA delay calculation: tau = (1-alpha)/alpha * period
-        // For 100Hz (10ms) and alpha 0.35: (0.65/0.35) * 10 = 18.57ms
-        _emaDelayMs = ((1.0f - _emaAlpha) / _emaAlpha) * 10.0f;
     }
     
     function startCountdown() as Void {
         _state = STATE_PREPARING;
         _countdown = 3;
         _filteredMag = 1.0f;
-        _lastMag = 1.0f;
         _restingG = 0.0f;
         _calibCount = 0;
     }
@@ -60,7 +54,6 @@ class JumpCalculator {
     }
 
     function processSample(accelMagG as Float, timestamp as Long) as Void {
-        var prevFiltered = _filteredMag;
         _filteredMag = (_emaAlpha * accelMagG) + ((1.0f - _emaAlpha) * _filteredMag);
 
         if (_state == STATE_PREPARING) {
@@ -75,22 +68,17 @@ class JumpCalculator {
 
         if (_state < STATE_IDLE || _state == STATE_LANDED) {
             _lastTimestamp = timestamp;
-            _lastMag = _filteredMag;
             return;
         }
 
         if (_lastTimestamp == 0L) {
             _lastTimestamp = timestamp;
-            _lastMag = _filteredMag;
             return;
         }
 
-        var dt = (timestamp - _lastTimestamp).toFloat(); // in ms
-        if (dt <= 0 || dt > 500) { 
-            _lastTimestamp = timestamp;
-            _lastMag = _filteredMag;
-            return; 
-        }
+        var dt = (timestamp - _lastTimestamp).toFloat() / 1000.0;
+        _lastTimestamp = timestamp;
+        if (dt <= 0 || dt > 0.5) { return; }
 
         switch (_state) {
             case STATE_IDLE:
@@ -107,43 +95,23 @@ class JumpCalculator {
                 break;
 
             case STATE_LAUNCHING:
-                var takeoffThreshold = 0.25f;
-                if (_filteredMag < takeoffThreshold) { 
+                if (_filteredMag < 0.25) { 
                     _state = STATE_IN_AIR;
-                    
-                    // Linear interpolation for more precise takeoff time
-                    var ratio = (takeoffThreshold - _lastMag) / (_filteredMag - _lastMag);
-                    var interpolatedTime = _lastTimestamp.toFloat() + (dt * ratio);
-                    
-                    // Compensate for EMA filter lag
-                    _takeOffTime = (interpolatedTime - _emaDelayMs).toLong();
-                    _ttt = (_takeOffTime - _startTime).toFloat() / 1000.0;
+                    _takeOffTime = timestamp;
+                    _ttt = (timestamp - _startTime).toFloat() / 1000.0;
                 }
                 break;
 
             case STATE_IN_AIR:
-                var timeInAirRaw = (timestamp - _takeOffTime).toFloat() / 1000.0;
-                var landingThreshold = 1.4f; // Refined from 1.8G
-                
-                if (timeInAirRaw > 0.15 && _filteredMag > landingThreshold) {
+                var timeInAir = (timestamp - _takeOffTime).toFloat() / 1000.0;
+                if (timeInAir > 0.15 && _filteredMag > 1.8) {
                     _state = STATE_LANDED;
-                    
-                    // Linear interpolation for more precise landing time
-                    var ratio = (landingThreshold - _lastMag) / (_filteredMag - _lastMag);
-                    var interpolatedLandingTime = _lastTimestamp.toFloat() + (dt * ratio);
-                    
-                    // Compensate for EMA filter lag
-                    var preciseLandingTime = interpolatedLandingTime - _emaDelayMs;
-                    
-                    _flightTime = (preciseLandingTime - _takeOffTime.toFloat()) / 1000.0;
+                    _flightTime = timeInAir;
                     calculateResults();
-                    System.println("Jump: H=" + _height + " RSI=" + _rsiMod + " FT=" + _flightTime);
+                    System.println("Jump: H=" + _height + " RSI=" + _rsiMod);
                 }
                 break;
         }
-        
-        _lastTimestamp = timestamp;
-        _lastMag = _filteredMag;
     }
 
     private function calculateResults() as Void {
