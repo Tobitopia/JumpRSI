@@ -29,9 +29,9 @@ class jumpheightView extends WatchUi.View {
         } 
         else if (state == STATE_PREPARING) {
             var count = _calculator.getCountdown();
-            dc.drawText(width / 2, height_dc / 2 - 60, Graphics.FONT_SMALL, "Hands on Hips!", Graphics.TEXT_JUSTIFY_CENTER);
-            dc.drawText(width / 2, height_dc / 2 - 35, Graphics.FONT_TINY, "Stand Still...", Graphics.TEXT_JUSTIFY_CENTER);
-            dc.drawText(width / 2, height_dc / 2 + 10, Graphics.FONT_NUMBER_THAI_HOT, (count + 1).format("%d"), Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(width / 2, height_dc / 2 - 70, Graphics.FONT_SMALL, "Hands on Hips!", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(width / 2, height_dc / 2 - 45, Graphics.FONT_TINY, "Stand Still...", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(width / 2, height_dc / 2 - 15, Graphics.FONT_NUMBER_THAI_HOT, (count + 1).format("%d"), Graphics.TEXT_JUSTIFY_CENTER);
         } 
         else if (state >= STATE_IDLE && state <= STATE_IN_AIR) {
             dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_TRANSPARENT);
@@ -46,7 +46,8 @@ class jumpheightView extends WatchUi.View {
             dc.drawText(width / 2, height_dc / 2 + 10, Graphics.FONT_MEDIUM, "RSI: " + r.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
             
             dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(width / 2, height_dc - 65, Graphics.FONT_XTINY, "Press START for next", Graphics.TEXT_JUSTIFY_CENTER);
+            var msg = (_session.getJumpCount() == 2) ? "Press START to finish" : "Press START for next";
+            dc.drawText(width / 2, height_dc - 65, Graphics.FONT_XTINY, msg, Graphics.TEXT_JUSTIFY_CENTER);
         }
 
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);

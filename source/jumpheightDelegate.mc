@@ -40,11 +40,19 @@ class jumpheightDelegate extends WatchUi.BehaviorDelegate {
     }
 
     function onNextPage() as Boolean {
+        var app = Application.getApp() as jumpheightApp;
+        if (app.calculator.getState() != STATE_START) {
+            return true;
+        }
         WatchUi.switchToView(new RsiGraphView(), new RsiGraphDelegate(), WatchUi.SLIDE_UP);
         return true;
     }
 
     function onPreviousPage() as Boolean {
+        var app = Application.getApp() as jumpheightApp;
+        if (app.calculator.getState() != STATE_START) {
+            return true;
+        }
         var view = new InfoView();
         WatchUi.switchToView(view, new InfoDelegate(), WatchUi.SLIDE_DOWN);
         return true;
@@ -67,7 +75,22 @@ class jumpheightDelegate extends WatchUi.BehaviorDelegate {
     }
 
     function onMenu() as Boolean {
-        WatchUi.pushView(new Rez.Menus.MainMenu(), new jumpheightMenuDelegate(), WatchUi.SLIDE_UP);
+        var confirm = new WatchUi.Confirmation("Clear History?");
+        WatchUi.pushView(confirm, new ClearHistoryConfirmationDelegate(), WatchUi.SLIDE_IMMEDIATE);
+        return true;
+    }
+}
+
+class ClearHistoryConfirmationDelegate extends WatchUi.ConfirmationDelegate {
+    function initialize() {
+        ConfirmationDelegate.initialize();
+    }
+
+    function onResponse(response) as Boolean {
+        if (response == WatchUi.CONFIRM_YES) {
+            var app = Application.getApp() as jumpheightApp;
+            app.storageService.clearHistory();
+        }
         return true;
     }
 }
