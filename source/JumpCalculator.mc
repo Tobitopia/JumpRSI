@@ -87,6 +87,9 @@ class JumpCalculator {
             return; 
         }
 
+        // EMA delay: tau = (1-alpha)/alpha * period
+        var emaDelayMs = ((1.0f - _emaAlpha) / _emaAlpha) * dt;
+
         switch (_state) {
             case STATE_IDLE:
                 if (_filteredMag < (_restingG * 0.85)) {
@@ -108,36 +111,41 @@ class JumpCalculator {
                     
                     // Linear interpolation for more precise takeoff time
                     var diff = _filteredMag - _lastMag;
+                    var preciseTakeoffTimeMs;
                     if (diff > 0.0001f || diff < -0.0001f) {
                         var ratio = (takeoffThreshold - _lastMag) / diff;
-                        var offset = (dt * ratio).toLong();
-                        _takeOffTime = _lastTimestamp + offset;
+                        preciseTakeoffTimeMs = _lastTimestamp.toFloat() + (dt * ratio);
                     } else {
-                        _takeOffTime = timestamp;
+                        preciseTakeoffTimeMs = timestamp.toFloat();
                     }
+                    
+                    // Compensate for EMA filter lag
+                    _takeOffTime = (preciseTakeoffTimeMs - emaDelayMs).toLong();
                     _ttt = (_takeOffTime - _startTime).toFloat() / 1000.0;
                 }
                 break;
 
             case STATE_IN_AIR:
                 var timeInAirRaw = (timestamp - _takeOffTime).toFloat() / 1000.0;
-                var landingThreshold = 1.8f; // Reverted to 1.8G for stability
+                var landingThreshold = 1.8f; 
                 
                 if (timeInAirRaw > 0.15 && _filteredMag > landingThreshold) {
                     _state = STATE_LANDED;
                     
                     // Linear interpolation for more precise landing time
                     var diff = _filteredMag - _lastMag;
-                    var preciseLandingTimeLong;
+                    var preciseLandingTimeMs;
                     if (diff > 0.0001f || diff < -0.0001f) {
                         var ratio = (landingThreshold - _lastMag) / diff;
-                        var offset = (dt * ratio).toLong();
-                        preciseLandingTimeLong = _lastTimestamp + offset;
+                        preciseLandingTimeMs = _lastTimestamp.toFloat() + (dt * ratio);
                     } else {
-                        preciseLandingTimeLong = timestamp;
+                        preciseLandingTimeMs = timestamp.toFloat();
                     }
                     
-                    _flightTime = (preciseLandingTimeLong - _takeOffTime).toFloat() / 1000.0;
+                    // Compensate for EMA filter lag
+                    var actualLandingTimeMs = preciseLandingTimeMs - emaDelayMs;
+                    
+                    _flightTime = (actualLandingTimeMs - _takeOffTime.toFloat()) / 1000.0;
                     calculateResults();
                     System.println("Jump: H=" + _height + " RSI=" + _rsiMod + " FT=" + _flightTime);
                 }

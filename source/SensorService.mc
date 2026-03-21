@@ -16,14 +16,14 @@ class SensorService {
             :period => 1,
             :accelerometer => {
                 :enabled => true,
-                :sampleRate => 50, // Increased to 50Hz for better precision
+                :sampleRate => 100, // Increased to 100Hz for better precision
                 :includeTimestamps => false
             }
         };
 
         try {
             Sensor.registerSensorDataListener(method(:onSensorData), options);
-            System.println("Sens: 50Hz OK");
+            System.println("Sens: 100Hz OK");
         } catch (e) {
             System.println("Sens: ERR");
         }
@@ -44,7 +44,7 @@ class SensorService {
             if (x == null || y == null || z == null) { return; }
             
             var baseTime = Time.now().value() * 1000L; 
-            var msPerSample = 20; // 50Hz = 20ms
+            var msPerSample = 10; // 100Hz = 10ms
 
             for (var i = 0; i < x.size(); i++) {
                 var xF = x[i].toFloat();
