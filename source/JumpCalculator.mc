@@ -48,7 +48,6 @@ class JumpCalculator {
                 if (_calibCount > 0) { _restingG = _restingG / _calibCount; }
                 else { _restingG = 1.0f; }
                 _state = STATE_IDLE;
-                System.println("Calibrated G: " + _restingG);
                 return true;
             }
         }
@@ -144,7 +143,6 @@ class JumpCalculator {
                     
                     _flightTime = (actualLandingTimeLong - _takeOffTime).toFloat() / 1000.0;
                     calculateResults();
-                    System.println("Jump: H=" + _height + " RSI=" + _rsiMod + " FT=" + _flightTime);
                 }
                 break;
         }

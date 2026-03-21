@@ -30,7 +30,7 @@ class InstructionsView extends WatchUi.View {
         dc.drawText(width / 2, startY + (spacing * 3) + 34, Graphics.FONT_XTINY, "avg. of best two", Graphics.TEXT_JUSTIFY_CENTER);
         
         dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(width / 2, height - 35, Graphics.FONT_XTINY, "Press START to begin", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, height - 45, Graphics.FONT_XTINY, "Press START to begin", Graphics.TEXT_JUSTIFY_CENTER);
     }
 }
 

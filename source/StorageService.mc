@@ -8,7 +8,25 @@ class StorageService {
     private const KEY_JUMP_HISTORY = "jump_history";
 
     function initialize() {
-        System.println("Store: Init");
+    }
+
+    function deleteLastJump() as Void {
+        var history = Storage.getValue(KEY_JUMP_HISTORY) as Array?;
+        if (history != null && history.size() > 0) {
+            history = history.slice(0, -1);
+            Storage.setValue(KEY_JUMP_HISTORY, history);
+            
+            if (history.size() > 0) {
+                var sum = 0.0;
+                for (var i = 0; i < history.size(); i++) {
+                    var item = history[i] as Dictionary;
+                    sum += item["rsi"] as Float;
+                }
+                saveBaseline(sum / history.size());
+            } else {
+                Storage.deleteValue(KEY_BASELINE);
+            }
+        }
     }
 
     function saveBaseline(rsi as Float) as Void {

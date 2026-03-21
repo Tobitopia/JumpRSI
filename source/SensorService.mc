@@ -23,9 +23,7 @@ class SensorService {
 
         try {
             Sensor.registerSensorDataListener(method(:onSensorData), options);
-            System.println("Sens: 50Hz OK");
         } catch (e) {
-            System.println("Sens: ERR");
         }
     }
 
