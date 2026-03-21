@@ -108,7 +108,7 @@ class JumpCalculator {
                     
                     // Linear interpolation for more precise takeoff time
                     var diff = _filteredMag - _lastMag;
-                    if (Math.abs(diff) > 0.0001f) {
+                    if (diff > 0.0001f || diff < -0.0001f) {
                         var ratio = (takeoffThreshold - _lastMag) / diff;
                         var offset = (dt * ratio).toLong();
                         _takeOffTime = _lastTimestamp + offset;
@@ -129,7 +129,7 @@ class JumpCalculator {
                     // Linear interpolation for more precise landing time
                     var diff = _filteredMag - _lastMag;
                     var preciseLandingTimeMs;
-                    if (Math.abs(diff) > 0.0001f) {
+                    if (diff > 0.0001f || diff < -0.0001f) {
                         var ratio = (landingThreshold - _lastMag) / diff;
                         var offset = (dt * ratio).toLong();
                         preciseLandingTimeMs = (_lastTimestamp + offset).toFloat();
