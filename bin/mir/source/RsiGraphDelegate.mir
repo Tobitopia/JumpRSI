@@ -1,0 +1,73 @@
+[ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [WatchUi,1,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Lang,2,14,18]; ]
+import Toybox.Lang;
+[ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc"; @line = 4; @symbol_classdef = [RsiGraphDelegate,4,6,22]; @symbol_extends<0> = [WatchUi,4,31,38]; @symbol_extends<1> = [BehaviorDelegate,4,39,55]; ]
+class RsiGraphDelegate extends WatchUi.BehaviorDelegate {
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc"; @line = 4; ]
+    <init> {
+    }
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc"; @line = 4; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc"; @line = 5; @symbol_functiondef = [initialize,5,13,23]; ]
+    function initialize() as Void {
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphDelegate_mc_5_26_7_4_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc" 6 8 ]
+        symbol [ BehaviorDelegate %tmp.2 6 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 6 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphDelegate_mc_5_26_7_4_stop:
+    }
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc"; @line = 9; @symbol_functiondef = [onNextPage,9,13,23]; @symbol_return<0> = [Boolean,9,29,36]; ]
+    function onNextPage() as Boolean {
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphDelegate_mc_9_37_13_4_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc" 10 8 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphDelegate_mc_9_37_13_4_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphDelegate_mc_9_37_13_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 10 12 16 ];
+        symbol [ jumpheightView %tmp.4 10 23 37 ];
+        %tmp.4 = getv ? :jumpheightView;
+        %tmp.1 = newc %tmp.4 ();
+        lputv %view.1 %tmp.1;
+        symbol [ view %view.1 10 12 16 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc" 11 8 ]
+        symbol [ WatchUi %tmp.5 11 8 15 ];
+        %tmp.5 = getm $.Toybox.WatchUi;
+        symbol [ switchToView %tmp.6 11 16 28 ];
+        %tmp.6 = getv function %tmp.5 :switchToView;
+        %tmp.7 = lgetv %view.1;
+        symbol [ view %tmp.7 11 29 33 ];
+        symbol [ jumpheightDelegate %tmp.11 11 39 57 ];
+        %tmp.11 = getv ? :jumpheightDelegate;
+        %tmp.12 = lgetv %view.1;
+        symbol [ view %tmp.12 11 58 62 ];
+        %tmp.8 = newc %tmp.11 (%tmp.12);
+        symbol [ WatchUi %tmp.13 11 65 72 ];
+        %tmp.13 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_DOWN %tmp.14 11 73 83 ];
+        %tmp.14 = getv %tmp.13 :SLIDE_DOWN;
+        invoke %tmp.5 %tmp.6(%tmp.7, %tmp.8, %tmp.14);
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc" 12 8 ]
+        %tmp.15 = true;
+        ret %tmp.15;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphDelegate_mc_9_37_13_4_stop:
+    }
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc"; @line = 15; @symbol_functiondef = [onPreviousPage,15,13,27]; @symbol_return<0> = [Boolean,15,33,40]; ]
+    function onPreviousPage() as Boolean {
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphDelegate_mc_15_41_17_4_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc" 16 8 ]
+        %tmp.1 = self;
+        symbol [ onNextPage %tmp.2 16 15 25 ];
+        %tmp.2 = getv function %tmp.1 :onNextPage;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        ret %tmp.3;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphDelegate_mc_15_41_17_4_stop:
+    }
+}
+[ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc"; @line = 1; ]
+<init> {
+}

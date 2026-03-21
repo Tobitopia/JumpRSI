@@ -1,0 +1,61 @@
+import Toybox.Lang;
+import Toybox.WatchUi;
+import Toybox.System;
+import Toybox.Application;
+
+class jumpheightDelegate extends WatchUi.BehaviorDelegate {
+
+    function initialize(view as jumpheightView) {
+        BehaviorDelegate.initialize();
+    }
+
+    function onSelect() as Boolean {
+        var app = Application.getApp() as jumpheightApp;
+        var state = app.calculator.getState();
+
+        if (state == STATE_START) {
+            app.calculator.startCountdown();
+        } 
+        else if (state == STATE_LANDED) {
+            var h = app.calculator.getHeight();
+            var r = app.calculator.getRsiMod();
+            var t = app.calculator.getTtt();
+            
+            app.session.addJump(h, r, t);
+            
+            if (app.session.isComplete()) {
+                var avgRsi = app.session.getAverageBestTwoRsi();
+                var avgHeight = app.session.getAverageBestTwoHeight();
+                app.storageService.saveTodayJump(avgRsi, avgHeight);
+                app.session.reset(); // Prepare for next time
+            }
+            
+            app.calculator.resetToStart();
+        }
+        
+        WatchUi.requestUpdate();
+        return true;
+    }
+
+    function onNextPage() as Boolean {
+        WatchUi.switchToView(new RsiGraphView(), new RsiGraphDelegate(), WatchUi.SLIDE_UP);
+        return true;
+    }
+
+    function onPreviousPage() as Boolean {
+        return onNextPage();
+    }
+
+    function onBack() as Boolean {
+        var app = Application.getApp() as jumpheightApp;
+        app.session.reset();
+        app.calculator.resetToStart();
+        WatchUi.requestUpdate();
+        return true;
+    }
+
+    function onMenu() as Boolean {
+        WatchUi.pushView(new Rez.Menus.MainMenu(), new jumpheightMenuDelegate(), WatchUi.SLIDE_UP);
+        return true;
+    }
+}

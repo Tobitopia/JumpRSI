@@ -1,0 +1,557 @@
+[ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Graphics,1,14,22]; ]
+import Toybox.Graphics;
+[ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [WatchUi,2,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Lang,3,14,18]; ]
+import Toybox.Lang;
+[ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [Application,4,14,25]; ]
+import Toybox.Application;
+[ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc"; @line = 6; @symbol_classdef = [RsiGraphView,6,6,18]; @symbol_extends<0> = [WatchUi,6,27,34]; @symbol_extends<1> = [View,6,35,39]; ]
+class RsiGraphView extends WatchUi.View {
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc"; @line = 6; ]
+    <init> {
+    }
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc"; @line = 7; @position = 16; @symbol_vardef = [_history,7,16,24]; @symbol_type<0> = [Array,7,28,33]; @symbol_type<1> = [Dictionary,7,34,44]; ]
+    private
+    var _history as Array<Dictionary>;
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc"; @line = 9; @symbol_functiondef = [initialize,9,13,23]; ]
+    function initialize() as Void {
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_9_26_13_4_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 10 8 ]
+        symbol [ View %tmp.2 10 8 12 ];
+        %tmp.2 = getv ? :View;
+        symbol [ initialize %tmp.3 10 13 23 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 11 8 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_9_26_13_4_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_9_26_13_4_stop" ]
+        %app.1 = local;
+        symbol [ app %app.1 11 12 15 ];
+        symbol [ Application %tmp.4 11 18 29 ];
+        %tmp.4 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.5 11 30 36 ];
+        %tmp.5 = getv function %tmp.4 :getApp;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        %tmp.7 = as %tmp.6 jumpheightApp;
+        symbol [ jumpheightApp %tmp.7 11 42 55 ];
+        lputv %app.1 %tmp.7;
+        symbol [ app %app.1 11 12 15 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 12 8 ]
+        %tmp.8 = lgetv %app.1;
+        symbol [ app %tmp.8 12 19 22 ];
+        symbol [ storageService %tmp.9 12 23 37 ];
+        %tmp.9 = getv %tmp.8 :storageService;
+        symbol [ getHistory %tmp.10 12 38 48 ];
+        %tmp.10 = getv function %tmp.9 :getHistory;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        symbol [ _history ? 12 8 16 ];
+        putv self :_history %tmp.11;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_9_26_13_4_stop:
+    }
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc"; @line = 15; @symbol_functiondef = [onUpdate,15,13,21]; @symbol_param<0> = [dc,15,22,24]; @symbol_param<0>_type<0> = [Dc,15,28,30]; ]
+    function onUpdate(dc as Dc) as Void {
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_15_40_73_4_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 16 8 ]
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 16 8 10 ];
+        symbol [ setColor %tmp.2 16 11 19 ];
+        %tmp.2 = getv function %tmp.1 :setColor;
+        symbol [ Graphics %tmp.3 16 20 28 ];
+        %tmp.3 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.4 16 29 40 ];
+        %tmp.4 = getv %tmp.3 :COLOR_BLACK;
+        symbol [ Graphics %tmp.5 16 42 50 ];
+        %tmp.5 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.6 16 51 62 ];
+        %tmp.6 = getv %tmp.5 :COLOR_BLACK;
+        invoke %tmp.1 %tmp.2(%tmp.4, %tmp.6);
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 17 8 ]
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 17 8 10 ];
+        symbol [ clear %tmp.8 17 11 16 ];
+        %tmp.8 = getv function %tmp.7 :clear;
+        invoke %tmp.7 %tmp.8();
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 19 8 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_15_40_73_4_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_15_40_73_4_stop" ]
+        %width.1 = local;
+        symbol [ width %width.1 19 12 17 ];
+        %tmp.9 = lgetv %dc;
+        symbol [ dc %tmp.9 19 20 22 ];
+        symbol [ getWidth %tmp.10 19 23 31 ];
+        %tmp.10 = getv function %tmp.9 :getWidth;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        lputv %width.1 %tmp.11;
+        symbol [ width %width.1 19 12 17 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 20 8 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_15_40_73_4_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_15_40_73_4_stop" ]
+        %height.2 = local;
+        symbol [ height %height.2 20 12 18 ];
+        %tmp.12 = lgetv %dc;
+        symbol [ dc %tmp.12 20 21 23 ];
+        symbol [ getHeight %tmp.13 20 24 33 ];
+        %tmp.13 = getv function %tmp.12 :getHeight;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        lputv %height.2 %tmp.14;
+        symbol [ height %height.2 20 12 18 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 21 8 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_15_40_73_4_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_15_40_73_4_stop" ]
+        %padding.3 = local;
+        symbol [ padding %padding.3 21 12 19 ];
+        %tmp.15 = 30;
+        lputv %padding.3 %tmp.15;
+        symbol [ padding %padding.3 21 12 19 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 22 8 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_15_40_73_4_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_15_40_73_4_stop" ]
+        %graphWidth.4 = local;
+        symbol [ graphWidth %graphWidth.4 22 12 22 ];
+        %tmp.16 = lgetv %width.1;
+        symbol [ width %tmp.16 22 25 30 ];
+        %tmp.17 = 2;
+        %tmp.18 = lgetv %padding.3;
+        symbol [ padding %tmp.18 22 38 45 ];
+        %tmp.19 = mul %tmp.17 %tmp.18;
+        %tmp.20 = sub %tmp.16 %tmp.19;
+        lputv %graphWidth.4 %tmp.20;
+        symbol [ graphWidth %graphWidth.4 22 12 22 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 23 8 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_15_40_73_4_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_15_40_73_4_stop" ]
+        %graphHeight.5 = local;
+        symbol [ graphHeight %graphHeight.5 23 12 23 ];
+        %tmp.21 = lgetv %height.2;
+        symbol [ height %tmp.21 23 26 32 ];
+        %tmp.22 = 2;
+        %tmp.23 = div %tmp.21 %tmp.22;
+        lputv %graphHeight.5 %tmp.23;
+        symbol [ graphHeight %graphHeight.5 23 12 23 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 24 8 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_15_40_73_4_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_15_40_73_4_stop" ]
+        %bottom.6 = local;
+        symbol [ bottom %bottom.6 24 12 18 ];
+        %tmp.24 = lgetv %height.2;
+        symbol [ height %tmp.24 24 22 28 ];
+        %tmp.25 = 2;
+        %tmp.26 = div %tmp.24 %tmp.25;
+        %tmp.27 = lgetv %graphHeight.5;
+        symbol [ graphHeight %tmp.27 24 37 48 ];
+        %tmp.28 = 2;
+        %tmp.29 = div %tmp.27 %tmp.28;
+        %tmp.30 = add %tmp.26 %tmp.29;
+        lputv %bottom.6 %tmp.30;
+        symbol [ bottom %bottom.6 24 12 18 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 26 8 ]
+        %tmp.31 = lgetv %dc;
+        symbol [ dc %tmp.31 26 8 10 ];
+        symbol [ setColor %tmp.32 26 11 19 ];
+        %tmp.32 = getv function %tmp.31 :setColor;
+        symbol [ Graphics %tmp.33 26 20 28 ];
+        %tmp.33 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.34 26 29 40 ];
+        %tmp.34 = getv %tmp.33 :COLOR_WHITE;
+        symbol [ Graphics %tmp.35 26 42 50 ];
+        %tmp.35 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.36 26 51 68 ];
+        %tmp.36 = getv %tmp.35 :COLOR_TRANSPARENT;
+        invoke %tmp.31 %tmp.32(%tmp.34, %tmp.36);
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 27 8 ]
+        %tmp.37 = lgetv %dc;
+        symbol [ dc %tmp.37 27 8 10 ];
+        symbol [ drawText %tmp.38 27 11 19 ];
+        %tmp.38 = getv function %tmp.37 :drawText;
+        %tmp.39 = lgetv %width.1;
+        symbol [ width %tmp.39 27 20 25 ];
+        %tmp.40 = 2;
+        %tmp.41 = div %tmp.39 %tmp.40;
+        %tmp.42 = lgetv %padding.3;
+        symbol [ padding %tmp.42 27 31 38 ];
+        symbol [ Graphics %tmp.43 27 40 48 ];
+        %tmp.43 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.44 27 49 59 ];
+        %tmp.44 = getv %tmp.43 :FONT_SMALL;
+        %tmp.45 = "RSI History (Last 7)";
+        symbol [ Graphics %tmp.46 27 85 93 ];
+        %tmp.46 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.47 27 94 113 ];
+        %tmp.47 = getv %tmp.46 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.37 %tmp.38(%tmp.41, %tmp.42, %tmp.44, %tmp.45, %tmp.47);
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 29 8 ]
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_29_8_32_8_if_stmt:
+        symbol [ _history %tmp.49 29 12 20 ];
+        %tmp.49 = getv ? :_history;
+        symbol [ size %tmp.50 29 21 25 ];
+        %tmp.50 = getv function %tmp.49 :size;
+        %tmp.51 = invoke %tmp.49 %tmp.50();
+        %tmp.52 = 0;
+        %tmp.53 = eq %tmp.51 %tmp.52;
+        bf %tmp.53 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_29_8_32_8_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_29_8_32_8_if_true:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_29_34_32_8_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 30 12 ]
+        %tmp.54 = lgetv %dc;
+        symbol [ dc %tmp.54 30 12 14 ];
+        symbol [ drawText %tmp.55 30 15 23 ];
+        %tmp.55 = getv function %tmp.54 :drawText;
+        %tmp.56 = lgetv %width.1;
+        symbol [ width %tmp.56 30 24 29 ];
+        %tmp.57 = 2;
+        %tmp.58 = div %tmp.56 %tmp.57;
+        %tmp.59 = lgetv %height.2;
+        symbol [ height %tmp.59 30 35 41 ];
+        %tmp.60 = 2;
+        %tmp.61 = div %tmp.59 %tmp.60;
+        symbol [ Graphics %tmp.62 30 47 55 ];
+        %tmp.62 = getm $.Toybox.Graphics;
+        symbol [ FONT_TINY %tmp.63 30 56 65 ];
+        %tmp.63 = getv %tmp.62 :FONT_TINY;
+        %tmp.64 = "No History Yet";
+        symbol [ Graphics %tmp.65 30 85 93 ];
+        %tmp.65 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.66 30 94 113 ];
+        %tmp.66 = getv %tmp.65 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.54 %tmp.55(%tmp.58, %tmp.61, %tmp.63, %tmp.64, %tmp.66);
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 31 12 ]
+        ret ?;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_29_34_32_8_stop:
+        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_29_8_32_8_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_29_8_32_8_if_end:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 35 8 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_15_40_73_4_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_15_40_73_4_stop" ]
+        %startIdx.7 = local;
+        symbol [ startIdx %startIdx.7 35 12 20 ];
+        %tmp.67 = 0;
+        lputv %startIdx.7 %tmp.67;
+        symbol [ startIdx %startIdx.7 35 12 20 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 36 8 ]
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_36_8_38_8_if_stmt:
+        symbol [ _history %tmp.69 36 12 20 ];
+        %tmp.69 = getv ? :_history;
+        symbol [ size %tmp.70 36 21 25 ];
+        %tmp.70 = getv function %tmp.69 :size;
+        %tmp.71 = invoke %tmp.69 %tmp.70();
+        %tmp.72 = 7;
+        %tmp.73 = gt %tmp.71 %tmp.72;
+        bf %tmp.73 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_36_8_38_8_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_36_8_38_8_if_true:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_36_33_38_8_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 37 12 ]
+        symbol [ _history %tmp.75 37 23 31 ];
+        %tmp.75 = getv ? :_history;
+        symbol [ size %tmp.76 37 32 36 ];
+        %tmp.76 = getv function %tmp.75 :size;
+        %tmp.77 = invoke %tmp.75 %tmp.76();
+        %tmp.78 = 7;
+        %tmp.79 = sub %tmp.77 %tmp.78;
+        lputv %startIdx.7 %tmp.79;
+        symbol [ startIdx %startIdx.7 37 12 20 ];
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_36_33_38_8_stop:
+        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_36_8_38_8_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_36_8_38_8_if_end:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 39 8 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_15_40_73_4_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_15_40_73_4_stop" ]
+        %count.8 = local;
+        symbol [ count %count.8 39 12 17 ];
+        symbol [ _history %tmp.81 39 20 28 ];
+        %tmp.81 = getv ? :_history;
+        symbol [ size %tmp.82 39 29 33 ];
+        %tmp.82 = getv function %tmp.81 :size;
+        %tmp.83 = invoke %tmp.81 %tmp.82();
+        %tmp.84 = lgetv %startIdx.7;
+        symbol [ startIdx %tmp.84 39 38 46 ];
+        %tmp.85 = sub %tmp.83 %tmp.84;
+        lputv %count.8 %tmp.85;
+        symbol [ count %count.8 39 12 17 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 42 8 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_15_40_73_4_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_15_40_73_4_stop" ]
+        %maxRsi.9 = local;
+        symbol [ maxRsi %maxRsi.9 42 12 18 ];
+        %tmp.86 = 0.1;
+        lputv %maxRsi.9 %tmp.86;
+        symbol [ maxRsi %maxRsi.9 42 12 18 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 43 8 ]
+        for @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_43_8_48_8_for_test @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_43_8_48_8_for_incr @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_43_8_48_8_for_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_43_8_48_8_for_init:
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_43_8_48_8_for_begin" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_43_8_48_8_for_end" ]
+        %i.10 = local;
+        symbol [ i %i.10 43 17 18 ];
+        %tmp.87 = lgetv %startIdx.7;
+        symbol [ startIdx %tmp.87 43 21 29 ];
+        lputv %i.10 %tmp.87;
+        symbol [ i %i.10 43 17 18 ];
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_43_8_48_8_for_test:
+        %tmp.88 = lgetv %i.10;
+        symbol [ i %tmp.88 43 31 32 ];
+        symbol [ _history %tmp.90 43 35 43 ];
+        %tmp.90 = getv ? :_history;
+        symbol [ size %tmp.91 43 44 48 ];
+        %tmp.91 = getv function %tmp.90 :size;
+        %tmp.92 = invoke %tmp.90 %tmp.91();
+        %tmp.93 = lt %tmp.88 %tmp.92;
+        bf %tmp.93 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_43_8_48_8_for_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_43_8_48_8_for_begin:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_43_57_48_8_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 44 12 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_43_57_48_8_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_43_57_48_8_stop" ]
+        %val.11 = local;
+        symbol [ val %val.11 44 16 19 ];
+        symbol [ _history %tmp.95 44 22 30 ];
+        %tmp.95 = getv ? :_history;
+        %tmp.96 = lgetv %i.10;
+        symbol [ i %tmp.96 44 31 32 ];
+        %tmp.97 = agetv %tmp.95 %tmp.96;
+        %tmp.98 = "rsi";
+        %tmp.99 = agetv %tmp.97 %tmp.98;
+        %tmp.100 = as %tmp.99 Float;
+        symbol [ Float %tmp.100 44 44 49 ];
+        lputv %val.11 %tmp.100;
+        symbol [ val %val.11 44 16 19 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 45 12 ]
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_45_12_47_12_if_stmt:
+        %tmp.101 = lgetv %val.11;
+        symbol [ val %tmp.101 45 16 19 ];
+        %tmp.102 = lgetv %maxRsi.9;
+        symbol [ maxRsi %tmp.102 45 22 28 ];
+        %tmp.103 = gt %tmp.101 %tmp.102;
+        bf %tmp.103 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_45_12_47_12_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_45_12_47_12_if_true:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_45_30_47_12_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 46 16 ]
+        %tmp.104 = lgetv %val.11;
+        symbol [ val %tmp.104 46 25 28 ];
+        lputv %maxRsi.9 %tmp.104;
+        symbol [ maxRsi %maxRsi.9 46 16 22 ];
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_45_30_47_12_stop:
+        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_45_12_47_12_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_45_12_47_12_if_end:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_43_57_48_8_stop:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_43_8_48_8_for_incr:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 43 ]
+        %tmp.107 = lgetv %i.10;
+        symbol [ i %tmp.107 43 52 53 ];
+        %tmp.108 = add %tmp.107 1;
+        lputv %i.10 %tmp.108;
+        symbol [ i %i.10 43 52 53 ];
+        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_43_8_48_8_for_test;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_43_8_48_8_for_end:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 50 8 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_15_40_73_4_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_15_40_73_4_stop" ]
+        %barWidth.12 = local;
+        symbol [ barWidth %barWidth.12 50 12 20 ];
+        %tmp.109 = lgetv %graphWidth.4;
+        symbol [ graphWidth %tmp.109 50 23 33 ];
+        %tmp.110 = 7;
+        %tmp.111 = div %tmp.109 %tmp.110;
+        lputv %barWidth.12 %tmp.111;
+        symbol [ barWidth %barWidth.12 50 12 20 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 51 8 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_15_40_73_4_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_15_40_73_4_stop" ]
+        %spacing.13 = local;
+        symbol [ spacing %spacing.13 51 12 19 ];
+        %tmp.112 = 4;
+        lputv %spacing.13 %tmp.112;
+        symbol [ spacing %spacing.13 51 12 19 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 53 8 ]
+        for @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_53_8_68_8_for_test @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_53_8_68_8_for_incr @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_53_8_68_8_for_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_53_8_68_8_for_init:
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_53_8_68_8_for_begin" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_53_8_68_8_for_end" ]
+        %i.14 = local;
+        symbol [ i %i.14 53 17 18 ];
+        %tmp.113 = 0;
+        lputv %i.14 %tmp.113;
+        symbol [ i %i.14 53 17 18 ];
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_53_8_68_8_for_test:
+        %tmp.114 = lgetv %i.14;
+        symbol [ i %tmp.114 53 24 25 ];
+        %tmp.115 = lgetv %count.8;
+        symbol [ count %tmp.115 53 28 33 ];
+        %tmp.116 = lt %tmp.114 %tmp.115;
+        bf %tmp.116 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_53_8_68_8_for_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_53_8_68_8_for_begin:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_53_40_68_8_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 54 12 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_53_40_68_8_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_53_40_68_8_stop" ]
+        %val.15 = local;
+        symbol [ val %val.15 54 16 19 ];
+        symbol [ _history %tmp.118 54 22 30 ];
+        %tmp.118 = getv ? :_history;
+        %tmp.119 = lgetv %startIdx.7;
+        symbol [ startIdx %tmp.119 54 31 39 ];
+        %tmp.120 = lgetv %i.14;
+        symbol [ i %tmp.120 54 42 43 ];
+        %tmp.121 = add %tmp.119 %tmp.120;
+        %tmp.122 = agetv %tmp.118 %tmp.121;
+        %tmp.123 = "rsi";
+        %tmp.124 = agetv %tmp.122 %tmp.123;
+        %tmp.125 = as %tmp.124 Float;
+        symbol [ Float %tmp.125 54 55 60 ];
+        lputv %val.15 %tmp.125;
+        symbol [ val %val.15 54 16 19 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 55 12 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_53_40_68_8_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_53_40_68_8_stop" ]
+        %barHeight.16 = local;
+        symbol [ barHeight %barHeight.16 55 16 25 ];
+        %tmp.126 = lgetv %val.15;
+        symbol [ val %tmp.126 55 29 32 ];
+        %tmp.127 = lgetv %maxRsi.9;
+        symbol [ maxRsi %tmp.127 55 35 41 ];
+        %tmp.128 = div %tmp.126 %tmp.127;
+        %tmp.129 = lgetv %graphHeight.5;
+        symbol [ graphHeight %tmp.129 55 45 56 ];
+        %tmp.130 = mul %tmp.128 %tmp.129;
+        lputv %barHeight.16 %tmp.130;
+        symbol [ barHeight %barHeight.16 55 16 25 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 57 12 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_53_40_68_8_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_53_40_68_8_stop" ]
+        %x.17 = local;
+        symbol [ x %x.17 57 16 17 ];
+        %tmp.131 = lgetv %padding.3;
+        symbol [ padding %tmp.131 57 20 27 ];
+        %tmp.132 = lgetv %i.14;
+        symbol [ i %tmp.132 57 31 32 ];
+        %tmp.133 = lgetv %barWidth.12;
+        symbol [ barWidth %tmp.133 57 35 43 ];
+        %tmp.134 = mul %tmp.132 %tmp.133;
+        %tmp.135 = add %tmp.131 %tmp.134;
+        %tmp.136 = lgetv %spacing.13;
+        symbol [ spacing %tmp.136 57 47 54 ];
+        %tmp.137 = add %tmp.135 %tmp.136;
+        lputv %x.17 %tmp.137;
+        symbol [ x %x.17 57 16 17 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 58 12 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_53_40_68_8_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_53_40_68_8_stop" ]
+        %y.18 = local;
+        symbol [ y %y.18 58 16 17 ];
+        %tmp.138 = lgetv %bottom.6;
+        symbol [ bottom %tmp.138 58 20 26 ];
+        %tmp.139 = lgetv %barHeight.16;
+        symbol [ barHeight %tmp.139 58 29 38 ];
+        %tmp.140 = sub %tmp.138 %tmp.139;
+        lputv %y.18 %tmp.140;
+        symbol [ y %y.18 58 16 17 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 62 12 ]
+        %tmp.141 = lgetv %dc;
+        symbol [ dc %tmp.141 62 12 14 ];
+        symbol [ setColor %tmp.142 62 15 23 ];
+        %tmp.142 = getv function %tmp.141 :setColor;
+        symbol [ Graphics %tmp.143 62 24 32 ];
+        %tmp.143 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLUE %tmp.144 62 33 43 ];
+        %tmp.144 = getv %tmp.143 :COLOR_BLUE;
+        symbol [ Graphics %tmp.145 62 45 53 ];
+        %tmp.145 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.146 62 54 71 ];
+        %tmp.146 = getv %tmp.145 :COLOR_TRANSPARENT;
+        invoke %tmp.141 %tmp.142(%tmp.144, %tmp.146);
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 63 12 ]
+        %tmp.147 = lgetv %dc;
+        symbol [ dc %tmp.147 63 12 14 ];
+        symbol [ fillRectangle %tmp.148 63 15 28 ];
+        %tmp.148 = getv function %tmp.147 :fillRectangle;
+        %tmp.149 = lgetv %x.17;
+        symbol [ x %tmp.149 63 29 30 ];
+        %tmp.150 = lgetv %y.18;
+        symbol [ y %tmp.150 63 32 33 ];
+        %tmp.151 = lgetv %barWidth.12;
+        symbol [ barWidth %tmp.151 63 35 43 ];
+        %tmp.152 = 2;
+        %tmp.153 = lgetv %spacing.13;
+        symbol [ spacing %tmp.153 63 51 58 ];
+        %tmp.154 = mul %tmp.152 %tmp.153;
+        %tmp.155 = sub %tmp.151 %tmp.154;
+        %tmp.156 = lgetv %barHeight.16;
+        symbol [ barHeight %tmp.156 63 61 70 ];
+        invoke %tmp.147 %tmp.148(%tmp.149, %tmp.150, %tmp.155, %tmp.156);
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 66 12 ]
+        %tmp.157 = lgetv %dc;
+        symbol [ dc %tmp.157 66 12 14 ];
+        symbol [ setColor %tmp.158 66 15 23 ];
+        %tmp.158 = getv function %tmp.157 :setColor;
+        symbol [ Graphics %tmp.159 66 24 32 ];
+        %tmp.159 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.160 66 33 44 ];
+        %tmp.160 = getv %tmp.159 :COLOR_WHITE;
+        symbol [ Graphics %tmp.161 66 46 54 ];
+        %tmp.161 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.162 66 55 72 ];
+        %tmp.162 = getv %tmp.161 :COLOR_TRANSPARENT;
+        invoke %tmp.157 %tmp.158(%tmp.160, %tmp.162);
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 67 12 ]
+        %tmp.163 = lgetv %dc;
+        symbol [ dc %tmp.163 67 12 14 ];
+        symbol [ drawText %tmp.164 67 15 23 ];
+        %tmp.164 = getv function %tmp.163 :drawText;
+        %tmp.165 = lgetv %x.17;
+        symbol [ x %tmp.165 67 24 25 ];
+        %tmp.166 = lgetv %barWidth.12;
+        symbol [ barWidth %tmp.166 67 29 37 ];
+        %tmp.167 = 2;
+        %tmp.168 = div %tmp.166 %tmp.167;
+        %tmp.169 = add %tmp.165 %tmp.168;
+        %tmp.170 = lgetv %bottom.6;
+        symbol [ bottom %tmp.170 67 44 50 ];
+        %tmp.171 = 5;
+        %tmp.172 = add %tmp.170 %tmp.171;
+        symbol [ Graphics %tmp.173 67 56 64 ];
+        %tmp.173 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.174 67 65 75 ];
+        %tmp.174 = getv %tmp.173 :FONT_XTINY;
+        %tmp.175 = lgetv %val.15;
+        symbol [ val %tmp.175 67 77 80 ];
+        symbol [ format %tmp.176 67 81 87 ];
+        %tmp.176 = getv function %tmp.175 :format;
+        %tmp.177 = "%.1f";
+        %tmp.178 = invoke %tmp.175 %tmp.176(%tmp.177);
+        symbol [ Graphics %tmp.179 67 97 105 ];
+        %tmp.179 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.180 67 106 125 ];
+        %tmp.180 = getv %tmp.179 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.163 %tmp.164(%tmp.169, %tmp.172, %tmp.174, %tmp.178, %tmp.180);
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_53_40_68_8_stop:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_53_8_68_8_for_incr:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 53 ]
+        %tmp.183 = lgetv %i.14;
+        symbol [ i %tmp.183 53 35 36 ];
+        %tmp.184 = add %tmp.183 1;
+        lputv %i.14 %tmp.184;
+        symbol [ i %i.14 53 35 36 ];
+        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_53_8_68_8_for_test;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_53_8_68_8_for_end:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 71 8 ]
+        %tmp.185 = lgetv %dc;
+        symbol [ dc %tmp.185 71 8 10 ];
+        symbol [ setColor %tmp.186 71 11 19 ];
+        %tmp.186 = getv function %tmp.185 :setColor;
+        symbol [ Graphics %tmp.187 71 20 28 ];
+        %tmp.187 = getm $.Toybox.Graphics;
+        symbol [ COLOR_LT_GRAY %tmp.188 71 29 42 ];
+        %tmp.188 = getv %tmp.187 :COLOR_LT_GRAY;
+        symbol [ Graphics %tmp.189 71 44 52 ];
+        %tmp.189 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.190 71 53 70 ];
+        %tmp.190 = getv %tmp.189 :COLOR_TRANSPARENT;
+        invoke %tmp.185 %tmp.186(%tmp.188, %tmp.190);
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" 72 8 ]
+        %tmp.191 = lgetv %dc;
+        symbol [ dc %tmp.191 72 8 10 ];
+        symbol [ drawLine %tmp.192 72 11 19 ];
+        %tmp.192 = getv function %tmp.191 :drawLine;
+        %tmp.193 = lgetv %padding.3;
+        symbol [ padding %tmp.193 72 20 27 ];
+        %tmp.194 = lgetv %bottom.6;
+        symbol [ bottom %tmp.194 72 29 35 ];
+        %tmp.195 = lgetv %width.1;
+        symbol [ width %tmp.195 72 37 42 ];
+        %tmp.196 = lgetv %padding.3;
+        symbol [ padding %tmp.196 72 45 52 ];
+        %tmp.197 = sub %tmp.195 %tmp.196;
+        %tmp.198 = lgetv %bottom.6;
+        symbol [ bottom %tmp.198 72 54 60 ];
+        invoke %tmp.191 %tmp.192(%tmp.193, %tmp.194, %tmp.197, %tmp.198);
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_RsiGraphView_mc_15_40_73_4_stop:
+    }
+}
+[ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc"; @line = 1; ]
+<init> {
+}

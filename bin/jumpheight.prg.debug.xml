@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <manifest filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/manifest.xml"/>
+    <pcToLineNum>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="1" lineNum="6" parent="globals/jumpheightDelegate" pc="268435460" symbol="&lt;init&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="2" lineNum="48" parent="globals" pc="268435479" symbol="getApp"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="2" lineNum="49" parent="globals" pc="268435489" symbol="getApp"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="3" lineNum="5" parent="globals/jumpheightView" pc="268435505" symbol="&lt;init&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/bin/gen/006-B3290-00/source/Rez.mcgen" id="4" lineNum="7" parent="globals/Rez" pc="268435524" symbol="&lt;init&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="5" lineNum="6" parent="globals/RsiGraphView" pc="268435548" symbol="&lt;init&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc" id="6" lineNum="4" parent="globals/RsiGraphDelegate" pc="268435567" symbol="&lt;init&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="7" lineNum="4" parent="globals/JumpSession" pc="268435586" symbol="&lt;init&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="8" lineNum="23" parent="globals/JumpCalculator" pc="268435601" symbol="&lt;init&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="8" lineNum="22" parent="globals/JumpCalculator" pc="268435618" symbol="&lt;init&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="8" lineNum="18" parent="globals/JumpCalculator" pc="268435635" symbol="&lt;init&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="9" lineNum="6" parent="globals/jumpheightApp" pc="268435653" symbol="&lt;init&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightMenuDelegate.mc" id="10" lineNum="6" parent="globals/jumpheightMenuDelegate" pc="268435672" symbol="&lt;init&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="11" lineNum="78" parent="globals/JumpData" pc="268435691" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="11" lineNum="79" parent="globals/JumpData" pc="268435693" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="11" lineNum="80" parent="globals/JumpData" pc="268435703" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="11" lineNum="81" parent="globals/JumpData" pc="268435713" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="12" lineNum="49" parent="globals/jumpheightDelegate" pc="268435724" symbol="onBack"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="12" lineNum="50" parent="globals/jumpheightDelegate" pc="268435728" symbol="onBack"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="12" lineNum="51" parent="globals/jumpheightDelegate" pc="268435745" symbol="onBack"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="12" lineNum="52" parent="globals/jumpheightDelegate" pc="268435763" symbol="onBack"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="12" lineNum="53" parent="globals/jumpheightDelegate" pc="268435781" symbol="onBack"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="12" lineNum="54" parent="globals/jumpheightDelegate" pc="268435797" symbol="onBack"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="13" lineNum="45" parent="globals/jumpheightDelegate" pc="268435800" symbol="onPreviousPage"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="13" lineNum="46" parent="globals/jumpheightDelegate" pc="268435802" symbol="onPreviousPage"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="14" lineNum="57" parent="globals/jumpheightDelegate" pc="268435814" symbol="onMenu"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="14" lineNum="58" parent="globals/jumpheightDelegate" pc="268435816" symbol="onMenu"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="14" lineNum="59" parent="globals/jumpheightDelegate" pc="268435897" symbol="onMenu"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="15" lineNum="8" parent="globals/jumpheightDelegate" pc="268435900" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="15" lineNum="9" parent="globals/jumpheightDelegate" pc="268435902" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="16" lineNum="12" parent="globals/jumpheightDelegate" pc="268435921" symbol="onSelect"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="16" lineNum="13" parent="globals/jumpheightDelegate" pc="268435925" symbol="onSelect"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="16" lineNum="14" parent="globals/jumpheightDelegate" pc="268435942" symbol="onSelect"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="16" lineNum="16" parent="globals/jumpheightDelegate" pc="268435961" symbol="onSelect"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="16" lineNum="17" parent="globals/jumpheightDelegate" pc="268435972" symbol="onSelect"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="16" lineNum="19" parent="globals/jumpheightDelegate" pc="268435993" symbol="onSelect"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="16" lineNum="20" parent="globals/jumpheightDelegate" pc="268436004" symbol="onSelect"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="16" lineNum="21" parent="globals/jumpheightDelegate" pc="268436023" symbol="onSelect"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="16" lineNum="22" parent="globals/jumpheightDelegate" pc="268436042" symbol="onSelect"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="16" lineNum="24" parent="globals/jumpheightDelegate" pc="268436061" symbol="onSelect"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="16" lineNum="26" parent="globals/jumpheightDelegate" pc="268436085" symbol="onSelect"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="16" lineNum="27" parent="globals/jumpheightDelegate" pc="268436105" symbol="onSelect"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="16" lineNum="28" parent="globals/jumpheightDelegate" pc="268436124" symbol="onSelect"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="16" lineNum="29" parent="globals/jumpheightDelegate" pc="268436143" symbol="onSelect"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="16" lineNum="30" parent="globals/jumpheightDelegate" pc="268436165" symbol="onSelect"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="16" lineNum="33" parent="globals/jumpheightDelegate" pc="268436186" symbol="onSelect"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="16" lineNum="36" parent="globals/jumpheightDelegate" pc="268436207" symbol="onSelect"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="16" lineNum="37" parent="globals/jumpheightDelegate" pc="268436223" symbol="onSelect"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="17" lineNum="40" parent="globals/jumpheightDelegate" pc="268436226" symbol="onNextPage"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="17" lineNum="41" parent="globals/jumpheightDelegate" pc="268436228" symbol="onNextPage"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightDelegate.mc" id="17" lineNum="42" parent="globals/jumpheightDelegate" pc="268436293" symbol="onNextPage"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="18" lineNum="10" parent="globals/jumpheightView" pc="268436296" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="18" lineNum="11" parent="globals/jumpheightView" pc="268436300" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="18" lineNum="12" parent="globals/jumpheightView" pc="268436318" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="18" lineNum="13" parent="globals/jumpheightView" pc="268436335" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="18" lineNum="14" parent="globals/jumpheightView" pc="268436351" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="18" lineNum="15" parent="globals/jumpheightView" pc="268436367" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="18" parent="globals/jumpheightView" pc="268436384" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="19" parent="globals/jumpheightView" pc="268436388" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="20" parent="globals/jumpheightView" pc="268436410" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="22" parent="globals/jumpheightView" pc="268436422" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="23" parent="globals/jumpheightView" pc="268436441" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="24" parent="globals/jumpheightView" pc="268436454" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="26" parent="globals/jumpheightView" pc="268436467" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="28" parent="globals/jumpheightView" pc="268436489" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="29" parent="globals/jumpheightView" pc="268436500" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="30" parent="globals/jumpheightView" pc="268436549" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="32" parent="globals/jumpheightView" pc="268436601" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="33" parent="globals/jumpheightView" pc="268436612" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="34" parent="globals/jumpheightView" pc="268436631" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="35" parent="globals/jumpheightView" pc="268436680" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="37" parent="globals/jumpheightView" pc="268436743" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="38" parent="globals/jumpheightView" pc="268436765" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="39" parent="globals/jumpheightView" pc="268436787" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="41" parent="globals/jumpheightView" pc="268436833" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="42" parent="globals/jumpheightView" pc="268436844" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="43" parent="globals/jumpheightView" pc="268436863" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="45" parent="globals/jumpheightView" pc="268436882" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="46" parent="globals/jumpheightView" pc="268436922" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="47" parent="globals/jumpheightView" pc="268436994" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="49" parent="globals/jumpheightView" pc="268437060" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="50" parent="globals/jumpheightView" pc="268437082" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="54" parent="globals/jumpheightView" pc="268437128" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" id="19" lineNum="55" parent="globals/jumpheightView" pc="268437150" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="20" lineNum="9" parent="globals/RsiGraphView" pc="268437224" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="20" lineNum="10" parent="globals/RsiGraphView" pc="268437228" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="20" lineNum="11" parent="globals/RsiGraphView" pc="268437246" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="20" lineNum="12" parent="globals/RsiGraphView" pc="268437263" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="15" parent="globals/RsiGraphView" pc="268437289" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="16" parent="globals/RsiGraphView" pc="268437293" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="17" parent="globals/RsiGraphView" pc="268437315" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="19" parent="globals/RsiGraphView" pc="268437327" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="20" parent="globals/RsiGraphView" pc="268437340" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="21" parent="globals/RsiGraphView" pc="268437353" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="22" parent="globals/RsiGraphView" pc="268437360" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="23" parent="globals/RsiGraphView" pc="268437373" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="24" parent="globals/RsiGraphView" pc="268437383" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="26" parent="globals/RsiGraphView" pc="268437402" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="27" parent="globals/RsiGraphView" pc="268437424" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="29" parent="globals/RsiGraphView" pc="268437461" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="30" parent="globals/RsiGraphView" pc="268437487" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="31" parent="globals/RsiGraphView" pc="268437530" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="35" parent="globals/RsiGraphView" pc="268437534" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="36" parent="globals/RsiGraphView" pc="268437541" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="37" parent="globals/RsiGraphView" pc="268437567" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="39" parent="globals/RsiGraphView" pc="268437595" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="42" parent="globals/RsiGraphView" pc="268437617" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="43" parent="globals/RsiGraphView" pc="268437624" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="44" parent="globals/RsiGraphView" pc="268437651" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="45" parent="globals/RsiGraphView" pc="268437670" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="46" parent="globals/RsiGraphView" pc="268437678" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="50" parent="globals/RsiGraphView" pc="268437698" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="51" parent="globals/RsiGraphView" pc="268437708" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="53" parent="globals/RsiGraphView" pc="268437715" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="54" parent="globals/RsiGraphView" pc="268437730" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="55" parent="globals/RsiGraphView" pc="268437752" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="57" parent="globals/RsiGraphView" pc="268437762" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="58" parent="globals/RsiGraphView" pc="268437775" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="62" parent="globals/RsiGraphView" pc="268437782" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="63" parent="globals/RsiGraphView" pc="268437804" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="66" parent="globals/RsiGraphView" pc="268437833" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="67" parent="globals/RsiGraphView" pc="268437855" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="71" parent="globals/RsiGraphView" pc="268437925" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphView.mc" id="21" lineNum="72" parent="globals/RsiGraphView" pc="268437947" symbol="onUpdate"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="22" lineNum="18" parent="globals/StorageService" pc="268437971" symbol="getBaseline"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="22" lineNum="19" parent="globals/StorageService" pc="268437975" symbol="getBaseline"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="22" lineNum="20" parent="globals/StorageService" pc="268437997" symbol="getBaseline"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="22" lineNum="20" parent="globals/StorageService" pc="268438003" symbol="getBaseline"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="22" lineNum="21" parent="globals/StorageService" pc="268438012" symbol="getBaseline"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="23" lineNum="57" parent="globals/StorageService" pc="268438015" symbol="getHistory"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="23" lineNum="58" parent="globals/StorageService" pc="268438019" symbol="getHistory"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="23" lineNum="59" parent="globals/StorageService" pc="268438041" symbol="getHistory"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="23" lineNum="59" parent="globals/StorageService" pc="268438047" symbol="getHistory"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="23" lineNum="60" parent="globals/StorageService" pc="268438057" symbol="getHistory"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="24" lineNum="63" parent="globals/StorageService" pc="268438060" symbol="clearHistory"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="24" lineNum="64" parent="globals/StorageService" pc="268438062" symbol="clearHistory"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="24" lineNum="65" parent="globals/StorageService" pc="268438083" symbol="clearHistory"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="25" lineNum="14" parent="globals/StorageService" pc="268438105" symbol="saveBaseline"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="25" lineNum="15" parent="globals/StorageService" pc="268438107" symbol="saveBaseline"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="26" lineNum="24" parent="globals/StorageService" pc="268438131" symbol="saveTodayJump"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="26" lineNum="25" parent="globals/StorageService" pc="268438135" symbol="saveTodayJump"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="26" lineNum="26" parent="globals/StorageService" pc="268438157" symbol="saveTodayJump"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="26" lineNum="26" parent="globals/StorageService" pc="268438163" symbol="saveTodayJump"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="26" lineNum="29" parent="globals/StorageService" pc="268438174" symbol="saveTodayJump"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="26" lineNum="30" parent="globals/StorageService" pc="268438191" symbol="saveTodayJump"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="26" lineNum="31" parent="globals/StorageService" pc="268438198" symbol="saveTodayJump"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="26" lineNum="32" parent="globals/StorageService" pc="268438209" symbol="saveTodayJump"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="26" lineNum="35" parent="globals/StorageService" pc="268438225" symbol="saveTodayJump"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="26" lineNum="41" parent="globals/StorageService" pc="268438263" symbol="saveTodayJump"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="26" lineNum="43" parent="globals/StorageService" pc="268438277" symbol="saveTodayJump"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="26" lineNum="44" parent="globals/StorageService" pc="268438297" symbol="saveTodayJump"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="26" lineNum="47" parent="globals/StorageService" pc="268438331" symbol="saveTodayJump"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="26" lineNum="49" parent="globals/StorageService" pc="268438354" symbol="saveTodayJump"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="26" lineNum="50" parent="globals/StorageService" pc="268438361" symbol="saveTodayJump"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="26" lineNum="51" parent="globals/StorageService" pc="268438385" symbol="saveTodayJump"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="26" lineNum="52" parent="globals/StorageService" pc="268438392" symbol="saveTodayJump"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="26" lineNum="54" parent="globals/StorageService" pc="268438418" symbol="saveTodayJump"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="27" lineNum="10" parent="globals/StorageService" pc="268438445" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/StorageService.mc" id="27" lineNum="11" parent="globals/StorageService" pc="268438447" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc" id="28" lineNum="15" parent="globals/RsiGraphDelegate" pc="268438469" symbol="onPreviousPage"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc" id="28" lineNum="16" parent="globals/RsiGraphDelegate" pc="268438471" symbol="onPreviousPage"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc" id="29" lineNum="5" parent="globals/RsiGraphDelegate" pc="268438483" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc" id="29" lineNum="6" parent="globals/RsiGraphDelegate" pc="268438485" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc" id="30" lineNum="9" parent="globals/RsiGraphDelegate" pc="268438504" symbol="onNextPage"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc" id="30" lineNum="10" parent="globals/RsiGraphDelegate" pc="268438508" symbol="onNextPage"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc" id="30" lineNum="11" parent="globals/RsiGraphDelegate" pc="268438532" symbol="onNextPage"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/RsiGraphDelegate.mc" id="30" lineNum="12" parent="globals/RsiGraphDelegate" pc="268438579" symbol="onNextPage"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="31" lineNum="47" parent="globals/JumpSession" pc="268438582" symbol="&lt;globals/JumpSession/&lt;&gt;sortDescending&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="31" lineNum="48" parent="globals/JumpSession" pc="268438586" symbol="&lt;globals/JumpSession/&lt;&gt;sortDescending&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="31" lineNum="49" parent="globals/JumpSession" pc="268438599" symbol="&lt;globals/JumpSession/&lt;&gt;sortDescending&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="31" lineNum="50" parent="globals/JumpSession" pc="268438614" symbol="&lt;globals/JumpSession/&lt;&gt;sortDescending&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="31" lineNum="51" parent="globals/JumpSession" pc="268438638" symbol="&lt;globals/JumpSession/&lt;&gt;sortDescending&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="31" lineNum="52" parent="globals/JumpSession" pc="268438658" symbol="&lt;globals/JumpSession/&lt;&gt;sortDescending&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="31" lineNum="53" parent="globals/JumpSession" pc="268438665" symbol="&lt;globals/JumpSession/&lt;&gt;sortDescending&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="31" lineNum="54" parent="globals/JumpSession" pc="268438681" symbol="&lt;globals/JumpSession/&lt;&gt;sortDescending&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="32" lineNum="32" parent="globals/JumpSession" pc="268438724" symbol="getAverageBestTwoHeight"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="32" lineNum="33" parent="globals/JumpSession" pc="268438728" symbol="getAverageBestTwoHeight"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="32" lineNum="34" parent="globals/JumpSession" pc="268438754" symbol="getAverageBestTwoHeight"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="32" lineNum="37" parent="globals/JumpSession" pc="268438763" symbol="getAverageBestTwoHeight"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="32" lineNum="38" parent="globals/JumpSession" pc="268438771" symbol="getAverageBestTwoHeight"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="32" lineNum="39" parent="globals/JumpSession" pc="268438801" symbol="getAverageBestTwoHeight"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="32" lineNum="42" parent="globals/JumpSession" pc="268438843" symbol="getAverageBestTwoHeight"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="32" lineNum="44" parent="globals/JumpSession" pc="268438857" symbol="getAverageBestTwoHeight"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="33" lineNum="68" parent="globals/JumpSession" pc="268438881" symbol="reset"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="33" lineNum="69" parent="globals/JumpSession" pc="268438883" symbol="reset"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="34" lineNum="10" parent="globals/JumpSession" pc="268438898" symbol="addJump"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="34" lineNum="11" parent="globals/JumpSession" pc="268438900" symbol="addJump"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="34" lineNum="12" parent="globals/JumpSession" pc="268438929" symbol="addJump"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="36" lineNum="16" parent="globals/JumpSession" pc="268438979" symbol="getAverageBestTwoRsi"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="36" lineNum="17" parent="globals/JumpSession" pc="268438983" symbol="getAverageBestTwoRsi"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="36" lineNum="18" parent="globals/JumpSession" pc="268439009" symbol="getAverageBestTwoRsi"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="36" lineNum="21" parent="globals/JumpSession" pc="268439018" symbol="getAverageBestTwoRsi"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="36" lineNum="22" parent="globals/JumpSession" pc="268439026" symbol="getAverageBestTwoRsi"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="36" lineNum="23" parent="globals/JumpSession" pc="268439056" symbol="getAverageBestTwoRsi"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="36" lineNum="27" parent="globals/JumpSession" pc="268439098" symbol="getAverageBestTwoRsi"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="36" lineNum="29" parent="globals/JumpSession" pc="268439112" symbol="getAverageBestTwoRsi"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="37" lineNum="64" parent="globals/JumpSession" pc="268439136" symbol="getJumpCount"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="37" lineNum="65" parent="globals/JumpSession" pc="268439138" symbol="getJumpCount"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="38" lineNum="60" parent="globals/JumpSession" pc="268439156" symbol="isComplete"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpSession.mc" id="38" lineNum="61" parent="globals/JumpSession" pc="268439158" symbol="isComplete"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="39" lineNum="101" parent="globals/JumpCalculator" pc="268439185" symbol="resetToStart"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="39" lineNum="102" parent="globals/JumpCalculator" pc="268439187" symbol="resetToStart"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="39" lineNum="103" parent="globals/JumpCalculator" pc="268439200" symbol="resetToStart"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="39" lineNum="104" parent="globals/JumpCalculator" pc="268439213" symbol="resetToStart"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="39" lineNum="105" parent="globals/JumpCalculator" pc="268439226" symbol="resetToStart"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="39" lineNum="106" parent="globals/JumpCalculator" pc="268439243" symbol="resetToStart"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="39" lineNum="107" parent="globals/JumpCalculator" pc="268439256" symbol="resetToStart"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="39" lineNum="108" parent="globals/JumpCalculator" pc="268439269" symbol="resetToStart"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="39" lineNum="109" parent="globals/JumpCalculator" pc="268439286" symbol="resetToStart"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="45" parent="globals/JumpCalculator" pc="268439304" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="47" parent="globals/JumpCalculator" pc="268439308" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="48" parent="globals/JumpCalculator" pc="268439342" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="49" parent="globals/JumpCalculator" pc="268439352" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="52" parent="globals/JumpCalculator" pc="268439356" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="53" parent="globals/JumpCalculator" pc="268439377" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="54" parent="globals/JumpCalculator" pc="268439387" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="57" parent="globals/JumpCalculator" pc="268439391" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="58" parent="globals/JumpCalculator" pc="268439419" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="60" parent="globals/JumpCalculator" pc="268439429" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="60" parent="globals/JumpCalculator" pc="268439451" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="62" parent="globals/JumpCalculator" pc="268439455" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="63" parent="globals/JumpCalculator" pc="268439472" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="64" parent="globals/JumpCalculator" pc="268439483" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="65" parent="globals/JumpCalculator" pc="268439496" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="67" parent="globals/JumpCalculator" pc="268439512" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="68" parent="globals/JumpCalculator" pc="268439529" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="69" parent="globals/JumpCalculator" pc="268439540" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="71" parent="globals/JumpCalculator" pc="268439559" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="72" parent="globals/JumpCalculator" pc="268439576" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="73" parent="globals/JumpCalculator" pc="268439587" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="74" parent="globals/JumpCalculator" pc="268439600" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="75" parent="globals/JumpCalculator" pc="268439610" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="77" parent="globals/JumpCalculator" pc="268439650" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="78" parent="globals/JumpCalculator" pc="268439667" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="79" parent="globals/JumpCalculator" pc="268439678" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="80" parent="globals/JumpCalculator" pc="268439691" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="40" lineNum="81" parent="globals/JumpCalculator" pc="268439725" symbol="processSample"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="41" lineNum="96" parent="globals/JumpCalculator" pc="268439744" symbol="getHeight"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="41" lineNum="96" parent="globals/JumpCalculator" pc="268439746" symbol="getHeight"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="42" lineNum="95" parent="globals/JumpCalculator" pc="268439755" symbol="getState"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="42" lineNum="95" parent="globals/JumpCalculator" pc="268439757" symbol="getState"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="43" lineNum="29" parent="globals/JumpCalculator" pc="268439766" symbol="startCountdown"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="43" lineNum="30" parent="globals/JumpCalculator" pc="268439768" symbol="startCountdown"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="43" lineNum="31" parent="globals/JumpCalculator" pc="268439781" symbol="startCountdown"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="44" lineNum="86" parent="globals/JumpCalculator" pc="268439795" symbol="&lt;globals/JumpCalculator/&lt;&gt;calculateResults&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="44" lineNum="87" parent="globals/JumpCalculator" pc="268439797" symbol="&lt;globals/JumpCalculator/&lt;&gt;calculateResults&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="44" lineNum="88" parent="globals/JumpCalculator" pc="268439834" symbol="&lt;globals/JumpCalculator/&lt;&gt;calculateResults&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="44" lineNum="89" parent="globals/JumpCalculator" pc="268439851" symbol="&lt;globals/JumpCalculator/&lt;&gt;calculateResults&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="44" lineNum="91" parent="globals/JumpCalculator" pc="268439879" symbol="&lt;globals/JumpCalculator/&lt;&gt;calculateResults&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="45" lineNum="97" parent="globals/JumpCalculator" pc="268439893" symbol="getRsiMod"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="45" lineNum="97" parent="globals/JumpCalculator" pc="268439895" symbol="getRsiMod"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="46" lineNum="98" parent="globals/JumpCalculator" pc="268439904" symbol="getTtt"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="46" lineNum="98" parent="globals/JumpCalculator" pc="268439906" symbol="getTtt"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="48" lineNum="99" parent="globals/JumpCalculator" pc="268439915" symbol="getCountdown"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="48" lineNum="99" parent="globals/JumpCalculator" pc="268439917" symbol="getCountdown"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="49" lineNum="34" parent="globals/JumpCalculator" pc="268439926" symbol="tickCountdown"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="49" lineNum="35" parent="globals/JumpCalculator" pc="268439928" symbol="tickCountdown"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="49" lineNum="36" parent="globals/JumpCalculator" pc="268439945" symbol="tickCountdown"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="49" lineNum="37" parent="globals/JumpCalculator" pc="268439964" symbol="tickCountdown"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="49" lineNum="38" parent="globals/JumpCalculator" pc="268439981" symbol="tickCountdown"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="49" lineNum="39" parent="globals/JumpCalculator" pc="268439994" symbol="tickCountdown"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" id="49" lineNum="42" parent="globals/JumpCalculator" pc="268440003" symbol="tickCountdown"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="50" lineNum="33" parent="globals/SensorService" pc="268440006" symbol="stop"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="50" lineNum="34" parent="globals/SensorService" pc="268440008" symbol="stop"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="51" lineNum="15" parent="globals/SensorService" pc="268440025" symbol="start"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="51" lineNum="16" parent="globals/SensorService" pc="268440029" symbol="start"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="51" lineNum="26" parent="globals/SensorService" pc="268440097" symbol="start"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="51" lineNum="27" parent="globals/SensorService" pc="268440131" symbol="start"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="51" lineNum="28" parent="globals/SensorService" pc="268440158" symbol="start"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="51" lineNum="29" parent="globals/SensorService" pc="268440162" symbol="start"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="52" lineNum="37" parent="globals/SensorService" pc="268440196" symbol="onSensorData"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="52" lineNum="38" parent="globals/SensorService" pc="268440200" symbol="onSensorData"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="52" lineNum="38" parent="globals/SensorService" pc="268440206" symbol="onSensorData"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="52" lineNum="40" parent="globals/SensorService" pc="268440210" symbol="onSensorData"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="52" lineNum="41" parent="globals/SensorService" pc="268440220" symbol="onSensorData"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="52" lineNum="42" parent="globals/SensorService" pc="268440227" symbol="onSensorData"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="52" lineNum="43" parent="globals/SensorService" pc="268440237" symbol="onSensorData"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="52" lineNum="43" parent="globals/SensorService" pc="268440243" symbol="onSensorData"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="52" lineNum="44" parent="globals/SensorService" pc="268440247" symbol="onSensorData"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="52" lineNum="45" parent="globals/SensorService" pc="268440257" symbol="onSensorData"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="52" lineNum="47" parent="globals/SensorService" pc="268440267" symbol="onSensorData"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="52" lineNum="48" parent="globals/SensorService" pc="268440303" symbol="onSensorData"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="52" lineNum="50" parent="globals/SensorService" pc="268440310" symbol="onSensorData"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="52" lineNum="51" parent="globals/SensorService" pc="268440334" symbol="onSensorData"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="52" lineNum="52" parent="globals/SensorService" pc="268440350" symbol="onSensorData"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="52" lineNum="53" parent="globals/SensorService" pc="268440366" symbol="onSensorData"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="52" lineNum="57" parent="globals/SensorService" pc="268440382" symbol="onSensorData"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="52" lineNum="59" parent="globals/SensorService" pc="268440431" symbol="onSensorData"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="52" lineNum="60" parent="globals/SensorService" pc="268440441" symbol="onSensorData"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="52" lineNum="64" parent="globals/SensorService" pc="268440476" symbol="onSensorData"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="52" lineNum="65" parent="globals/SensorService" pc="268440495" symbol="onSensorData"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="52" lineNum="66" parent="globals/SensorService" pc="268440512" symbol="onSensorData"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="52" lineNum="67" parent="globals/SensorService" pc="268440533" symbol="onSensorData"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="53" lineNum="11" parent="globals/SensorService" pc="268440553" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" id="53" lineNum="12" parent="globals/SensorService" pc="268440555" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="54" lineNum="21" parent="globals/jumpheightApp" pc="268440566" symbol="onStart"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="54" lineNum="22" parent="globals/jumpheightApp" pc="268440568" symbol="onStart"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="54" lineNum="23" parent="globals/jumpheightApp" pc="268440586" symbol="onStart"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="54" lineNum="24" parent="globals/jumpheightApp" pc="268440620" symbol="onStart"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="55" lineNum="41" parent="globals/jumpheightApp" pc="268440662" symbol="getInitialView"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="55" lineNum="42" parent="globals/jumpheightApp" pc="268440666" symbol="getInitialView"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="55" lineNum="43" parent="globals/jumpheightApp" pc="268440690" symbol="getInitialView"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="55" lineNum="44" parent="globals/jumpheightApp" pc="268440716" symbol="getInitialView"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="56" lineNum="13" parent="globals/jumpheightApp" pc="268440743" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="56" lineNum="14" parent="globals/jumpheightApp" pc="268440745" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="56" lineNum="15" parent="globals/jumpheightApp" pc="268440763" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="56" lineNum="16" parent="globals/jumpheightApp" pc="268440793" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="56" lineNum="17" parent="globals/jumpheightApp" pc="268440823" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="56" lineNum="18" parent="globals/jumpheightApp" pc="268440861" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="57" lineNum="27" parent="globals/jumpheightApp" pc="268440892" symbol="onStop"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="57" lineNum="28" parent="globals/jumpheightApp" pc="268440894" symbol="onStop"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="57" lineNum="29" parent="globals/jumpheightApp" pc="268440912" symbol="onStop"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="57" lineNum="30" parent="globals/jumpheightApp" pc="268440925" symbol="onStop"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="58" lineNum="34" parent="globals/jumpheightApp" pc="268440947" symbol="onTimer"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="58" lineNum="35" parent="globals/jumpheightApp" pc="268440949" symbol="onTimer"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="58" lineNum="36" parent="globals/jumpheightApp" pc="268440975" symbol="onTimer"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightApp.mc" id="58" lineNum="38" parent="globals/jumpheightApp" pc="268440996" symbol="onTimer"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightMenuDelegate.mc" id="59" lineNum="12" parent="globals/jumpheightMenuDelegate" pc="268441013" symbol="onMenuItem"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightMenuDelegate.mc" id="59" lineNum="13" parent="globals/jumpheightMenuDelegate" pc="268441015" symbol="onMenuItem"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightMenuDelegate.mc" id="59" lineNum="14" parent="globals/jumpheightMenuDelegate" pc="268441026" symbol="onMenuItem"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightMenuDelegate.mc" id="60" lineNum="8" parent="globals/jumpheightMenuDelegate" pc="268441095" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightMenuDelegate.mc" id="60" lineNum="9" parent="globals/jumpheightMenuDelegate" pc="268441097" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/bin/gen/006-B3290-00/source/Rez.mcgen" id="61" lineNum="14" parent="globals/Rez/Layouts" pc="268441116" symbol="MainLayout"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/bin/gen/006-B3290-00/source/Rez.mcgen" id="61" lineNum="15" parent="globals/Rez/Layouts" pc="268441128" symbol="MainLayout"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/bin/gen/006-B3290-00/source/Rez.mcgen" id="61" lineNum="17" parent="globals/Rez/Layouts" pc="268441141" symbol="MainLayout"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/bin/gen/006-B3290-00/source/Rez.mcgen" id="61" lineNum="19" parent="globals/Rez/Layouts" pc="268441275" symbol="MainLayout"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/bin/gen/006-B3290-00/source/Rez.mcgen" id="61" lineNum="20" parent="globals/Rez/Layouts" pc="268441380" symbol="MainLayout"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/bin/gen/006-B3290-00/source/Rez.mcgen" id="61" lineNum="22" parent="globals/Rez/Layouts" pc="268441417" symbol="MainLayout"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/bin/gen/006-B3290-00/source/Rez.mcgen" id="62" lineNum="27" parent="globals/Rez/Menus/MainMenu" pc="268441444" symbol="&lt;init&gt;"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/bin/gen/006-B3290-00/source/Rez.mcgen" id="63" lineNum="28" parent="globals/Rez/Menus/MainMenu" pc="268441463" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/bin/gen/006-B3290-00/source/Rez.mcgen" id="63" lineNum="29" parent="globals/Rez/Menus/MainMenu" pc="268441465" symbol="initialize"/>
+        <entry filename="/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/bin/gen/006-B3290-00/source/Rez.mcgen" id="63" lineNum="30" parent="globals/Rez/Menus/MainMenu" pc="268441483" symbol="initialize"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry id="8388639" module="true" symbol="Graphics"/>
+        <entry field="true" id="40" symbol="&lt;globals/JumpCalculator/&lt;&gt;_height&gt;"/>
+        <entry field="true" id="8389346" symbol="text"/>
+        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+        <entry id="51" method="true" symbol="processSample"/>
+        <entry field="true" id="45" symbol="&lt;globals/JumpCalculator/&lt;&gt;_takeOffTime&gt;"/>
+        <entry id="5" module="true" symbol="globals/Rez/Menus"/>
+        <entry id="66" method="true" symbol="MainLayout"/>
+        <entry field="true" id="63" symbol="timer"/>
+        <entry id="71" symbol="item_history"/>
+        <entry field="true" id="41" symbol="&lt;globals/JumpCalculator/&lt;&gt;_lastTimestamp&gt;"/>
+        <entry id="34" method="true" symbol="getAverageBestTwoRsi"/>
+        <entry field="true" id="62" symbol="storageService"/>
+        <entry id="8390424" module="true" symbol="Storage"/>
+        <entry field="true" id="43" symbol="&lt;globals/JumpCalculator/&lt;&gt;_startTime&gt;"/>
+        <entry id="15" object="true" symbol="jumpheightDelegate"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry field="true" id="18" symbol="rsiMod"/>
+        <entry field="true" id="22" symbol="&lt;globals/jumpheightView/&lt;&gt;_storage&gt;"/>
+        <entry id="57" method="true" symbol="onSensorData"/>
+        <entry id="16" object="true" symbol="jumpheightMenuDelegate"/>
+        <entry id="33" method="true" symbol="getAverageBestTwoHeight"/>
+        <entry id="8392382" method="true" symbol="reset"/>
+        <entry field="true" id="30" symbol="&lt;globals/JumpSession/&lt;&gt;_jumps&gt;"/>
+        <entry field="true" id="19" symbol="ttt"/>
+        <entry id="17" object="true" symbol="jumpheightView"/>
+        <entry field="true" id="39" symbol="&lt;globals/JumpCalculator/&lt;&gt;_flightTime&gt;"/>
+        <entry field="true" id="68" symbol="AppName"/>
+        <entry id="37" method="true" symbol="&lt;globals/JumpSession/&lt;&gt;sortDescending&gt;"/>
+        <entry id="6" module="true" symbol="globals/Rez/Strings"/>
+        <entry id="8389080" method="true" symbol="onMenu"/>
+        <entry id="8389345" symbol="rezId"/>
+        <entry id="13" object="true" symbol="StorageService"/>
+        <entry field="true" id="31" symbol="&lt;globals/JumpSession/&lt;&gt;_maxJumps&gt;"/>
+        <entry field="true" id="8388947" method="true" symbol="value"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry id="8389081" method="true" symbol="onBack"/>
+        <entry field="true" id="25" symbol="&lt;globals/RsiGraphView/&lt;&gt;_history&gt;"/>
+        <entry id="2" module="true" symbol="globals/Rez"/>
+        <entry field="true" id="70" symbol="prompt"/>
+        <entry field="true" id="65" symbol="id_monkey"/>
+        <entry field="true" id="21" symbol="&lt;globals/jumpheightView/&lt;&gt;_session&gt;"/>
+        <entry id="35" method="true" symbol="getJumpCount"/>
+        <entry id="8389124" method="true" symbol="onUpdate"/>
+        <entry field="true" id="8389065" symbol="locY"/>
+        <entry field="true" id="8389064" symbol="locX"/>
+        <entry id="49" method="true" symbol="getRsiMod"/>
+        <entry id="27" method="true" symbol="getBaseline"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry id="8389348" symbol="font"/>
+        <entry field="true" id="8389067" symbol="height"/>
+        <entry id="8389079" method="true" symbol="onPreviousPage"/>
+        <entry id="24" module="true" symbol="Menus"/>
+        <entry id="8389275" method="true" symbol="getApp"/>
+        <entry id="4" module="true" symbol="globals/Rez/Layouts"/>
+        <entry id="50" method="true" symbol="getTtt"/>
+        <entry field="true" id="20" symbol="&lt;globals/jumpheightView/&lt;&gt;_calculator&gt;"/>
+        <entry id="12" object="true" symbol="SensorService"/>
+        <entry id="14" object="true" symbol="jumpheightApp"/>
+        <entry field="true" id="69" symbol="menu_label_history"/>
+        <entry id="28" method="true" symbol="saveBaseline"/>
+        <entry field="true" id="8389063" symbol="identifier"/>
+        <entry id="7" object="true" symbol="JumpCalculator"/>
+        <entry id="8389349" symbol="justification"/>
+        <entry id="52" method="true" symbol="resetToStart"/>
+        <entry field="true" id="8390134" symbol="sampleRate"/>
+        <entry field="true" id="58" symbol="calculator"/>
+        <entry id="47" method="true" symbol="&lt;globals/JumpCalculator/&lt;&gt;calculateResults&gt;"/>
+        <entry id="8390648" symbol="accelerometer"/>
+        <entry field="true" id="44" symbol="&lt;globals/JumpCalculator/&lt;&gt;_state&gt;"/>
+        <entry id="32" method="true" symbol="addJump"/>
+        <entry field="true" id="46" symbol="&lt;globals/JumpCalculator/&lt;&gt;_ttt&gt;"/>
+        <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+        <entry id="53" method="true" symbol="startCountdown"/>
+        <entry id="67" object="true" symbol="MainMenu"/>
+        <entry id="8388699" method="true" symbol="stop"/>
+        <entry id="8389116" method="true" symbol="getHeight"/>
+        <entry field="true" id="8390438" symbol="enabled"/>
+        <entry id="8388644" module="true" symbol="System"/>
+        <entry id="10" object="true" symbol="RsiGraphDelegate"/>
+        <entry id="8389619" method="true" symbol="onSelect"/>
+        <entry id="8388645" module="true" symbol="Time"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry id="36" method="true" symbol="isComplete"/>
+        <entry id="8388640" module="true" symbol="Lang"/>
+        <entry field="true" id="64" symbol="LauncherIcon"/>
+        <entry id="8388610" symbol="statics"/>
+        <entry id="54" method="true" symbol="tickCountdown"/>
+        <entry id="8388643" module="true" symbol="Sensor"/>
+        <entry id="8389350" module="true" symbol="globals"/>
+        <entry field="true" id="38" symbol="&lt;globals/JumpCalculator/&lt;&gt;_countdown&gt;"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry id="48" method="true" symbol="getCountdown"/>
+        <entry id="8389279" method="true" symbol="onStart"/>
+        <entry id="8389902" method="true" symbol="getState"/>
+        <entry id="8389808" symbol="period"/>
+        <entry id="8388641" module="true" symbol="Math"/>
+        <entry id="8389280" method="true" symbol="getInitialView"/>
+        <entry id="8389281" method="true" symbol="onStop"/>
+        <entry id="26" method="true" symbol="clearHistory"/>
+        <entry id="29" method="true" symbol="saveTodayJump"/>
+        <entry id="8389109" method="true" symbol="onMenuItem"/>
+        <entry field="true" id="8389347" symbol="color"/>
+        <entry field="true" id="42" symbol="&lt;globals/JumpCalculator/&lt;&gt;_rsiMod&gt;"/>
+        <entry id="8388646" module="true" object="true" symbol="Timer"/>
+        <entry id="23" module="true" symbol="Layouts"/>
+        <entry id="9" object="true" symbol="JumpSession"/>
+        <entry id="8388698" method="true" symbol="start"/>
+        <entry field="true" id="55" symbol="&lt;globals/SensorService/&lt;&gt;_calculator&gt;"/>
+        <entry field="true" id="60" symbol="sensorService"/>
+        <entry id="11" object="true" symbol="RsiGraphView"/>
+        <entry id="8388910" method="true" symbol="getHistory"/>
+        <entry id="8" object="true" symbol="JumpData"/>
+        <entry field="true" id="61" symbol="session"/>
+        <entry field="true" id="56" symbol="&lt;globals/SensorService/&lt;&gt;_count&gt;"/>
+        <entry id="8389078" method="true" symbol="onNextPage"/>
+        <entry id="8388635" module="true" symbol="Application"/>
+        <entry id="59" method="true" symbol="onTimer"/>
+        <entry id="8392407" symbol="includeTimestamps"/>
+    </symbolTable>
+    <localVars>
+        <entry arg="true" endPc="268435723" name="h" stackId="1" startPc="268435691"/>
+        <entry arg="true" endPc="268435723" name="r" stackId="2" startPc="268435691"/>
+        <entry arg="true" endPc="268435723" name="t" stackId="3" startPc="268435691"/>
+        <entry endPc="268435799" name="app" stackId="1" startPc="268435728"/>
+        <entry arg="true" endPc="268435920" name="view" stackId="1" startPc="268435900"/>
+        <entry endPc="268436225" name="app" stackId="1" startPc="268435925"/>
+        <entry endPc="268436225" name="state" stackId="2" startPc="268435925"/>
+        <entry endPc="268436203" name="h" stackId="3" startPc="268436004"/>
+        <entry endPc="268436203" name="r" stackId="4" startPc="268436004"/>
+        <entry endPc="268436203" name="t" stackId="5" startPc="268436004"/>
+        <entry endPc="268436182" name="avgRsi" stackId="6" startPc="268436105"/>
+        <entry endPc="268436182" name="avgHeight" stackId="7" startPc="268436105"/>
+        <entry endPc="268436382" name="app" stackId="1" startPc="268436300"/>
+        <entry arg="true" endPc="268437223" name="dc" stackId="1" startPc="268436384"/>
+        <entry endPc="268437222" name="state" stackId="2" startPc="268436388"/>
+        <entry endPc="268437222" name="width" stackId="3" startPc="268436388"/>
+        <entry endPc="268437222" name="height_dc" stackId="4" startPc="268436388"/>
+        <entry endPc="268436739" name="count" stackId="5" startPc="268436612"/>
+        <entry endPc="268437124" name="h" stackId="6" startPc="268436844"/>
+        <entry endPc="268437124" name="r" stackId="7" startPc="268436844"/>
+        <entry endPc="268437287" name="app" stackId="1" startPc="268437228"/>
+        <entry arg="true" endPc="268437970" name="dc" stackId="1" startPc="268437289"/>
+        <entry endPc="268437969" name="width" stackId="2" startPc="268437293"/>
+        <entry endPc="268437969" name="height" stackId="3" startPc="268437293"/>
+        <entry endPc="268437969" name="padding" stackId="4" startPc="268437293"/>
+        <entry endPc="268437969" name="graphWidth" stackId="5" startPc="268437293"/>
+        <entry endPc="268437969" name="graphHeight" stackId="6" startPc="268437293"/>
+        <entry endPc="268437969" name="bottom" stackId="7" startPc="268437293"/>
+        <entry endPc="268437969" name="startIdx" stackId="8" startPc="268437293"/>
+        <entry endPc="268437969" name="count" stackId="9" startPc="268437293"/>
+        <entry endPc="268437969" name="maxRsi" stackId="10" startPc="268437293"/>
+        <entry endPc="268437697" name="i" stackId="11" startPc="268437651"/>
+        <entry endPc="268437684" name="val" stackId="12" startPc="268437651"/>
+        <entry endPc="268437969" name="barWidth" stackId="13" startPc="268437293"/>
+        <entry endPc="268437969" name="spacing" stackId="14" startPc="268437293"/>
+        <entry endPc="268437924" name="i" stackId="15" startPc="268437730"/>
+        <entry endPc="268437911" name="val" stackId="16" startPc="268437730"/>
+        <entry endPc="268437911" name="barHeight" stackId="17" startPc="268437730"/>
+        <entry endPc="268437911" name="x" stackId="18" startPc="268437730"/>
+        <entry endPc="268437911" name="y" stackId="19" startPc="268437730"/>
+        <entry endPc="268438014" name="val" stackId="1" startPc="268437975"/>
+        <entry endPc="268438059" name="history" stackId="1" startPc="268438019"/>
+        <entry arg="true" endPc="268438130" name="rsi" stackId="1" startPc="268438105"/>
+        <entry arg="true" endPc="268438444" name="rsi" stackId="1" startPc="268438131"/>
+        <entry arg="true" endPc="268438444" name="height" stackId="2" startPc="268438131"/>
+        <entry endPc="268438443" name="history" stackId="3" startPc="268438135"/>
+        <entry endPc="268438443" name="now" stackId="4" startPc="268438135"/>
+        <entry endPc="268438443" name="timeValue" stackId="5" startPc="268438135"/>
+        <entry endPc="268438443" name="today" stackId="6" startPc="268438135"/>
+        <entry endPc="268438443" name="sum" stackId="7" startPc="268438135"/>
+        <entry endPc="268438417" name="i" stackId="8" startPc="268438385"/>
+        <entry endPc="268438404" name="item" stackId="9" startPc="268438385"/>
+        <entry endPc="268438581" name="view" stackId="1" startPc="268438508"/>
+        <entry arg="true" endPc="268438723" name="arr" stackId="1" startPc="268438582"/>
+        <entry endPc="268438722" name="n" stackId="2" startPc="268438586"/>
+        <entry endPc="268438722" name="i" stackId="3" startPc="268438614"/>
+        <entry endPc="268438709" name="j" stackId="4" startPc="268438638"/>
+        <entry endPc="268438693" name="temp" stackId="5" startPc="268438658"/>
+        <entry endPc="268438880" name="heights" stackId="1" startPc="268438728"/>
+        <entry endPc="268438842" name="i" stackId="2" startPc="268438801"/>
+        <entry arg="true" endPc="268438978" name="height" stackId="1" startPc="268438898"/>
+        <entry arg="true" endPc="268438978" name="rsiMod" stackId="2" startPc="268438898"/>
+        <entry arg="true" endPc="268438978" name="ttt" stackId="3" startPc="268438898"/>
+        <entry endPc="268439135" name="rsiValues" stackId="1" startPc="268438983"/>
+        <entry endPc="268439097" name="i" stackId="2" startPc="268439056"/>
+        <entry arg="true" endPc="268439743" name="accelMagG" stackId="1" startPc="268439304"/>
+        <entry arg="true" endPc="268439743" name="timestamp" stackId="2" startPc="268439304"/>
+        <entry endPc="268439742" name="dt" stackId="3" startPc="268439308"/>
+        <entry endPc="268440194" name="options" stackId="1" startPc="268440029"/>
+        <entry endPc="268440189" name="e" stackId="2" startPc="268440158"/>
+        <entry arg="true" endPc="268440552" name="sensorData" stackId="1" startPc="268440196"/>
+        <entry endPc="268440551" name="accel" stackId="2" startPc="268440200"/>
+        <entry endPc="268440548" name="x" stackId="3" startPc="268440227"/>
+        <entry endPc="268440548" name="y" stackId="4" startPc="268440227"/>
+        <entry endPc="268440548" name="z" stackId="5" startPc="268440227"/>
+        <entry endPc="268440548" name="baseTime" stackId="6" startPc="268440227"/>
+        <entry endPc="268440548" name="msPerSample" stackId="7" startPc="268440227"/>
+        <entry endPc="268440475" name="i" stackId="8" startPc="268440334"/>
+        <entry endPc="268440462" name="xF" stackId="9" startPc="268440334"/>
+        <entry endPc="268440462" name="yF" stackId="10" startPc="268440334"/>
+        <entry endPc="268440462" name="zF" stackId="11" startPc="268440334"/>
+        <entry endPc="268440462" name="magG" stackId="12" startPc="268440334"/>
+        <entry endPc="268440462" name="t" stackId="13" startPc="268440334"/>
+        <entry arg="true" endPc="268440565" name="calculator" stackId="1" startPc="268440553"/>
+        <entry arg="true" endPc="268440661" name="state" stackId="1" startPc="268440566"/>
+        <entry endPc="268440742" name="view" stackId="1" startPc="268440666"/>
+        <entry endPc="268440742" name="delegate" stackId="2" startPc="268440666"/>
+        <entry arg="true" endPc="268440946" name="state" stackId="1" startPc="268440892"/>
+        <entry arg="true" endPc="268441094" name="item" stackId="1" startPc="268441013"/>
+        <entry arg="true" endPc="268441443" name="dc" stackId="1" startPc="268441116"/>
+        <entry endPc="268441443" name="rez_cmp_local_var_dc_getWidth" stackId="2" startPc="268441128"/>
+        <entry endPc="268441443" name="rez_cmp_local_text_1193959466" stackId="3" startPc="268441128"/>
+        <entry endPc="268441443" name="rez_cmp_local_bitmap_id_monkey" stackId="4" startPc="268441128"/>
+    </localVars>
+    <deviceInfo deviceVersion="8fc30743a4191ec19bcafa28e3ffcc2b5a958a17" partNumber="006-B3290-00"/>
+    <annotations>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="menu_label_history"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="prompt"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="id_monkey"/>
+    </annotations>
+    <dataEntryOffsetMappings>
+        <dataEntry label="globals" offset="71" parentId="" symbolId="globals" type="module"/>
+        <dataEntry label="globals/JumpData" offset="214" parentId="globals" symbolId="JumpData" type="class"/>
+        <dataEntry label="globals/jumpheightDelegate" offset="285" parentId="globals" symbolId="jumpheightDelegate" type="class"/>
+        <dataEntry label="globals/jumpheightView" offset="372" parentId="globals" symbolId="jumpheightView" type="class"/>
+        <dataEntry label="globals/Rez" offset="451" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry label="globals/RsiGraphView" offset="514" parentId="globals" symbolId="RsiGraphView" type="class"/>
+        <dataEntry label="globals/StorageService" offset="577" parentId="globals" symbolId="StorageService" type="class"/>
+        <dataEntry label="globals/RsiGraphDelegate" offset="664" parentId="globals" symbolId="RsiGraphDelegate" type="class"/>
+        <dataEntry label="globals/JumpSession" offset="727" parentId="globals" symbolId="JumpSession" type="class"/>
+        <dataEntry label="globals/JumpCalculator" offset="846" parentId="globals" symbolId="JumpCalculator" type="class"/>
+        <dataEntry label="globals/SensorService" offset="1045" parentId="globals" symbolId="SensorService" type="class"/>
+        <dataEntry label="globals/jumpheightApp" offset="1132" parentId="globals" symbolId="jumpheightApp" type="class"/>
+        <dataEntry label="globals/jumpheightMenuDelegate" offset="1251" parentId="globals" symbolId="jumpheightMenuDelegate" type="class"/>
+        <dataEntry label="globals/Rez/Drawables" offset="1306" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry label="globals/Rez/Layouts" offset="1353" parentId="Rez" symbolId="Layouts" type="module"/>
+        <dataEntry label="globals/Rez/Menus" offset="1392" parentId="Rez" symbolId="Menus" type="module"/>
+        <dataEntry label="globals/Rez/Strings" offset="1431" parentId="Rez" symbolId="Strings" type="module"/>
+        <dataEntry label="globals/Rez/Menus/MainMenu" offset="1486" parentId="Menus" symbolId="MainMenu" type="class"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="JumpData">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435478" name="&lt;init&gt;" parent="jumpheightDelegate" startPc="268435460">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435504" name="getApp" startPc="268435479">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435523" name="&lt;init&gt;" parent="jumpheightView" startPc="268435505">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435547" name="&lt;init&gt;" parent="Rez" startPc="268435524">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435566" name="&lt;init&gt;" parent="RsiGraphView" startPc="268435548">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="StorageService">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435585" name="&lt;init&gt;" parent="RsiGraphDelegate" startPc="268435567">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435600" name="&lt;init&gt;" parent="JumpSession" startPc="268435586">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435652" name="&lt;init&gt;" parent="JumpCalculator" startPc="268435601">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="SensorService">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435671" name="&lt;init&gt;" parent="jumpheightApp" startPc="268435653">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435690" name="&lt;init&gt;" parent="jumpheightMenuDelegate" startPc="268435672">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435723" name="initialize" parent="JumpData" startPc="268435691">
+            <param id="h"/>
+            <param id="r"/>
+            <param id="t"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435799" name="onBack" parent="jumpheightDelegate" startPc="268435724">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435813" name="onPreviousPage" parent="jumpheightDelegate" startPc="268435800">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435899" name="onMenu" parent="jumpheightDelegate" startPc="268435814">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435920" name="initialize" parent="jumpheightDelegate" startPc="268435900">
+            <param id="view"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436225" name="onSelect" parent="jumpheightDelegate" startPc="268435921">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436295" name="onNextPage" parent="jumpheightDelegate" startPc="268436226">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436383" name="initialize" parent="jumpheightView" startPc="268436296">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437223" name="onUpdate" parent="jumpheightView" startPc="268436384">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Drawables">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Layouts">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Menus">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437288" name="initialize" parent="RsiGraphView" startPc="268437224">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437970" name="onUpdate" parent="RsiGraphView" startPc="268437289">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438014" name="getBaseline" parent="StorageService" startPc="268437971">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438059" name="getHistory" parent="StorageService" startPc="268438015">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438104" name="clearHistory" parent="StorageService" startPc="268438060">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438130" name="saveBaseline" parent="StorageService" startPc="268438105">
+            <param id="rsi"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438444" name="saveTodayJump" parent="StorageService" startPc="268438131">
+            <param id="rsi"/>
+            <param id="height"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438468" name="initialize" parent="StorageService" startPc="268438445">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438482" name="onPreviousPage" parent="RsiGraphDelegate" startPc="268438469">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438503" name="initialize" parent="RsiGraphDelegate" startPc="268438483">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438581" name="onNextPage" parent="RsiGraphDelegate" startPc="268438504">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268438723" name="&lt;globals/JumpSession/&lt;&gt;sortDescending&gt;" parent="JumpSession" startPc="268438582">
+            <param id="arr"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438880" name="getAverageBestTwoHeight" parent="JumpSession" startPc="268438724">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438897" name="reset" parent="JumpSession" startPc="268438881">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438978" name="addJump" parent="JumpSession" startPc="268438898">
+            <param id="height"/>
+            <param id="rsiMod"/>
+            <param id="ttt"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="JumpSession">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439135" name="getAverageBestTwoRsi" parent="JumpSession" startPc="268438979">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439155" name="getJumpCount" parent="JumpSession" startPc="268439136">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439184" name="isComplete" parent="JumpSession" startPc="268439156">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439303" name="resetToStart" parent="JumpCalculator" startPc="268439185">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439743" name="processSample" parent="JumpCalculator" startPc="268439304">
+            <param id="accelMagG"/>
+            <param id="timestamp"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439754" name="getHeight" parent="JumpCalculator" startPc="268439744">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439765" name="getState" parent="JumpCalculator" startPc="268439755">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439794" name="startCountdown" parent="JumpCalculator" startPc="268439766">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268439892" name="&lt;globals/JumpCalculator/&lt;&gt;calculateResults&gt;" parent="JumpCalculator" startPc="268439795">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439903" name="getRsiMod" parent="JumpCalculator" startPc="268439893">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439914" name="getTtt" parent="JumpCalculator" startPc="268439904">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="JumpCalculator">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439925" name="getCountdown" parent="JumpCalculator" startPc="268439915">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440005" name="tickCountdown" parent="JumpCalculator" startPc="268439926">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440024" name="stop" parent="SensorService" startPc="268440006">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440195" name="start" parent="SensorService" startPc="268440025">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440552" name="onSensorData" parent="SensorService" startPc="268440196">
+            <param id="sensorData"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440565" name="initialize" parent="SensorService" startPc="268440553">
+            <param id="calculator"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440661" name="onStart" parent="jumpheightApp" startPc="268440566">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440742" name="getInitialView" parent="jumpheightApp" startPc="268440662">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440891" name="initialize" parent="jumpheightApp" startPc="268440743">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440946" name="onStop" parent="jumpheightApp" startPc="268440892">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441012" name="onTimer" parent="jumpheightApp" startPc="268440947">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441094" name="onMenuItem" parent="jumpheightMenuDelegate" startPc="268441013">
+            <param id="item"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441115" name="initialize" parent="jumpheightMenuDelegate" startPc="268441095">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441443" name="MainLayout" parent="Layouts" startPc="268441116">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441462" name="&lt;init&gt;" parent="MainMenu" startPc="268441444">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441539" name="initialize" parent="MainMenu" startPc="268441463">
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>
