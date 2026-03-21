@@ -59,7 +59,7 @@ _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightView
     }
     [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc"; @line = 16; @symbol_functiondef = [onUpdate,16,13,21]; @symbol_param<0> = [dc,16,22,24]; @symbol_param<0>_type<0> = [Dc,16,28,30]; ]
     function onUpdate(dc as Dc) as Void {
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightView_mc_16_40_54_4_start:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightView_mc_16_40_57_4_start:
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" 17 8 ]
         %tmp.1 = lgetv %dc;
         symbol [ dc %tmp.1 17 8 10 ];
@@ -81,7 +81,7 @@ _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightView
         %tmp.8 = getv function %tmp.7 :clear;
         invoke %tmp.7 %tmp.8();
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" 20 8 ]
-        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightView_mc_16_40_54_4_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightView_mc_16_40_54_4_stop" ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightView_mc_16_40_57_4_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightView_mc_16_40_57_4_stop" ]
         %state.1 = local;
         symbol [ state %state.1 20 12 17 ];
         symbol [ _calculator %tmp.10 20 20 31 ];
@@ -92,7 +92,7 @@ _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightView
         lputv %state.1 %tmp.12;
         symbol [ state %state.1 20 12 17 ];
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" 21 8 ]
-        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightView_mc_16_40_54_4_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightView_mc_16_40_54_4_stop" ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightView_mc_16_40_57_4_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightView_mc_16_40_57_4_stop" ]
         %width.2 = local;
         symbol [ width %width.2 21 12 17 ];
         %tmp.13 = lgetv %dc;
@@ -103,7 +103,7 @@ _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightView
         lputv %width.2 %tmp.15;
         symbol [ width %width.2 21 12 17 ];
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" 22 8 ]
-        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightView_mc_16_40_54_4_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightView_mc_16_40_54_4_stop" ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightView_mc_16_40_57_4_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightView_mc_16_40_57_4_stop" ]
         %height_dc.3 = local;
         symbol [ height_dc %height_dc.3 22 12 21 ];
         %tmp.16 = lgetv %dc;
@@ -500,7 +500,7 @@ _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightView
         %tmp.220 = div %tmp.218 %tmp.219;
         %tmp.221 = lgetv %height_dc.3;
         symbol [ height_dc %tmp.221 49 35 44 ];
-        %tmp.222 = 60;
+        %tmp.222 = 65;
         %tmp.223 = sub %tmp.221 %tmp.222;
         symbol [ Graphics %tmp.224 49 51 59 ];
         %tmp.224 = getm $.Toybox.Graphics;
@@ -543,7 +543,7 @@ _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightView
         %tmp.239 = div %tmp.237 %tmp.238;
         %tmp.240 = lgetv %height_dc.3;
         symbol [ height_dc %tmp.240 53 31 40 ];
-        %tmp.241 = 30;
+        %tmp.241 = 45;
         %tmp.242 = sub %tmp.240 %tmp.241;
         symbol [ Graphics %tmp.243 53 47 55 ];
         %tmp.243 = getm $.Toybox.Graphics;
@@ -565,7 +565,17 @@ _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightView
         symbol [ TEXT_JUSTIFY_CENTER %tmp.256 53 125 144 ];
         %tmp.256 = getv %tmp.255 :TEXT_JUSTIFY_CENTER;
         invoke %tmp.235 %tmp.236(%tmp.239, %tmp.242, %tmp.244, %tmp.254, %tmp.256);
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightView_mc_16_40_54_4_stop:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc" 56 8 ]
+        symbol [ UIUtils %tmp.258 56 8 15 ];
+        %tmp.258 = getv ? :UIUtils;
+        symbol [ drawPagination %tmp.259 56 16 30 ];
+        %tmp.259 = getv function %tmp.258 :drawPagination;
+        %tmp.260 = lgetv %dc;
+        symbol [ dc %tmp.260 56 31 33 ];
+        %tmp.261 = 0;
+        %tmp.262 = 4;
+        invoke %tmp.258 %tmp.259(%tmp.260, %tmp.261, %tmp.262);
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightView_mc_16_40_57_4_stop:
     }
 }
 [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightView.mc"; @line = 1; ]

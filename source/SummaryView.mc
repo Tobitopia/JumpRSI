@@ -51,10 +51,10 @@ class SummaryView extends WatchUi.View {
         var height_dc = dc.getHeight();
         
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(width / 2, 30, Graphics.FONT_SMALL, "Session Finished", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, 35, Graphics.FONT_SMALL, "Session Finished", Graphics.TEXT_JUSTIFY_CENTER);
         
-        dc.drawText(width / 2, 70, Graphics.FONT_TINY, "Avg Height: " + _height.format("%.2f") + "m", Graphics.TEXT_JUSTIFY_CENTER);
-        dc.drawText(width / 2, 95, Graphics.FONT_TINY, "Avg RSI: " + _rsi.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, 75, Graphics.FONT_TINY, "Avg Height: " + _height.format("%.2f") + "m", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, 100, Graphics.FONT_TINY, "Avg RSI: " + _rsi.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
         
         if (_baseline > 0) {
             var color = Graphics.COLOR_WHITE;
@@ -64,14 +64,14 @@ class SummaryView extends WatchUi.View {
             
             dc.setColor(color, Graphics.COLOR_TRANSPARENT);
             var sign = _diff >= 0 ? "+" : "";
-            dc.drawText(width / 2, 130, Graphics.FONT_SMALL, "vs Baseline: " + sign + _diff.format("%.1f") + "%", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(width / 2, 135, Graphics.FONT_SMALL, "vs Baseline: " + sign + _diff.format("%.1f") + "%", Graphics.TEXT_JUSTIFY_CENTER);
         }
         
         dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(width / 2, height_dc - 60, Graphics.FONT_XTINY, _recommendation, Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, height_dc - 75, Graphics.FONT_XTINY, _recommendation, Graphics.TEXT_JUSTIFY_CENTER);
         
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(width / 2, height_dc - 30, Graphics.FONT_XTINY, "Press START to Restart", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, height_dc - 50, Graphics.FONT_XTINY, "Press START to Restart", Graphics.TEXT_JUSTIFY_CENTER);
     }
 }
 

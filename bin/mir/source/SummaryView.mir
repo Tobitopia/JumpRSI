@@ -255,7 +255,7 @@ _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_SummaryView_mc
         symbol [ width %tmp.23 54 20 25 ];
         %tmp.24 = 2;
         %tmp.25 = div %tmp.23 %tmp.24;
-        %tmp.26 = 30;
+        %tmp.26 = 35;
         symbol [ Graphics %tmp.27 54 35 43 ];
         %tmp.27 = getm $.Toybox.Graphics;
         symbol [ FONT_SMALL %tmp.28 54 44 54 ];
@@ -275,7 +275,7 @@ _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_SummaryView_mc
         symbol [ width %tmp.34 56 20 25 ];
         %tmp.35 = 2;
         %tmp.36 = div %tmp.34 %tmp.35;
-        %tmp.37 = 70;
+        %tmp.37 = 75;
         symbol [ Graphics %tmp.38 56 35 43 ];
         %tmp.38 = getm $.Toybox.Graphics;
         symbol [ FONT_TINY %tmp.39 56 44 53 ];
@@ -304,22 +304,22 @@ _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_SummaryView_mc
         symbol [ width %tmp.53 57 20 25 ];
         %tmp.54 = 2;
         %tmp.55 = div %tmp.53 %tmp.54;
-        %tmp.56 = 95;
-        symbol [ Graphics %tmp.57 57 35 43 ];
+        %tmp.56 = 100;
+        symbol [ Graphics %tmp.57 57 36 44 ];
         %tmp.57 = getm $.Toybox.Graphics;
-        symbol [ FONT_TINY %tmp.58 57 44 53 ];
+        symbol [ FONT_TINY %tmp.58 57 45 54 ];
         %tmp.58 = getv %tmp.57 :FONT_TINY;
         %tmp.59 = "Avg RSI: ";
-        symbol [ _rsi %tmp.61 57 69 73 ];
+        symbol [ _rsi %tmp.61 57 70 74 ];
         %tmp.61 = getv ? :_rsi;
-        symbol [ format %tmp.62 57 74 80 ];
+        symbol [ format %tmp.62 57 75 81 ];
         %tmp.62 = getv function %tmp.61 :format;
         %tmp.63 = "%.2f";
         %tmp.64 = invoke %tmp.61 %tmp.62(%tmp.63);
         %tmp.65 = add %tmp.59 %tmp.64;
-        symbol [ Graphics %tmp.66 57 90 98 ];
+        symbol [ Graphics %tmp.66 57 91 99 ];
         %tmp.66 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.67 57 99 118 ];
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.67 57 100 119 ];
         %tmp.67 = getv %tmp.66 :TEXT_JUSTIFY_CENTER;
         invoke %tmp.51 %tmp.52(%tmp.55, %tmp.56, %tmp.58, %tmp.65, %tmp.67);
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SummaryView.mc" 59 8 ]
@@ -442,7 +442,7 @@ _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_SummaryView_mc
         symbol [ width %tmp.106 67 24 29 ];
         %tmp.107 = 2;
         %tmp.108 = div %tmp.106 %tmp.107;
-        %tmp.109 = 130;
+        %tmp.109 = 135;
         symbol [ Graphics %tmp.110 67 40 48 ];
         %tmp.110 = getm $.Toybox.Graphics;
         symbol [ FONT_SMALL %tmp.111 67 49 59 ];
@@ -493,7 +493,7 @@ _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_SummaryView_mc
         %tmp.135 = div %tmp.133 %tmp.134;
         %tmp.136 = lgetv %height_dc.2;
         symbol [ height_dc %tmp.136 71 31 40 ];
-        %tmp.137 = 60;
+        %tmp.137 = 75;
         %tmp.138 = sub %tmp.136 %tmp.137;
         symbol [ Graphics %tmp.139 71 47 55 ];
         %tmp.139 = getm $.Toybox.Graphics;
@@ -531,7 +531,7 @@ _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_SummaryView_mc
         %tmp.155 = div %tmp.153 %tmp.154;
         %tmp.156 = lgetv %height_dc.2;
         symbol [ height_dc %tmp.156 74 31 40 ];
-        %tmp.157 = 30;
+        %tmp.157 = 50;
         %tmp.158 = sub %tmp.156 %tmp.157;
         symbol [ Graphics %tmp.159 74 47 55 ];
         %tmp.159 = getm $.Toybox.Graphics;

@@ -10,17 +10,19 @@ class RsiGraphDelegate extends WatchUi.BehaviorDelegate {
     }
 
     function onSelect() as Boolean {
-        _view.toggleMode();
+        // Toggle feature removed as requested, now using separate views
         return true;
     }
 
     function onNextPage() as Boolean {
-        var view = new jumpheightView();
-        WatchUi.switchToView(view, new jumpheightDelegate(view), WatchUi.SLIDE_DOWN);
+        var view = new HeightGraphView();
+        WatchUi.switchToView(view, new HeightGraphDelegate(), WatchUi.SLIDE_UP);
         return true;
     }
 
     function onPreviousPage() as Boolean {
-        return onNextPage();
+        var view = new jumpheightView();
+        WatchUi.switchToView(view, new jumpheightDelegate(view), WatchUi.SLIDE_DOWN);
+        return true;
     }
 }

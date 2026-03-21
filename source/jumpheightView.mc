@@ -46,10 +46,13 @@ class jumpheightView extends WatchUi.View {
             dc.drawText(width / 2, height_dc / 2 + 10, Graphics.FONT_MEDIUM, "RSI: " + r.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
             
             dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(width / 2, height_dc - 60, Graphics.FONT_XTINY, "Press START for next", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(width / 2, height_dc - 65, Graphics.FONT_XTINY, "Press START for next", Graphics.TEXT_JUSTIFY_CENTER);
         }
 
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(width / 2, height_dc - 30, Graphics.FONT_XTINY, "Jump " + (_session.getJumpCount() + 1) + "/3", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, height_dc - 45, Graphics.FONT_XTINY, "Jump " + (_session.getJumpCount() + 1) + "/3", Graphics.TEXT_JUSTIFY_CENTER);
+        
+        // Use UIUtils from the module
+        UIUtils.drawPagination(dc, 0, 4);
     }
 }

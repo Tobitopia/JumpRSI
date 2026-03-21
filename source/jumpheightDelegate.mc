@@ -46,7 +46,9 @@ class jumpheightDelegate extends WatchUi.BehaviorDelegate {
     }
 
     function onPreviousPage() as Boolean {
-        return onNextPage();
+        var view = new InfoView();
+        WatchUi.switchToView(view, new InfoDelegate(), WatchUi.SLIDE_DOWN);
+        return true;
     }
 
     function onBack() as Boolean {
