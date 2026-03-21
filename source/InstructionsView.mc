@@ -18,15 +18,19 @@ class InstructionsView extends WatchUi.View {
         dc.drawText(width / 2, 30, Graphics.FONT_MEDIUM, "Instructions", Graphics.TEXT_JUSTIFY_CENTER);
         
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-        var spacing = 25;
-        var startY = 70;
+        var spacing = 22;
+        var startY = 65;
         dc.drawText(width / 2, startY, Graphics.FONT_XTINY, "1. Arms to hips", Graphics.TEXT_JUSTIFY_CENTER);
         dc.drawText(width / 2, startY + spacing, Graphics.FONT_XTINY, "2. Stand still during", Graphics.TEXT_JUSTIFY_CENTER);
-        dc.drawText(width / 2, startY + spacing + 15, Graphics.FONT_XTINY, "countdown", Graphics.TEXT_JUSTIFY_CENTER);
-        dc.drawText(width / 2, startY + (spacing * 2) + 15, Graphics.FONT_XTINY, "3. Perform CM jump", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, startY + spacing + 12, Graphics.FONT_XTINY, "countdown", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, startY + (spacing * 2) + 12, Graphics.FONT_XTINY, "3. Perform CM jump", Graphics.TEXT_JUSTIFY_CENTER);
+        
+        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(width / 2, startY + (spacing * 3) + 20, Graphics.FONT_XTINY, "Takes 3 jumps, saves", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, startY + (spacing * 3) + 34, Graphics.FONT_XTINY, "avg. of best two", Graphics.TEXT_JUSTIFY_CENTER);
         
         dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(width / 2, height - 40, Graphics.FONT_XTINY, "Press START to begin", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, height - 35, Graphics.FONT_XTINY, "Press START to begin", Graphics.TEXT_JUSTIFY_CENTER);
     }
 }
 

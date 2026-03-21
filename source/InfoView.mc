@@ -15,21 +15,23 @@ class InfoView extends WatchUi.View {
         var width = dc.getWidth();
         
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(width / 2, 25, Graphics.FONT_SMALL, "About Jump RSI", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, 25, Graphics.FONT_SMALL, "About JumpRSI", Graphics.TEXT_JUSTIFY_CENTER);
         
         var lines = [
-            "Track reactive strength",
-            "& neuromuscular fatigue.",
+            "Uses the RSImod metric,",
+            "scientifically proven to",
+            "measure neuromuscular",
+            "readiness and power.",
             "Higher RSI means better",
-            "recovery & readiness.",
-            "Use it daily to optimize",
-            "your training intensity."
+            "recovery & explosive force.",
+            "Use daily to optimize",
+            "training intensity."
         ];
         
-        var y = 65;
+        var y = 62;
         for (var i = 0; i < lines.size(); i++) {
             dc.drawText(width / 2, y, Graphics.FONT_XTINY, lines[i], Graphics.TEXT_JUSTIFY_CENTER);
-            y += 22;
+            y += 20;
         }
         
         UIUtils.drawPagination(dc, 3, 4);
