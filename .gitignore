@@ -1,0 +1,13 @@
+# Garmin Connect IQ
+bin/
+*.prg
+*.prg.debug.xml
+*.mir
+*.mcgen
+*.mbc
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

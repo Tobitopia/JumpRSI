@@ -13,7 +13,7 @@ class StorageService {
     function deleteLastJump() as Void {
         var history = Storage.getValue(KEY_JUMP_HISTORY) as Array?;
         if (history != null && history.size() > 0) {
-            history = history.slice(0, -1);
+            history = history.slice(0, history.size() - 1);
             Storage.setValue(KEY_JUMP_HISTORY, history);
             
             if (history.size() > 0) {
