@@ -8,7 +8,6 @@ class RsiGraphDelegate extends BaseDelegate {
     }
 
     function onSelect() as Boolean {
-        // Toggle feature removed as requested, now using separate views
         return true;
     }
 

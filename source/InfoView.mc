@@ -20,21 +20,22 @@ class InfoView extends WatchUi.View {
         var lines = [
             "Uses the RSImod metric,",
             "scientifically proven to",
-            "measure neuromuscular",
-            "readiness and power.",
-            "Higher RSI means better",
-            "recovery & explosive force.",
-            "Use daily to optimize",
-            "training intensity."
+            "measure power & fatigue.",
+            "",
+            "Full research, source",
+            "& scientific background",
+            "available on GitHub:",
+            "github.com/tobitopia/",
+            "JumpDiagnosticsGarmin"
         ];
         
         var y = 62;
         for (var i = 0; i < lines.size(); i++) {
             dc.drawText(width / 2, y, Graphics.FONT_XTINY, lines[i], Graphics.TEXT_JUSTIFY_CENTER);
-            y += 20;
+            y += 18;
         }
         
-        UIUtils.drawPagination(dc, 3, 4);
+        UIUtils.drawPagination(dc, 4, 5);
     }
 }
 
@@ -52,8 +53,8 @@ class InfoDelegate extends BaseDelegate {
     }
 
     function onPreviousPage() as Boolean {
-        var view = new HeightGraphView();
-        WatchUi.switchToView(view, new HeightGraphDelegate(), WatchUi.SLIDE_DOWN);
+        var view = new SupportView();
+        WatchUi.switchToView(view, new SupportDelegate(), WatchUi.SLIDE_DOWN);
         return true;
     }
 }

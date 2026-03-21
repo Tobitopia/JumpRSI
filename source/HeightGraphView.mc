@@ -28,7 +28,7 @@ class HeightGraphView extends WatchUi.View {
 
         if (_history.size() == 0) {
             dc.drawText(width / 2, height / 2, Graphics.FONT_TINY, "No History Yet", Graphics.TEXT_JUSTIFY_CENTER);
-            UIUtils.drawPagination(dc, 2, 4);
+            UIUtils.drawPagination(dc, 2, 5);
             return;
         }
 
@@ -66,7 +66,7 @@ class HeightGraphView extends WatchUi.View {
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
         dc.drawLine(padding, bottom, width - padding, bottom);
         
-        UIUtils.drawPagination(dc, 2, 4);
+        UIUtils.drawPagination(dc, 2, 5);
     }
 }
 
@@ -77,8 +77,8 @@ class HeightGraphDelegate extends BaseDelegate {
     }
 
     function onNextPage() as Boolean {
-        var view = new InfoView();
-        WatchUi.switchToView(view, new InfoDelegate(), WatchUi.SLIDE_UP);
+        var view = new SupportView();
+        WatchUi.switchToView(view, new SupportDelegate(), WatchUi.SLIDE_UP);
         return true;
     }
 

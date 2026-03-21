@@ -56,7 +56,7 @@ class jumpheightView extends WatchUi.View {
         
         // Use UIUtils from the module
         if (state == STATE_START) {
-            UIUtils.drawPagination(dc, 0, 4);
+            UIUtils.drawPagination(dc, 0, 5);
         }
     }
 }

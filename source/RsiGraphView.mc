@@ -28,7 +28,7 @@ class RsiGraphView extends WatchUi.View {
 
         if (_history.size() == 0) {
             dc.drawText(width / 2, height / 2, Graphics.FONT_TINY, "No History Yet", Graphics.TEXT_JUSTIFY_CENTER);
-            UIUtils.drawPagination(dc, 1, 4);
+            UIUtils.drawPagination(dc, 1, 5);
             return;
         }
 
@@ -66,6 +66,6 @@ class RsiGraphView extends WatchUi.View {
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
         dc.drawLine(padding, bottom, width - padding, bottom);
         
-        UIUtils.drawPagination(dc, 1, 4);
+        UIUtils.drawPagination(dc, 1, 5);
     }
 }

@@ -3,7 +3,6 @@
 
     <string id="prompt">Click the menu button</string>
 
-    <string id="menu_label_history">RSI History</string>
     <string id="menu_label_delete_last">Delete Last Jump</string>
     <string id="menu_label_clear_all">Clear History</string>
 </strings>
