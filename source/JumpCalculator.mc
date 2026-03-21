@@ -23,7 +23,7 @@ class JumpCalculator {
     private var _countdown as Number = 0;
 
     // Pro Filter & Calibration
-    private var _emaAlpha = 0.35f; 
+    private var _emaAlpha = 0.45f; // Increased from 0.35 for faster response
     private var _filteredMag = 1.0f;
     private var _lastMag = 1.0f;
     private var _restingG = 1.0f;
@@ -88,6 +88,7 @@ class JumpCalculator {
         }
 
         // EMA delay: tau = (1-alpha)/alpha * period
+        // This compensates for the "lag" introduced by the smoothing filter.
         var emaDelayMs = ((1.0f - _emaAlpha) / _emaAlpha) * dtFloat;
 
         switch (_state) {
@@ -105,7 +106,7 @@ class JumpCalculator {
                 break;
 
             case STATE_LAUNCHING:
-                var takeoffThreshold = 0.25f;
+                var takeoffThreshold = 0.40f; // Increased from 0.25 to catch takeoff earlier
                 if (_filteredMag < takeoffThreshold) { 
                     _state = STATE_IN_AIR;
                     
@@ -125,7 +126,7 @@ class JumpCalculator {
 
             case STATE_IN_AIR:
                 var timeInAirRaw = (timestamp - _takeOffTime).toFloat() / 1000.0;
-                var landingThreshold = 1.5f; // Refined from 1.8G for better initial contact detection
+                var landingThreshold = 1.7f; // Adjusted from 1.5 for a more realistic impact detection
                 
                 if (timeInAirRaw > 0.15 && _filteredMag > landingThreshold) {
                     _state = STATE_LANDED;
