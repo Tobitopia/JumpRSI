@@ -25,6 +25,7 @@ class JumpCalculator {
     // Pro Filter & Calibration
     private var _emaAlpha = 0.35f; 
     private var _filteredMag = 1.0f;
+    private var _lastMag = 1.0f;
     private var _restingG = 1.0f;
     private var _calibCount = 0;
 
@@ -35,6 +36,7 @@ class JumpCalculator {
         _state = STATE_PREPARING;
         _countdown = 3;
         _filteredMag = 1.0f;
+        _lastMag = 1.0f;
         _restingG = 0.0f;
         _calibCount = 0;
     }
@@ -68,17 +70,22 @@ class JumpCalculator {
 
         if (_state < STATE_IDLE || _state == STATE_LANDED) {
             _lastTimestamp = timestamp;
+            _lastMag = _filteredMag;
             return;
         }
 
         if (_lastTimestamp == 0L) {
             _lastTimestamp = timestamp;
+            _lastMag = _filteredMag;
             return;
         }
 
-        var dt = (timestamp - _lastTimestamp).toFloat() / 1000.0;
-        _lastTimestamp = timestamp;
-        if (dt <= 0 || dt > 0.5) { return; }
+        var dt = (timestamp - _lastTimestamp).toFloat(); // in ms
+        if (dt <= 0 || dt > 500) { 
+            _lastTimestamp = timestamp;
+            _lastMag = _filteredMag;
+            return; 
+        }
 
         switch (_state) {
             case STATE_IDLE:
@@ -95,23 +102,40 @@ class JumpCalculator {
                 break;
 
             case STATE_LAUNCHING:
-                if (_filteredMag < 0.25) { 
+                var takeoffThreshold = 0.25f;
+                if (_filteredMag < takeoffThreshold) { 
                     _state = STATE_IN_AIR;
-                    _takeOffTime = timestamp;
-                    _ttt = (timestamp - _startTime).toFloat() / 1000.0;
+                    
+                    // Linear interpolation for more precise takeoff time
+                    // Solve for t: lastMag + (t - lastTimestamp) * (filteredMag - lastMag) / dt = takeoffThreshold
+                    var ratio = (takeoffThreshold - _lastMag) / (_filteredMag - _lastMag);
+                    var interpolatedTime = _lastTimestamp.toFloat() + (dt * ratio);
+                    
+                    _takeOffTime = interpolatedTime.toLong();
+                    _ttt = (_takeOffTime - _startTime).toFloat() / 1000.0;
                 }
                 break;
 
             case STATE_IN_AIR:
-                var timeInAir = (timestamp - _takeOffTime).toFloat() / 1000.0;
-                if (timeInAir > 0.15 && _filteredMag > 1.8) {
+                var timeInAirRaw = (timestamp - _takeOffTime).toFloat() / 1000.0;
+                var landingThreshold = 1.6f; // Slightly more sensitive than original 1.8G
+                
+                if (timeInAirRaw > 0.15 && _filteredMag > landingThreshold) {
                     _state = STATE_LANDED;
-                    _flightTime = timeInAir;
+                    
+                    // Linear interpolation for more precise landing time
+                    var ratio = (landingThreshold - _lastMag) / (_filteredMag - _lastMag);
+                    var interpolatedLandingTime = _lastTimestamp.toFloat() + (dt * ratio);
+                    
+                    _flightTime = (interpolatedLandingTime - _takeOffTime.toFloat()) / 1000.0;
                     calculateResults();
-                    System.println("Jump: H=" + _height + " RSI=" + _rsiMod);
+                    System.println("Jump: H=" + _height + " RSI=" + _rsiMod + " FT=" + _flightTime);
                 }
                 break;
         }
+        
+        _lastTimestamp = timestamp;
+        _lastMag = _filteredMag;
     }
 
     private function calculateResults() as Void {
@@ -139,5 +163,6 @@ class JumpCalculator {
         _startTime = 0L;
         _lastTimestamp = 0L;
         _filteredMag = 1.0f;
+        _lastMag = 1.0f;
     }
 }
