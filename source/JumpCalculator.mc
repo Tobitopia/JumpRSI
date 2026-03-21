@@ -107,27 +107,37 @@ class JumpCalculator {
                     _state = STATE_IN_AIR;
                     
                     // Linear interpolation for more precise takeoff time
-                    // Solve for t: lastMag + (t - lastTimestamp) * (filteredMag - lastMag) / dt = takeoffThreshold
-                    var ratio = (takeoffThreshold - _lastMag) / (_filteredMag - _lastMag);
-                    var interpolatedTime = _lastTimestamp.toFloat() + (dt * ratio);
-                    
-                    _takeOffTime = interpolatedTime.toLong();
+                    var diff = _filteredMag - _lastMag;
+                    if (Math.abs(diff) > 0.0001f) {
+                        var ratio = (takeoffThreshold - _lastMag) / diff;
+                        var offset = (dt * ratio).toLong();
+                        _takeOffTime = _lastTimestamp + offset;
+                    } else {
+                        _takeOffTime = timestamp;
+                    }
                     _ttt = (_takeOffTime - _startTime).toFloat() / 1000.0;
                 }
                 break;
 
             case STATE_IN_AIR:
                 var timeInAirRaw = (timestamp - _takeOffTime).toFloat() / 1000.0;
-                var landingThreshold = 1.6f; // Slightly more sensitive than original 1.8G
+                var landingThreshold = 1.8f; // Reverted to 1.8G for stability
                 
                 if (timeInAirRaw > 0.15 && _filteredMag > landingThreshold) {
                     _state = STATE_LANDED;
                     
                     // Linear interpolation for more precise landing time
-                    var ratio = (landingThreshold - _lastMag) / (_filteredMag - _lastMag);
-                    var interpolatedLandingTime = _lastTimestamp.toFloat() + (dt * ratio);
+                    var diff = _filteredMag - _lastMag;
+                    var preciseLandingTimeMs;
+                    if (Math.abs(diff) > 0.0001f) {
+                        var ratio = (landingThreshold - _lastMag) / diff;
+                        var offset = (dt * ratio).toLong();
+                        preciseLandingTimeMs = (_lastTimestamp + offset).toFloat();
+                    } else {
+                        preciseLandingTimeMs = timestamp.toFloat();
+                    }
                     
-                    _flightTime = (interpolatedLandingTime - _takeOffTime.toFloat()) / 1000.0;
+                    _flightTime = (preciseLandingTimeMs - _takeOffTime.toFloat()) / 1000.0;
                     calculateResults();
                     System.println("Jump: H=" + _height + " RSI=" + _rsiMod + " FT=" + _flightTime);
                 }
