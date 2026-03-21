@@ -53,7 +53,7 @@ _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_SensorService_
         %tmp.14 = aputv %tmp.13 %tmp.11 %tmp.12;
         %tmp.16 = const :sampleRate;
         symbol [ sampleRate %tmp.16 19 17 27 const ];
-        %tmp.17 = 100;
+        %tmp.17 = 50;
         %tmp.18 = dup %tmp.14;
         %tmp.19 = aputv %tmp.18 %tmp.16 %tmp.17;
         %tmp.21 = const :includeTimestamps;
@@ -88,7 +88,7 @@ _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_SensorService_
         %tmp.35 = getm $.Toybox.System;
         symbol [ println %tmp.36 26 19 26 ];
         %tmp.36 = getv function %tmp.35 :println;
-        %tmp.37 = "Sens: 100Hz OK";
+        %tmp.37 = "Sens: 50Hz OK";
         invoke %tmp.35 %tmp.36(%tmp.37);
 _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_SensorService_mc_24_12_27_8_stop:
 _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_SensorService_mc_24_8_29_8_endTry:
@@ -259,7 +259,7 @@ _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_SensorService_
         [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_SensorService_mc_40_27_58_8_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_SensorService_mc_40_27_58_8_stop" ]
         %msPerSample.6 = local;
         symbol [ msPerSample %msPerSample.6 47 16 27 ];
-        %tmp.36 = 10;
+        %tmp.36 = 20;
         lputv %msPerSample.6 %tmp.36;
         symbol [ msPerSample %msPerSample.6 47 16 27 ];
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/SensorService.mc" 49 12 ]

@@ -27,10 +27,12 @@ class jumpheightDelegate extends WatchUi.BehaviorDelegate {
                 var avgRsi = app.session.getAverageBestTwoRsi();
                 var avgHeight = app.session.getAverageBestTwoHeight();
                 app.storageService.saveTodayJump(avgRsi, avgHeight);
-                app.session.reset(); // Prepare for next time
+                
+                // Switch to SummaryView instead of resetting immediately
+                WatchUi.switchToView(new SummaryView(avgRsi, avgHeight), new SummaryDelegate(), WatchUi.SLIDE_LEFT);
+            } else {
+                app.calculator.resetToStart();
             }
-            
-            app.calculator.resetToStart();
         }
         
         WatchUi.requestUpdate();
@@ -38,7 +40,8 @@ class jumpheightDelegate extends WatchUi.BehaviorDelegate {
     }
 
     function onNextPage() as Boolean {
-        WatchUi.switchToView(new RsiGraphView(), new RsiGraphDelegate(), WatchUi.SLIDE_UP);
+        var view = new RsiGraphView();
+        WatchUi.switchToView(view, new RsiGraphDelegate(view), WatchUi.SLIDE_UP);
         return true;
     }
 
@@ -48,6 +51,14 @@ class jumpheightDelegate extends WatchUi.BehaviorDelegate {
 
     function onBack() as Boolean {
         var app = Application.getApp() as jumpheightApp;
+        var state = app.calculator.getState();
+        
+        if (state == STATE_START) {
+            // Allow default back behavior (exit app) if at start
+            return false;
+        }
+        
+        // Otherwise reset to start
         app.session.reset();
         app.calculator.resetToStart();
         WatchUi.requestUpdate();

@@ -60,7 +60,7 @@ class JumpCalculator {
     var _countdown as Number = 0;
     [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 26; @position = 16; @symbol_vardef = [_emaAlpha,26,16,25]; ]
     private
-    var _emaAlpha = 0.35f;
+    var _emaAlpha = 0.45f;
     [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 27; @position = 16; @symbol_vardef = [_filteredMag,27,16,28]; ]
     private
     var _filteredMag = 1.0f;
@@ -73,772 +73,838 @@ class JumpCalculator {
     [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 30; @position = 16; @symbol_vardef = [_calibCount,30,16,27]; ]
     private
     var _calibCount = 0;
-    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 31; @position = 16; @symbol_vardef = [_emaDelayMs,31,16,27]; ]
-    private
-    var _emaDelayMs = 0.0f;
-    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 33; @symbol_functiondef = [initialize,33,13,23]; ]
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 32; @symbol_functiondef = [initialize,32,13,23]; ]
     function initialize() as Void {
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_33_26_37_4_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 36 8 ]
-        %tmp.1 = 1.0f;
-        symbol [ _emaAlpha %tmp.3 36 31 40 ];
-        %tmp.3 = getv ? :_emaAlpha;
-        %tmp.4 = sub %tmp.1 %tmp.3;
-        symbol [ _emaAlpha %tmp.6 36 44 53 ];
-        %tmp.6 = getv ? :_emaAlpha;
-        %tmp.7 = div %tmp.4 %tmp.6;
-        %tmp.8 = 10.0f;
-        %tmp.9 = mul %tmp.7 %tmp.8;
-        symbol [ _emaDelayMs ? 36 8 19 ];
-        putv self :_emaDelayMs %tmp.9;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_33_26_37_4_stop:
     }
-    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 39; @symbol_functiondef = [startCountdown,39,13,27]; ]
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 35; @symbol_functiondef = [startCountdown,35,13,27]; ]
     function startCountdown() as Void {
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_39_38_46_4_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 40 8 ]
-        symbol [ STATE_PREPARING %tmp.2 40 17 32 ];
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_35_38_42_4_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 36 8 ]
+        symbol [ STATE_PREPARING %tmp.2 36 17 32 ];
         %tmp.2 = getv ? :STATE_PREPARING;
-        symbol [ _state ? 40 8 14 ];
+        symbol [ _state ? 36 8 14 ];
         putv self :_state %tmp.2;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 41 8 ]
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 37 8 ]
         %tmp.3 = 3;
-        symbol [ _countdown ? 41 8 18 ];
+        symbol [ _countdown ? 37 8 18 ];
         putv self :_countdown %tmp.3;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 42 8 ]
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 38 8 ]
         %tmp.4 = 1.0f;
-        symbol [ _filteredMag ? 42 8 20 ];
+        symbol [ _filteredMag ? 38 8 20 ];
         putv self :_filteredMag %tmp.4;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 43 8 ]
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 39 8 ]
         %tmp.5 = 1.0f;
-        symbol [ _lastMag ? 43 8 16 ];
+        symbol [ _lastMag ? 39 8 16 ];
         putv self :_lastMag %tmp.5;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 44 8 ]
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 40 8 ]
         %tmp.6 = 0.0f;
-        symbol [ _restingG ? 44 8 17 ];
+        symbol [ _restingG ? 40 8 17 ];
         putv self :_restingG %tmp.6;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 45 8 ]
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 41 8 ]
         %tmp.7 = 0;
-        symbol [ _calibCount ? 45 8 19 ];
+        symbol [ _calibCount ? 41 8 19 ];
         putv self :_calibCount %tmp.7;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_39_38_46_4_stop:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_35_38_42_4_stop:
     }
-    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 48; @symbol_functiondef = [tickCountdown,48,13,26]; @symbol_return<0> = [Boolean,48,32,39]; ]
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 44; @symbol_functiondef = [tickCountdown,44,13,26]; @symbol_return<0> = [Boolean,44,32,39]; ]
     function tickCountdown() as Boolean {
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_48_40_60_4_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 49 8 ]
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_49_8_58_8_if_stmt:
-        symbol [ _state %tmp.2 49 12 18 ];
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_44_40_56_4_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 45 8 ]
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_45_8_54_8_if_stmt:
+        symbol [ _state %tmp.2 45 12 18 ];
         %tmp.2 = getv ? :_state;
-        symbol [ STATE_PREPARING %tmp.4 49 22 37 ];
+        symbol [ STATE_PREPARING %tmp.4 45 22 37 ];
         %tmp.4 = getv ? :STATE_PREPARING;
         %tmp.5 = eq %tmp.2 %tmp.4;
-        bf %tmp.5 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_49_8_58_8_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_49_8_58_8_if_true:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_49_39_58_8_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 50 12 ]
-        symbol [ _countdown %tmp.8 50 12 22 ];
+        bf %tmp.5 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_45_8_54_8_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_45_8_54_8_if_true:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_45_39_54_8_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 46 12 ]
+        symbol [ _countdown %tmp.8 46 12 22 ];
         %tmp.8 = getv ? :_countdown;
         %tmp.9 = sub %tmp.8 1;
-        symbol [ _countdown ? 50 12 22 ];
+        symbol [ _countdown ? 46 12 22 ];
         putv self :_countdown dup %tmp.9;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 51 12 ]
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_51_12_57_12_if_stmt:
-        symbol [ _countdown %tmp.11 51 16 26 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 47 12 ]
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_47_12_53_12_if_stmt:
+        symbol [ _countdown %tmp.11 47 16 26 ];
         %tmp.11 = getv ? :_countdown;
         %tmp.12 = 0;
         %tmp.13 = lt %tmp.11 %tmp.12;
-        bf %tmp.13 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_51_12_57_12_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_51_12_57_12_if_true:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_51_32_57_12_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 52 16 ]
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_52_16_53_41_if_stmt:
-        symbol [ _calibCount %tmp.15 52 20 31 ];
+        bf %tmp.13 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_47_12_53_12_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_47_12_53_12_if_true:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_47_32_53_12_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 48 16 ]
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_48_16_49_41_if_stmt:
+        symbol [ _calibCount %tmp.15 48 20 31 ];
         %tmp.15 = getv ? :_calibCount;
         %tmp.16 = 0;
         %tmp.17 = gt %tmp.15 %tmp.16;
-        bf %tmp.17 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_52_16_53_41_if_else_false;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_52_16_53_41_if_true:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_52_37_52_76_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 52 39 ]
-        symbol [ _restingG %tmp.19 52 51 60 ];
+        bf %tmp.17 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_48_16_49_41_if_else_false;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_48_16_49_41_if_true:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_48_37_48_76_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 48 39 ]
+        symbol [ _restingG %tmp.19 48 51 60 ];
         %tmp.19 = getv ? :_restingG;
-        symbol [ _calibCount %tmp.21 52 63 74 ];
+        symbol [ _calibCount %tmp.21 48 63 74 ];
         %tmp.21 = getv ? :_calibCount;
         %tmp.22 = div %tmp.19 %tmp.21;
-        symbol [ _restingG ? 52 39 48 ];
+        symbol [ _restingG ? 48 39 48 ];
         putv self :_restingG %tmp.22;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_52_37_52_76_stop:
-        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_52_16_53_41_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_52_16_53_41_if_else_false:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_53_21_53_41_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 53 23 ]
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_48_37_48_76_stop:
+        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_48_16_49_41_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_48_16_49_41_if_else_false:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_49_21_49_41_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 49 23 ]
         %tmp.23 = 1.0f;
-        symbol [ _restingG ? 53 23 32 ];
+        symbol [ _restingG ? 49 23 32 ];
         putv self :_restingG %tmp.23;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_53_21_53_41_stop:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_52_16_53_41_if_end:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 54 16 ]
-        symbol [ STATE_IDLE %tmp.25 54 25 35 ];
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_49_21_49_41_stop:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_48_16_49_41_if_end:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 50 16 ]
+        symbol [ STATE_IDLE %tmp.25 50 25 35 ];
         %tmp.25 = getv ? :STATE_IDLE;
-        symbol [ _state ? 54 16 22 ];
+        symbol [ _state ? 50 16 22 ];
         putv self :_state %tmp.25;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 55 16 ]
-        symbol [ System %tmp.26 55 16 22 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 51 16 ]
+        symbol [ System %tmp.26 51 16 22 ];
         %tmp.26 = getm $.Toybox.System;
-        symbol [ println %tmp.27 55 23 30 ];
+        symbol [ println %tmp.27 51 23 30 ];
         %tmp.27 = getv function %tmp.26 :println;
         %tmp.28 = "Calibrated G: ";
-        symbol [ _restingG %tmp.30 55 50 59 ];
+        symbol [ _restingG %tmp.30 51 50 59 ];
         %tmp.30 = getv ? :_restingG;
         %tmp.31 = add %tmp.28 %tmp.30;
         invoke %tmp.26 %tmp.27(%tmp.31);
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 56 16 ]
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 52 16 ]
         %tmp.32 = true;
         ret %tmp.32;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_51_32_57_12_stop:
-        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_51_12_57_12_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_51_12_57_12_if_end:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_49_39_58_8_stop:
-        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_49_8_58_8_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_49_8_58_8_if_end:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 59 8 ]
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_47_32_53_12_stop:
+        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_47_12_53_12_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_47_12_53_12_if_end:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_45_39_54_8_stop:
+        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_45_8_54_8_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_45_8_54_8_if_end:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 55 8 ]
         %tmp.33 = false;
         ret %tmp.33;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_48_40_60_4_stop:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_44_40_56_4_stop:
     }
-    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 62; @symbol_functiondef = [processSample,62,13,26]; @symbol_param<0> = [accelMagG,62,27,36]; @symbol_param<0>_type<0> = [Float,62,40,45]; @symbol_param<1> = [timestamp,62,47,56]; @symbol_param<1>_type<0> = [Long,62,60,64]; ]
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 58; @symbol_functiondef = [processSample,58,13,26]; @symbol_param<0> = [accelMagG,58,27,36]; @symbol_param<0>_type<0> = [Float,58,40,45]; @symbol_param<1> = [timestamp,58,47,56]; @symbol_param<1>_type<0> = [Long,58,60,64]; ]
     function processSample(accelMagG as Float, timestamp as Long) as Void {
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_62_74_147_4_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 63 8 ]
-        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_62_74_147_4_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_62_74_147_4_stop" ]
-        %prevFiltered.1 = local;
-        symbol [ prevFiltered %prevFiltered.1 63 12 24 ];
-        symbol [ _filteredMag %tmp.2 63 27 39 ];
-        %tmp.2 = getv ? :_filteredMag;
-        lputv %prevFiltered.1 %tmp.2;
-        symbol [ prevFiltered %prevFiltered.1 63 12 24 ];
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 64 8 ]
-        symbol [ _emaAlpha %tmp.4 64 24 33 ];
-        %tmp.4 = getv ? :_emaAlpha;
-        %tmp.5 = lgetv %accelMagG;
-        symbol [ accelMagG %tmp.5 64 36 45 ];
-        %tmp.6 = mul %tmp.4 %tmp.5;
-        %tmp.7 = 1.0f;
-        symbol [ _emaAlpha %tmp.9 64 58 67 ];
-        %tmp.9 = getv ? :_emaAlpha;
-        %tmp.10 = sub %tmp.7 %tmp.9;
-        symbol [ _filteredMag %tmp.12 64 71 83 ];
-        %tmp.12 = getv ? :_filteredMag;
-        %tmp.13 = mul %tmp.10 %tmp.12;
-        %tmp.14 = add %tmp.6 %tmp.13;
-        symbol [ _filteredMag ? 64 8 20 ];
-        putv self :_filteredMag %tmp.14;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 66 8 ]
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_66_8_74_8_if_stmt:
-        symbol [ _state %tmp.16 66 12 18 ];
-        %tmp.16 = getv ? :_state;
-        symbol [ STATE_PREPARING %tmp.18 66 22 37 ];
-        %tmp.18 = getv ? :STATE_PREPARING;
-        %tmp.19 = eq %tmp.16 %tmp.18;
-        bf %tmp.19 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_66_8_74_8_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_66_8_74_8_if_true:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_66_39_74_8_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 69 12 ]
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_69_12_72_12_if_stmt:
-        symbol [ _countdown %tmp.21 69 16 26 ];
-        %tmp.21 = getv ? :_countdown;
-        %tmp.22 = 2;
-        %tmp.23 = lte %tmp.21 %tmp.22;
-        bf %tmp.23 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_69_12_72_12_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_69_12_72_12_if_true:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_69_33_72_12_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 70 16 ]
-        symbol [ _restingG %tmp.24 70 16 25 ];
-        %tmp.24 = getv self :_restingG;
-        symbol [ _filteredMag %tmp.26 70 29 41 ];
-        %tmp.26 = getv ? :_filteredMag;
-        %tmp.27 = add %tmp.24 %tmp.26;
-        symbol [ _restingG ? 70 16 25 ];
-        putv self :_restingG dup %tmp.27;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 71 16 ]
-        symbol [ _calibCount %tmp.30 71 16 27 ];
-        %tmp.30 = getv ? :_calibCount;
-        %tmp.31 = add %tmp.30 1;
-        symbol [ _calibCount ? 71 16 27 ];
-        putv self :_calibCount dup %tmp.31;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_69_33_72_12_stop:
-        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_69_12_72_12_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_69_12_72_12_if_end:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_58_74_154_4_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 59 8 ]
+        symbol [ _emaAlpha %tmp.2 59 24 33 ];
+        %tmp.2 = getv ? :_emaAlpha;
+        %tmp.3 = lgetv %accelMagG;
+        symbol [ accelMagG %tmp.3 59 36 45 ];
+        %tmp.4 = mul %tmp.2 %tmp.3;
+        %tmp.5 = 1.0f;
+        symbol [ _emaAlpha %tmp.7 59 58 67 ];
+        %tmp.7 = getv ? :_emaAlpha;
+        %tmp.8 = sub %tmp.5 %tmp.7;
+        symbol [ _filteredMag %tmp.10 59 71 83 ];
+        %tmp.10 = getv ? :_filteredMag;
+        %tmp.11 = mul %tmp.8 %tmp.10;
+        %tmp.12 = add %tmp.4 %tmp.11;
+        symbol [ _filteredMag ? 59 8 20 ];
+        putv self :_filteredMag %tmp.12;
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 61 8 ]
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_61_8_69_8_if_stmt:
+        symbol [ _state %tmp.14 61 12 18 ];
+        %tmp.14 = getv ? :_state;
+        symbol [ STATE_PREPARING %tmp.16 61 22 37 ];
+        %tmp.16 = getv ? :STATE_PREPARING;
+        %tmp.17 = eq %tmp.14 %tmp.16;
+        bf %tmp.17 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_61_8_69_8_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_61_8_69_8_if_true:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_61_39_69_8_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 64 12 ]
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_64_12_67_12_if_stmt:
+        symbol [ _countdown %tmp.19 64 16 26 ];
+        %tmp.19 = getv ? :_countdown;
+        %tmp.20 = 2;
+        %tmp.21 = lte %tmp.19 %tmp.20;
+        bf %tmp.21 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_64_12_67_12_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_64_12_67_12_if_true:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_64_33_67_12_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 65 16 ]
+        symbol [ _restingG %tmp.22 65 16 25 ];
+        %tmp.22 = getv self :_restingG;
+        symbol [ _filteredMag %tmp.24 65 29 41 ];
+        %tmp.24 = getv ? :_filteredMag;
+        %tmp.25 = add %tmp.22 %tmp.24;
+        symbol [ _restingG ? 65 16 25 ];
+        putv self :_restingG dup %tmp.25;
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 66 16 ]
+        symbol [ _calibCount %tmp.28 66 16 27 ];
+        %tmp.28 = getv ? :_calibCount;
+        %tmp.29 = add %tmp.28 1;
+        symbol [ _calibCount ? 66 16 27 ];
+        putv self :_calibCount dup %tmp.29;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_64_33_67_12_stop:
+        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_64_12_67_12_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_64_12_67_12_if_end:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 68 12 ]
+        ret ?;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_61_39_69_8_stop:
+        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_61_8_69_8_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_61_8_69_8_if_end:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 71 8 ]
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_71_8_75_8_if_stmt:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_71_12_71_45_begin:
+        symbol [ _state %tmp.31 71 12 18 ];
+        %tmp.31 = getv ? :_state;
+        symbol [ STATE_IDLE %tmp.33 71 21 31 ];
+        %tmp.33 = getv ? :STATE_IDLE;
+        %tmp.34 = lt %tmp.31 %tmp.33;
+        bt %tmp.34 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_71_8_75_8_if_true;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_71_35_71_45_false:
+        symbol [ _state %tmp.36 71 35 41 ];
+        %tmp.36 = getv ? :_state;
+        symbol [ STATE_LANDED %tmp.38 71 45 57 ];
+        %tmp.38 = getv ? :STATE_LANDED;
+        %tmp.39 = eq %tmp.36 %tmp.38;
+        push %tmp.39;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_71_35_71_45_end:
+        %tmp.40 = phi [%tmp.34 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_71_12_71_45_begin] [%tmp.39 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_71_35_71_45_false] [%tmp.40 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_71_35_71_45_end];
+        bf %tmp.40 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_71_8_75_8_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_71_8_75_8_if_true:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_71_59_75_8_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 72 12 ]
+        %tmp.41 = lgetv %timestamp;
+        symbol [ timestamp %tmp.41 72 29 38 ];
+        symbol [ _lastTimestamp ? 72 12 26 ];
+        putv self :_lastTimestamp %tmp.41;
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 73 12 ]
+        symbol [ _filteredMag %tmp.43 73 23 35 ];
+        %tmp.43 = getv ? :_filteredMag;
+        symbol [ _lastMag ? 73 12 20 ];
+        putv self :_lastMag %tmp.43;
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 74 12 ]
         ret ?;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_66_39_74_8_stop:
-        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_66_8_74_8_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_66_8_74_8_if_end:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 76 8 ]
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_76_8_80_8_if_stmt:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_76_12_76_45_begin:
-        symbol [ _state %tmp.33 76 12 18 ];
-        %tmp.33 = getv ? :_state;
-        symbol [ STATE_IDLE %tmp.35 76 21 31 ];
-        %tmp.35 = getv ? :STATE_IDLE;
-        %tmp.36 = lt %tmp.33 %tmp.35;
-        bt %tmp.36 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_76_8_80_8_if_true;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_76_35_76_45_false:
-        symbol [ _state %tmp.38 76 35 41 ];
-        %tmp.38 = getv ? :_state;
-        symbol [ STATE_LANDED %tmp.40 76 45 57 ];
-        %tmp.40 = getv ? :STATE_LANDED;
-        %tmp.41 = eq %tmp.38 %tmp.40;
-        push %tmp.41;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_76_35_76_45_end:
-        %tmp.42 = phi [%tmp.36 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_76_12_76_45_begin] [%tmp.41 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_76_35_76_45_false] [%tmp.42 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_76_35_76_45_end];
-        bf %tmp.42 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_76_8_80_8_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_76_8_80_8_if_true:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_76_59_80_8_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 77 12 ]
-        %tmp.43 = lgetv %timestamp;
-        symbol [ timestamp %tmp.43 77 29 38 ];
-        symbol [ _lastTimestamp ? 77 12 26 ];
-        putv self :_lastTimestamp %tmp.43;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_71_59_75_8_stop:
+        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_71_8_75_8_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_71_8_75_8_if_end:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 77 8 ]
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_77_8_81_8_if_stmt:
+        symbol [ _lastTimestamp %tmp.45 77 12 26 ];
+        %tmp.45 = getv ? :_lastTimestamp;
+        %tmp.46 = 0L;
+        %tmp.47 = eq %tmp.45 %tmp.46;
+        bf %tmp.47 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_77_8_81_8_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_77_8_81_8_if_true:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_77_34_81_8_start:
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 78 12 ]
-        symbol [ _filteredMag %tmp.45 78 23 35 ];
-        %tmp.45 = getv ? :_filteredMag;
-        symbol [ _lastMag ? 78 12 20 ];
-        putv self :_lastMag %tmp.45;
+        %tmp.48 = lgetv %timestamp;
+        symbol [ timestamp %tmp.48 78 29 38 ];
+        symbol [ _lastTimestamp ? 78 12 26 ];
+        putv self :_lastTimestamp %tmp.48;
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 79 12 ]
+        symbol [ _filteredMag %tmp.50 79 23 35 ];
+        %tmp.50 = getv ? :_filteredMag;
+        symbol [ _lastMag ? 79 12 20 ];
+        putv self :_lastMag %tmp.50;
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 80 12 ]
         ret ?;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_76_59_80_8_stop:
-        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_76_8_80_8_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_76_8_80_8_if_end:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 82 8 ]
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_82_8_86_8_if_stmt:
-        symbol [ _lastTimestamp %tmp.47 82 12 26 ];
-        %tmp.47 = getv ? :_lastTimestamp;
-        %tmp.48 = 0L;
-        %tmp.49 = eq %tmp.47 %tmp.48;
-        bf %tmp.49 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_82_8_86_8_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_82_8_86_8_if_true:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_82_34_86_8_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 83 12 ]
-        %tmp.50 = lgetv %timestamp;
-        symbol [ timestamp %tmp.50 83 29 38 ];
-        symbol [ _lastTimestamp ? 83 12 26 ];
-        putv self :_lastTimestamp %tmp.50;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 84 12 ]
-        symbol [ _filteredMag %tmp.52 84 23 35 ];
-        %tmp.52 = getv ? :_filteredMag;
-        symbol [ _lastMag ? 84 12 20 ];
-        putv self :_lastMag %tmp.52;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_77_34_81_8_stop:
+        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_77_8_81_8_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_77_8_81_8_if_end:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 83 8 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_58_74_154_4_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_58_74_154_4_stop" ]
+        %dtFloat.1 = local;
+        symbol [ dtFloat %dtFloat.1 83 12 19 ];
+        %tmp.51 = lgetv %timestamp;
+        symbol [ timestamp %tmp.51 83 23 32 ];
+        symbol [ _lastTimestamp %tmp.53 83 35 49 ];
+        %tmp.53 = getv ? :_lastTimestamp;
+        %tmp.54 = sub %tmp.51 %tmp.53;
+        symbol [ toFloat %tmp.55 83 51 58 ];
+        %tmp.55 = getv function %tmp.54 :toFloat;
+        %tmp.56 = invoke %tmp.54 %tmp.55();
+        lputv %dtFloat.1 %tmp.56;
+        symbol [ dtFloat %dtFloat.1 83 12 19 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 84 8 ]
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_84_8_88_8_if_stmt:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_84_12_84_38_begin:
+        %tmp.57 = lgetv %dtFloat.1;
+        symbol [ dtFloat %tmp.57 84 12 19 ];
+        %tmp.58 = 0;
+        %tmp.59 = lte %tmp.57 %tmp.58;
+        bt %tmp.59 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_84_8_88_8_if_true;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_84_28_84_38_false:
+        %tmp.60 = lgetv %dtFloat.1;
+        symbol [ dtFloat %tmp.60 84 28 35 ];
+        %tmp.61 = 500;
+        %tmp.62 = gt %tmp.60 %tmp.61;
+        push %tmp.62;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_84_28_84_38_end:
+        %tmp.63 = phi [%tmp.59 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_84_12_84_38_begin] [%tmp.62 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_84_28_84_38_false] [%tmp.63 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_84_28_84_38_end];
+        bf %tmp.63 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_84_8_88_8_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_84_8_88_8_if_true:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_84_43_88_8_start:
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 85 12 ]
+        %tmp.64 = lgetv %timestamp;
+        symbol [ timestamp %tmp.64 85 29 38 ];
+        symbol [ _lastTimestamp ? 85 12 26 ];
+        putv self :_lastTimestamp %tmp.64;
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 86 12 ]
+        symbol [ _filteredMag %tmp.66 86 23 35 ];
+        %tmp.66 = getv ? :_filteredMag;
+        symbol [ _lastMag ? 86 12 20 ];
+        putv self :_lastMag %tmp.66;
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 87 12 ]
         ret ?;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_82_34_86_8_stop:
-        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_82_8_86_8_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_82_8_86_8_if_end:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 88 8 ]
-        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_62_74_147_4_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_62_74_147_4_stop" ]
-        %dt.2 = local;
-        symbol [ dt %dt.2 88 12 14 ];
-        %tmp.53 = lgetv %timestamp;
-        symbol [ timestamp %tmp.53 88 18 27 ];
-        symbol [ _lastTimestamp %tmp.55 88 30 44 ];
-        %tmp.55 = getv ? :_lastTimestamp;
-        %tmp.56 = sub %tmp.53 %tmp.55;
-        symbol [ toFloat %tmp.57 88 46 53 ];
-        %tmp.57 = getv function %tmp.56 :toFloat;
-        %tmp.58 = invoke %tmp.56 %tmp.57();
-        lputv %dt.2 %tmp.58;
-        symbol [ dt %dt.2 88 12 14 ];
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 89 8 ]
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_89_8_93_8_if_stmt:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_89_12_89_28_begin:
-        %tmp.59 = lgetv %dt.2;
-        symbol [ dt %tmp.59 89 12 14 ];
-        %tmp.60 = 0;
-        %tmp.61 = lte %tmp.59 %tmp.60;
-        bt %tmp.61 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_89_8_93_8_if_true;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_89_23_89_28_false:
-        %tmp.62 = lgetv %dt.2;
-        symbol [ dt %tmp.62 89 23 25 ];
-        %tmp.63 = 500;
-        %tmp.64 = gt %tmp.62 %tmp.63;
-        push %tmp.64;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_89_23_89_28_end:
-        %tmp.65 = phi [%tmp.61 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_89_12_89_28_begin] [%tmp.64 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_89_23_89_28_false] [%tmp.65 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_89_23_89_28_end];
-        bf %tmp.65 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_89_8_93_8_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_89_8_93_8_if_true:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_89_33_93_8_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 90 12 ]
-        %tmp.66 = lgetv %timestamp;
-        symbol [ timestamp %tmp.66 90 29 38 ];
-        symbol [ _lastTimestamp ? 90 12 26 ];
-        putv self :_lastTimestamp %tmp.66;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 91 12 ]
-        symbol [ _filteredMag %tmp.68 91 23 35 ];
-        %tmp.68 = getv ? :_filteredMag;
-        symbol [ _lastMag ? 91 12 20 ];
-        putv self :_lastMag %tmp.68;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 92 12 ]
-        ret ?;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_89_33_93_8_stop:
-        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_89_8_93_8_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_89_8_93_8_if_end:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 95 8 ]
-        symbol [ _state %tmp.70 95 16 22 ];
-        %tmp.70 = getv ? :_state;
-        push %tmp.70;
-        switch %tmp.70 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_95_8_143_8_switchStmtEnd;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_95_8_143_8_switchStmtBegin:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 96 12 ]
-        %tmp.71 = dup %tmp.70;
-        symbol [ STATE_IDLE %tmp.73 96 17 27 ];
-        %tmp.73 = getv ? :STATE_IDLE;
-        %tmp.74 = getv function %tmp.71 :equals;
-        %tmp.75 = invoke %tmp.71 %tmp.74 (%tmp.73);
-        bt %tmp.75 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_96_12_101_21_switchCase;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 103 12 ]
-        %tmp.76 = dup %tmp.70;
-        symbol [ STATE_UNWEIGHTING %tmp.78 103 17 34 ];
-        %tmp.78 = getv ? :STATE_UNWEIGHTING;
-        %tmp.79 = getv function %tmp.76 :equals;
-        %tmp.80 = invoke %tmp.76 %tmp.79 (%tmp.78);
-        bt %tmp.80 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_103_12_107_21_switchCase;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 109 12 ]
-        %tmp.81 = dup %tmp.70;
-        symbol [ STATE_LAUNCHING %tmp.83 109 17 32 ];
-        %tmp.83 = getv ? :STATE_LAUNCHING;
-        %tmp.84 = getv function %tmp.81 :equals;
-        %tmp.85 = invoke %tmp.81 %tmp.84 (%tmp.83);
-        bt %tmp.85 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_109_12_122_21_switchCase;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 124 12 ]
-        %tmp.86 = dup %tmp.70;
-        symbol [ STATE_IN_AIR %tmp.88 124 17 29 ];
-        %tmp.88 = getv ? :STATE_IN_AIR;
-        %tmp.89 = getv function %tmp.86 :equals;
-        %tmp.90 = invoke %tmp.86 %tmp.89 (%tmp.88);
-        bt %tmp.90 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_124_12_142_21_switchCase;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_95_8_143_8_switchStmtDefault:
-        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_95_8_143_8_defaultCodeBegin;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_96_12_101_21_switchCase:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 97 16 ]
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_97_16_100_16_if_stmt:
-        symbol [ _filteredMag %tmp.92 97 20 32 ];
-        %tmp.92 = getv ? :_filteredMag;
-        symbol [ _restingG %tmp.94 97 36 45 ];
-        %tmp.94 = getv ? :_restingG;
-        %tmp.95 = 0.85;
-        %tmp.96 = mul %tmp.94 %tmp.95;
-        %tmp.97 = lt %tmp.92 %tmp.96;
-        bf %tmp.97 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_97_16_100_16_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_97_16_100_16_if_true:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_97_55_100_16_start:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_84_43_88_8_stop:
+        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_84_8_88_8_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_84_8_88_8_if_end:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 92 8 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_58_74_154_4_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_58_74_154_4_stop" ]
+        %emaDelayMs.2 = local;
+        symbol [ emaDelayMs %emaDelayMs.2 92 12 22 ];
+        %tmp.67 = 1.0f;
+        symbol [ _emaAlpha %tmp.69 92 34 43 ];
+        %tmp.69 = getv ? :_emaAlpha;
+        %tmp.70 = sub %tmp.67 %tmp.69;
+        symbol [ _emaAlpha %tmp.72 92 47 56 ];
+        %tmp.72 = getv ? :_emaAlpha;
+        %tmp.73 = div %tmp.70 %tmp.72;
+        %tmp.74 = lgetv %dtFloat.1;
+        symbol [ dtFloat %tmp.74 92 60 67 ];
+        %tmp.75 = mul %tmp.73 %tmp.74;
+        lputv %emaDelayMs.2 %tmp.75;
+        symbol [ emaDelayMs %emaDelayMs.2 92 12 22 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 94 8 ]
+        symbol [ _state %tmp.77 94 16 22 ];
+        %tmp.77 = getv ? :_state;
+        push %tmp.77;
+        switch %tmp.77 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_94_8_150_8_switchStmtEnd;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_94_8_150_8_switchStmtBegin:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 95 12 ]
+        %tmp.78 = dup %tmp.77;
+        symbol [ STATE_IDLE %tmp.80 95 17 27 ];
+        %tmp.80 = getv ? :STATE_IDLE;
+        %tmp.81 = getv function %tmp.78 :equals;
+        %tmp.82 = invoke %tmp.78 %tmp.81 (%tmp.80);
+        bt %tmp.82 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_95_12_100_21_switchCase;
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 102 12 ]
+        %tmp.83 = dup %tmp.77;
+        symbol [ STATE_UNWEIGHTING %tmp.85 102 17 34 ];
+        %tmp.85 = getv ? :STATE_UNWEIGHTING;
+        %tmp.86 = getv function %tmp.83 :equals;
+        %tmp.87 = invoke %tmp.83 %tmp.86 (%tmp.85);
+        bt %tmp.87 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_102_12_106_21_switchCase;
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 108 12 ]
+        %tmp.88 = dup %tmp.77;
+        symbol [ STATE_LAUNCHING %tmp.90 108 17 32 ];
+        %tmp.90 = getv ? :STATE_LAUNCHING;
+        %tmp.91 = getv function %tmp.88 :equals;
+        %tmp.92 = invoke %tmp.88 %tmp.91 (%tmp.90);
+        bt %tmp.92 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_108_12_125_21_switchCase;
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 127 12 ]
+        %tmp.93 = dup %tmp.77;
+        symbol [ STATE_IN_AIR %tmp.95 127 17 29 ];
+        %tmp.95 = getv ? :STATE_IN_AIR;
+        %tmp.96 = getv function %tmp.93 :equals;
+        %tmp.97 = invoke %tmp.93 %tmp.96 (%tmp.95);
+        bt %tmp.97 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_127_12_149_21_switchCase;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_94_8_150_8_switchStmtDefault:
+        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_94_8_150_8_defaultCodeBegin;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_95_12_100_21_switchCase:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 96 16 ]
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_96_16_99_16_if_stmt:
+        symbol [ _filteredMag %tmp.99 96 20 32 ];
+        %tmp.99 = getv ? :_filteredMag;
+        symbol [ _restingG %tmp.101 96 36 45 ];
+        %tmp.101 = getv ? :_restingG;
+        %tmp.102 = 0.85;
+        %tmp.103 = mul %tmp.101 %tmp.102;
+        %tmp.104 = lt %tmp.99 %tmp.103;
+        bf %tmp.104 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_96_16_99_16_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_96_16_99_16_if_true:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_96_55_99_16_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 97 20 ]
+        symbol [ STATE_UNWEIGHTING %tmp.106 97 29 46 ];
+        %tmp.106 = getv ? :STATE_UNWEIGHTING;
+        symbol [ _state ? 97 20 26 ];
+        putv self :_state %tmp.106;
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 98 20 ]
-        symbol [ STATE_UNWEIGHTING %tmp.99 98 29 46 ];
-        %tmp.99 = getv ? :STATE_UNWEIGHTING;
-        symbol [ _state ? 98 20 26 ];
-        putv self :_state %tmp.99;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 99 20 ]
-        %tmp.100 = lgetv %timestamp;
-        symbol [ timestamp %tmp.100 99 33 42 ];
-        symbol [ _startTime ? 99 20 30 ];
-        putv self :_startTime %tmp.100;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_97_55_100_16_stop:
-        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_97_16_100_16_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_97_16_100_16_if_end:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 101 16 ]
-        goto break @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_95_8_143_8_switchStmtEnd;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_103_12_107_21_switchCase:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 104 16 ]
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_104_16_106_16_if_stmt:
-        symbol [ _filteredMag %tmp.102 104 20 32 ];
-        %tmp.102 = getv ? :_filteredMag;
-        symbol [ _restingG %tmp.104 104 36 45 ];
-        %tmp.104 = getv ? :_restingG;
-        %tmp.105 = 1.25;
-        %tmp.106 = mul %tmp.104 %tmp.105;
-        %tmp.107 = gt %tmp.102 %tmp.106;
-        bf %tmp.107 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_104_16_106_16_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_104_16_106_16_if_true:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_104_55_106_16_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 105 20 ]
-        symbol [ STATE_LAUNCHING %tmp.109 105 29 44 ];
-        %tmp.109 = getv ? :STATE_LAUNCHING;
-        symbol [ _state ? 105 20 26 ];
-        putv self :_state %tmp.109;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_104_55_106_16_stop:
-        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_104_16_106_16_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_104_16_106_16_if_end:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 107 16 ]
-        goto break @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_95_8_143_8_switchStmtEnd;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_109_12_122_21_switchCase:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 110 16 ]
-        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_95_8_143_8_switchStmtBegin" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_95_8_143_8_switchStmtEnd" ]
-        %takeoffThreshold.3 = local;
-        symbol [ takeoffThreshold %takeoffThreshold.3 110 20 36 ];
-        %tmp.110 = 0.25f;
-        lputv %takeoffThreshold.3 %tmp.110;
-        symbol [ takeoffThreshold %takeoffThreshold.3 110 20 36 ];
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 111 16 ]
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_111_16_121_16_if_stmt:
-        symbol [ _filteredMag %tmp.112 111 20 32 ];
-        %tmp.112 = getv ? :_filteredMag;
-        %tmp.113 = lgetv %takeoffThreshold.3;
-        symbol [ takeoffThreshold %tmp.113 111 35 51 ];
-        %tmp.114 = lt %tmp.112 %tmp.113;
-        bf %tmp.114 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_111_16_121_16_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_111_16_121_16_if_true:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_111_53_121_16_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 112 20 ]
-        symbol [ STATE_IN_AIR %tmp.116 112 29 41 ];
-        %tmp.116 = getv ? :STATE_IN_AIR;
-        symbol [ _state ? 112 20 26 ];
+        %tmp.107 = lgetv %timestamp;
+        symbol [ timestamp %tmp.107 98 33 42 ];
+        symbol [ _startTime ? 98 20 30 ];
+        putv self :_startTime %tmp.107;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_96_55_99_16_stop:
+        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_96_16_99_16_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_96_16_99_16_if_end:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 100 16 ]
+        goto break @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_94_8_150_8_switchStmtEnd;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_102_12_106_21_switchCase:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 103 16 ]
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_103_16_105_16_if_stmt:
+        symbol [ _filteredMag %tmp.109 103 20 32 ];
+        %tmp.109 = getv ? :_filteredMag;
+        symbol [ _restingG %tmp.111 103 36 45 ];
+        %tmp.111 = getv ? :_restingG;
+        %tmp.112 = 1.25;
+        %tmp.113 = mul %tmp.111 %tmp.112;
+        %tmp.114 = gt %tmp.109 %tmp.113;
+        bf %tmp.114 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_103_16_105_16_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_103_16_105_16_if_true:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_103_55_105_16_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 104 20 ]
+        symbol [ STATE_LAUNCHING %tmp.116 104 29 44 ];
+        %tmp.116 = getv ? :STATE_LAUNCHING;
+        symbol [ _state ? 104 20 26 ];
         putv self :_state %tmp.116;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_103_55_105_16_stop:
+        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_103_16_105_16_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_103_16_105_16_if_end:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 106 16 ]
+        goto break @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_94_8_150_8_switchStmtEnd;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_108_12_125_21_switchCase:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 109 16 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_94_8_150_8_switchStmtBegin" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_94_8_150_8_switchStmtEnd" ]
+        %takeoffThreshold.3 = local;
+        symbol [ takeoffThreshold %takeoffThreshold.3 109 20 36 ];
+        %tmp.117 = 0.40f;
+        lputv %takeoffThreshold.3 %tmp.117;
+        symbol [ takeoffThreshold %takeoffThreshold.3 109 20 36 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 110 16 ]
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_110_16_124_16_if_stmt:
+        symbol [ _filteredMag %tmp.119 110 20 32 ];
+        %tmp.119 = getv ? :_filteredMag;
+        %tmp.120 = lgetv %takeoffThreshold.3;
+        symbol [ takeoffThreshold %tmp.120 110 35 51 ];
+        %tmp.121 = lt %tmp.119 %tmp.120;
+        bf %tmp.121 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_110_16_124_16_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_110_16_124_16_if_true:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_110_53_124_16_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 111 20 ]
+        symbol [ STATE_IN_AIR %tmp.123 111 29 41 ];
+        %tmp.123 = getv ? :STATE_IN_AIR;
+        symbol [ _state ? 111 20 26 ];
+        putv self :_state %tmp.123;
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 114 20 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_110_53_124_16_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_110_53_124_16_stop" ]
+        %diff.4 = local;
+        symbol [ diff %diff.4 114 24 28 ];
+        symbol [ _filteredMag %tmp.125 114 31 43 ];
+        %tmp.125 = getv ? :_filteredMag;
+        symbol [ _lastMag %tmp.127 114 46 54 ];
+        %tmp.127 = getv ? :_lastMag;
+        %tmp.128 = sub %tmp.125 %tmp.127;
+        lputv %diff.4 %tmp.128;
+        symbol [ diff %diff.4 114 24 28 ];
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 115 20 ]
-        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_111_53_121_16_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_111_53_121_16_stop" ]
-        %ratio.4 = local;
-        symbol [ ratio %ratio.4 115 24 29 ];
-        %tmp.117 = lgetv %takeoffThreshold.3;
-        symbol [ takeoffThreshold %tmp.117 115 33 49 ];
-        symbol [ _lastMag %tmp.119 115 52 60 ];
-        %tmp.119 = getv ? :_lastMag;
-        %tmp.120 = sub %tmp.117 %tmp.119;
-        symbol [ _filteredMag %tmp.122 115 65 77 ];
-        %tmp.122 = getv ? :_filteredMag;
-        symbol [ _lastMag %tmp.124 115 80 88 ];
-        %tmp.124 = getv ? :_lastMag;
-        %tmp.125 = sub %tmp.122 %tmp.124;
-        %tmp.126 = div %tmp.120 %tmp.125;
-        lputv %ratio.4 %tmp.126;
-        symbol [ ratio %ratio.4 115 24 29 ];
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_110_53_124_16_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_110_53_124_16_stop" ]
+        %offsetLong.5 = local;
+        symbol [ offsetLong %offsetLong.5 115 24 34 ];
+        %tmp.129 = 0L;
+        lputv %offsetLong.5 %tmp.129;
+        symbol [ offsetLong %offsetLong.5 115 24 34 ];
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 116 20 ]
-        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_111_53_121_16_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_111_53_121_16_stop" ]
-        %interpolatedTime.5 = local;
-        symbol [ interpolatedTime %interpolatedTime.5 116 24 40 ];
-        symbol [ _lastTimestamp %tmp.128 116 43 57 ];
-        %tmp.128 = getv ? :_lastTimestamp;
-        symbol [ toFloat %tmp.129 116 58 65 ];
-        %tmp.129 = getv function %tmp.128 :toFloat;
-        %tmp.130 = invoke %tmp.128 %tmp.129();
-        %tmp.131 = lgetv %dt.2;
-        symbol [ dt %tmp.131 116 71 73 ];
-        %tmp.132 = lgetv %ratio.4;
-        symbol [ ratio %tmp.132 116 76 81 ];
-        %tmp.133 = mul %tmp.131 %tmp.132;
-        %tmp.134 = add %tmp.130 %tmp.133;
-        lputv %interpolatedTime.5 %tmp.134;
-        symbol [ interpolatedTime %interpolatedTime.5 116 24 40 ];
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 119 20 ]
-        %tmp.135 = lgetv %interpolatedTime.5;
-        symbol [ interpolatedTime %tmp.135 119 36 52 ];
-        symbol [ _emaDelayMs %tmp.137 119 55 66 ];
-        %tmp.137 = getv ? :_emaDelayMs;
-        %tmp.138 = sub %tmp.135 %tmp.137;
-        symbol [ toLong %tmp.139 119 68 74 ];
-        %tmp.139 = getv function %tmp.138 :toLong;
-        %tmp.140 = invoke %tmp.138 %tmp.139();
-        symbol [ _takeOffTime ? 119 20 32 ];
-        putv self :_takeOffTime %tmp.140;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 120 20 ]
-        symbol [ _takeOffTime %tmp.142 120 28 40 ];
-        %tmp.142 = getv ? :_takeOffTime;
-        symbol [ _startTime %tmp.144 120 43 53 ];
-        %tmp.144 = getv ? :_startTime;
-        %tmp.145 = sub %tmp.142 %tmp.144;
-        symbol [ toFloat %tmp.146 120 55 62 ];
-        %tmp.146 = getv function %tmp.145 :toFloat;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_116_20_119_20_if_stmt:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_116_24_116_50_begin:
+        %tmp.130 = lgetv %diff.4;
+        symbol [ diff %tmp.130 116 24 28 ];
+        %tmp.131 = 0.0001f;
+        %tmp.132 = gt %tmp.130 %tmp.131;
+        bt %tmp.132 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_116_20_119_20_if_true;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_116_42_116_50_false:
+        %tmp.133 = lgetv %diff.4;
+        symbol [ diff %tmp.133 116 42 46 ];
+        %tmp.134 = -0.0001f;
+        %tmp.135 = lt %tmp.133 %tmp.134;
+        push %tmp.135;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_116_42_116_50_end:
+        %tmp.136 = phi [%tmp.132 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_116_24_116_50_begin] [%tmp.135 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_116_42_116_50_false] [%tmp.136 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_116_42_116_50_end];
+        bf %tmp.136 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_116_20_119_20_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_116_20_119_20_if_true:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_116_59_119_20_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 117 24 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_116_59_119_20_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_116_59_119_20_stop" ]
+        %ratio.6 = local;
+        symbol [ ratio %ratio.6 117 28 33 ];
+        %tmp.137 = lgetv %takeoffThreshold.3;
+        symbol [ takeoffThreshold %tmp.137 117 37 53 ];
+        symbol [ _lastMag %tmp.139 117 56 64 ];
+        %tmp.139 = getv ? :_lastMag;
+        %tmp.140 = sub %tmp.137 %tmp.139;
+        %tmp.141 = lgetv %diff.4;
+        symbol [ diff %tmp.141 117 68 72 ];
+        %tmp.142 = div %tmp.140 %tmp.141;
+        lputv %ratio.6 %tmp.142;
+        symbol [ ratio %ratio.6 117 28 33 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 118 24 ]
+        %tmp.143 = lgetv %dtFloat.1;
+        symbol [ dtFloat %tmp.143 118 38 45 ];
+        %tmp.144 = lgetv %ratio.6;
+        symbol [ ratio %tmp.144 118 48 53 ];
+        %tmp.145 = mul %tmp.143 %tmp.144;
+        symbol [ toLong %tmp.146 118 55 61 ];
+        %tmp.146 = getv function %tmp.145 :toLong;
         %tmp.147 = invoke %tmp.145 %tmp.146();
-        %tmp.148 = 1000.0;
-        %tmp.149 = div %tmp.147 %tmp.148;
-        symbol [ _ttt ? 120 20 24 ];
-        putv self :_ttt %tmp.149;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_111_53_121_16_stop:
-        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_111_16_121_16_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_111_16_121_16_if_end:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 122 16 ]
-        goto break @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_95_8_143_8_switchStmtEnd;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_124_12_142_21_switchCase:
+        lputv %offsetLong.5 %tmp.147;
+        symbol [ offsetLong %offsetLong.5 118 24 34 ];
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_116_59_119_20_stop:
+        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_116_20_119_20_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_116_20_119_20_if_end:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 122 20 ]
+        symbol [ _lastTimestamp %tmp.149 122 35 49 ];
+        %tmp.149 = getv ? :_lastTimestamp;
+        %tmp.150 = lgetv %offsetLong.5;
+        symbol [ offsetLong %tmp.150 122 52 62 ];
+        %tmp.151 = add %tmp.149 %tmp.150;
+        %tmp.152 = lgetv %emaDelayMs.2;
+        symbol [ emaDelayMs %tmp.152 122 65 75 ];
+        symbol [ toLong %tmp.153 122 76 82 ];
+        %tmp.153 = getv function %tmp.152 :toLong;
+        %tmp.154 = invoke %tmp.152 %tmp.153();
+        %tmp.155 = sub %tmp.151 %tmp.154;
+        symbol [ _takeOffTime ? 122 20 32 ];
+        putv self :_takeOffTime %tmp.155;
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 123 20 ]
+        symbol [ _takeOffTime %tmp.157 123 28 40 ];
+        %tmp.157 = getv ? :_takeOffTime;
+        symbol [ _startTime %tmp.159 123 43 53 ];
+        %tmp.159 = getv ? :_startTime;
+        %tmp.160 = sub %tmp.157 %tmp.159;
+        symbol [ toFloat %tmp.161 123 55 62 ];
+        %tmp.161 = getv function %tmp.160 :toFloat;
+        %tmp.162 = invoke %tmp.160 %tmp.161();
+        %tmp.163 = 1000.0;
+        %tmp.164 = div %tmp.162 %tmp.163;
+        symbol [ _ttt ? 123 20 24 ];
+        putv self :_ttt %tmp.164;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_110_53_124_16_stop:
+        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_110_16_124_16_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_110_16_124_16_if_end:
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 125 16 ]
-        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_95_8_143_8_switchStmtBegin" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_95_8_143_8_switchStmtEnd" ]
-        %timeInAirRaw.6 = local;
-        symbol [ timeInAirRaw %timeInAirRaw.6 125 20 32 ];
-        %tmp.150 = lgetv %timestamp;
-        symbol [ timestamp %tmp.150 125 36 45 ];
-        symbol [ _takeOffTime %tmp.152 125 48 60 ];
-        %tmp.152 = getv ? :_takeOffTime;
-        %tmp.153 = sub %tmp.150 %tmp.152;
-        symbol [ toFloat %tmp.154 125 62 69 ];
-        %tmp.154 = getv function %tmp.153 :toFloat;
-        %tmp.155 = invoke %tmp.153 %tmp.154();
-        %tmp.156 = 1000.0;
-        %tmp.157 = div %tmp.155 %tmp.156;
-        lputv %timeInAirRaw.6 %tmp.157;
-        symbol [ timeInAirRaw %timeInAirRaw.6 125 20 32 ];
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 126 16 ]
-        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_95_8_143_8_switchStmtBegin" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_95_8_143_8_switchStmtEnd" ]
-        %landingThreshold.7 = local;
-        symbol [ landingThreshold %landingThreshold.7 126 20 36 ];
-        %tmp.158 = 1.4f;
-        lputv %landingThreshold.7 %tmp.158;
-        symbol [ landingThreshold %landingThreshold.7 126 20 36 ];
+        goto break @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_94_8_150_8_switchStmtEnd;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_127_12_149_21_switchCase:
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 128 16 ]
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_128_16_141_16_if_stmt:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_128_20_128_58_begin:
-        %tmp.159 = lgetv %timeInAirRaw.6;
-        symbol [ timeInAirRaw %tmp.159 128 20 32 ];
-        %tmp.160 = 0.15;
-        %tmp.161 = gt %tmp.159 %tmp.160;
-        bf %tmp.161 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_128_16_141_16_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_128_43_128_58_true:
-        symbol [ _filteredMag %tmp.163 128 43 55 ];
-        %tmp.163 = getv ? :_filteredMag;
-        %tmp.164 = lgetv %landingThreshold.7;
-        symbol [ landingThreshold %tmp.164 128 58 74 ];
-        %tmp.165 = gt %tmp.163 %tmp.164;
-        push %tmp.165;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_128_43_128_58_end:
-        %tmp.166 = phi [%tmp.161 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_128_20_128_58_begin] [%tmp.165 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_128_43_128_58_true] [%tmp.166 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_128_43_128_58_end];
-        bf %tmp.166 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_128_16_141_16_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_128_16_141_16_if_true:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_128_76_141_16_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 129 20 ]
-        symbol [ STATE_LANDED %tmp.168 129 29 41 ];
-        %tmp.168 = getv ? :STATE_LANDED;
-        symbol [ _state ? 129 20 26 ];
-        putv self :_state %tmp.168;
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_94_8_150_8_switchStmtBegin" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_94_8_150_8_switchStmtEnd" ]
+        %timeInAirRaw.7 = local;
+        symbol [ timeInAirRaw %timeInAirRaw.7 128 20 32 ];
+        %tmp.165 = lgetv %timestamp;
+        symbol [ timestamp %tmp.165 128 36 45 ];
+        symbol [ _takeOffTime %tmp.167 128 48 60 ];
+        %tmp.167 = getv ? :_takeOffTime;
+        %tmp.168 = sub %tmp.165 %tmp.167;
+        symbol [ toFloat %tmp.169 128 62 69 ];
+        %tmp.169 = getv function %tmp.168 :toFloat;
+        %tmp.170 = invoke %tmp.168 %tmp.169();
+        %tmp.171 = 1000.0;
+        %tmp.172 = div %tmp.170 %tmp.171;
+        lputv %timeInAirRaw.7 %tmp.172;
+        symbol [ timeInAirRaw %timeInAirRaw.7 128 20 32 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 129 16 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_94_8_150_8_switchStmtBegin" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_94_8_150_8_switchStmtEnd" ]
+        %landingThreshold.8 = local;
+        symbol [ landingThreshold %landingThreshold.8 129 20 36 ];
+        %tmp.173 = 1.7f;
+        lputv %landingThreshold.8 %tmp.173;
+        symbol [ landingThreshold %landingThreshold.8 129 20 36 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 131 16 ]
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_131_16_148_16_if_stmt:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_131_20_131_58_begin:
+        %tmp.174 = lgetv %timeInAirRaw.7;
+        symbol [ timeInAirRaw %tmp.174 131 20 32 ];
+        %tmp.175 = 0.15;
+        %tmp.176 = gt %tmp.174 %tmp.175;
+        bf %tmp.176 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_131_16_148_16_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_131_43_131_58_true:
+        symbol [ _filteredMag %tmp.178 131 43 55 ];
+        %tmp.178 = getv ? :_filteredMag;
+        %tmp.179 = lgetv %landingThreshold.8;
+        symbol [ landingThreshold %tmp.179 131 58 74 ];
+        %tmp.180 = gt %tmp.178 %tmp.179;
+        push %tmp.180;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_131_43_131_58_end:
+        %tmp.181 = phi [%tmp.176 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_131_20_131_58_begin] [%tmp.180 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_131_43_131_58_true] [%tmp.181 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_131_43_131_58_end];
+        bf %tmp.181 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_131_16_148_16_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_131_16_148_16_if_true:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_131_76_148_16_start:
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 132 20 ]
-        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_128_76_141_16_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_128_76_141_16_stop" ]
-        %ratio.8 = local;
-        symbol [ ratio %ratio.8 132 24 29 ];
-        %tmp.169 = lgetv %landingThreshold.7;
-        symbol [ landingThreshold %tmp.169 132 33 49 ];
-        symbol [ _lastMag %tmp.171 132 52 60 ];
-        %tmp.171 = getv ? :_lastMag;
-        %tmp.172 = sub %tmp.169 %tmp.171;
-        symbol [ _filteredMag %tmp.174 132 65 77 ];
-        %tmp.174 = getv ? :_filteredMag;
-        symbol [ _lastMag %tmp.176 132 80 88 ];
-        %tmp.176 = getv ? :_lastMag;
-        %tmp.177 = sub %tmp.174 %tmp.176;
-        %tmp.178 = div %tmp.172 %tmp.177;
-        lputv %ratio.8 %tmp.178;
-        symbol [ ratio %ratio.8 132 24 29 ];
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 133 20 ]
-        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_128_76_141_16_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_128_76_141_16_stop" ]
-        %interpolatedLandingTime.9 = local;
-        symbol [ interpolatedLandingTime %interpolatedLandingTime.9 133 24 47 ];
-        symbol [ _lastTimestamp %tmp.180 133 50 64 ];
-        %tmp.180 = getv ? :_lastTimestamp;
-        symbol [ toFloat %tmp.181 133 65 72 ];
-        %tmp.181 = getv function %tmp.180 :toFloat;
-        %tmp.182 = invoke %tmp.180 %tmp.181();
-        %tmp.183 = lgetv %dt.2;
-        symbol [ dt %tmp.183 133 78 80 ];
-        %tmp.184 = lgetv %ratio.8;
-        symbol [ ratio %tmp.184 133 83 88 ];
-        %tmp.185 = mul %tmp.183 %tmp.184;
-        %tmp.186 = add %tmp.182 %tmp.185;
-        lputv %interpolatedLandingTime.9 %tmp.186;
-        symbol [ interpolatedLandingTime %interpolatedLandingTime.9 133 24 47 ];
+        symbol [ STATE_LANDED %tmp.183 132 29 41 ];
+        %tmp.183 = getv ? :STATE_LANDED;
+        symbol [ _state ? 132 20 26 ];
+        putv self :_state %tmp.183;
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 135 20 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_131_76_148_16_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_131_76_148_16_stop" ]
+        %diff.9 = local;
+        symbol [ diff %diff.9 135 24 28 ];
+        symbol [ _filteredMag %tmp.185 135 31 43 ];
+        %tmp.185 = getv ? :_filteredMag;
+        symbol [ _lastMag %tmp.187 135 46 54 ];
+        %tmp.187 = getv ? :_lastMag;
+        %tmp.188 = sub %tmp.185 %tmp.187;
+        lputv %diff.9 %tmp.188;
+        symbol [ diff %diff.9 135 24 28 ];
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 136 20 ]
-        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_128_76_141_16_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_128_76_141_16_stop" ]
-        %preciseLandingTime.10 = local;
-        symbol [ preciseLandingTime %preciseLandingTime.10 136 24 42 ];
-        %tmp.187 = lgetv %interpolatedLandingTime.9;
-        symbol [ interpolatedLandingTime %tmp.187 136 45 68 ];
-        symbol [ _emaDelayMs %tmp.189 136 71 82 ];
-        %tmp.189 = getv ? :_emaDelayMs;
-        %tmp.190 = sub %tmp.187 %tmp.189;
-        lputv %preciseLandingTime.10 %tmp.190;
-        symbol [ preciseLandingTime %preciseLandingTime.10 136 24 42 ];
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 138 20 ]
-        %tmp.191 = lgetv %preciseLandingTime.10;
-        symbol [ preciseLandingTime %tmp.191 138 35 53 ];
-        symbol [ _takeOffTime %tmp.193 138 56 68 ];
-        %tmp.193 = getv ? :_takeOffTime;
-        symbol [ toFloat %tmp.194 138 69 76 ];
-        %tmp.194 = getv function %tmp.193 :toFloat;
-        %tmp.195 = invoke %tmp.193 %tmp.194();
-        %tmp.196 = sub %tmp.191 %tmp.195;
-        %tmp.197 = 1000.0;
-        %tmp.198 = div %tmp.196 %tmp.197;
-        symbol [ _flightTime ? 138 20 31 ];
-        putv self :_flightTime %tmp.198;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 139 20 ]
-        %tmp.199 = self;
-        symbol [ calculateResults %tmp.200 139 20 36 ];
-        %tmp.200 = getv function %tmp.199 :calculateResults;
-        invoke %tmp.199 %tmp.200();
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 140 20 ]
-        symbol [ System %tmp.201 140 20 26 ];
-        %tmp.201 = getm $.Toybox.System;
-        symbol [ println %tmp.202 140 27 34 ];
-        %tmp.202 = getv function %tmp.201 :println;
-        %tmp.203 = "Jump: H=";
-        symbol [ _height %tmp.205 140 48 55 ];
-        %tmp.205 = getv ? :_height;
-        %tmp.206 = add %tmp.203 %tmp.205;
-        %tmp.207 = " RSI=";
-        %tmp.208 = add %tmp.206 %tmp.207;
-        symbol [ _rsiMod %tmp.210 140 68 75 ];
-        %tmp.210 = getv ? :_rsiMod;
-        %tmp.211 = add %tmp.208 %tmp.210;
-        %tmp.212 = " FT=";
-        %tmp.213 = add %tmp.211 %tmp.212;
-        symbol [ _flightTime %tmp.215 140 87 98 ];
-        %tmp.215 = getv ? :_flightTime;
-        %tmp.216 = add %tmp.213 %tmp.215;
-        invoke %tmp.201 %tmp.202(%tmp.216);
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_128_76_141_16_stop:
-        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_128_16_141_16_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_128_16_141_16_if_end:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 142 16 ]
-        goto break @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_95_8_143_8_switchStmtEnd;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_95_8_143_8_defaultCodeBegin:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_95_8_143_8_switchStmtEnd:
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_131_76_148_16_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_131_76_148_16_stop" ]
+        %landingOffsetLong.10 = local;
+        symbol [ landingOffsetLong %landingOffsetLong.10 136 24 41 ];
+        %tmp.189 = 0L;
+        lputv %landingOffsetLong.10 %tmp.189;
+        symbol [ landingOffsetLong %landingOffsetLong.10 136 24 41 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 137 20 ]
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_137_20_140_20_if_stmt:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_137_24_137_50_begin:
+        %tmp.190 = lgetv %diff.9;
+        symbol [ diff %tmp.190 137 24 28 ];
+        %tmp.191 = 0.0001f;
+        %tmp.192 = gt %tmp.190 %tmp.191;
+        bt %tmp.192 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_137_20_140_20_if_true;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_137_42_137_50_false:
+        %tmp.193 = lgetv %diff.9;
+        symbol [ diff %tmp.193 137 42 46 ];
+        %tmp.194 = -0.0001f;
+        %tmp.195 = lt %tmp.193 %tmp.194;
+        push %tmp.195;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_137_42_137_50_end:
+        %tmp.196 = phi [%tmp.192 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_137_24_137_50_begin] [%tmp.195 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_137_42_137_50_false] [%tmp.196 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_137_42_137_50_end];
+        bf %tmp.196 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_137_20_140_20_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_137_20_140_20_if_true:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_137_59_140_20_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 138 24 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_137_59_140_20_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_137_59_140_20_stop" ]
+        %ratio.11 = local;
+        symbol [ ratio %ratio.11 138 28 33 ];
+        %tmp.197 = lgetv %landingThreshold.8;
+        symbol [ landingThreshold %tmp.197 138 37 53 ];
+        symbol [ _lastMag %tmp.199 138 56 64 ];
+        %tmp.199 = getv ? :_lastMag;
+        %tmp.200 = sub %tmp.197 %tmp.199;
+        %tmp.201 = lgetv %diff.9;
+        symbol [ diff %tmp.201 138 68 72 ];
+        %tmp.202 = div %tmp.200 %tmp.201;
+        lputv %ratio.11 %tmp.202;
+        symbol [ ratio %ratio.11 138 28 33 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 139 24 ]
+        %tmp.203 = lgetv %dtFloat.1;
+        symbol [ dtFloat %tmp.203 139 45 52 ];
+        %tmp.204 = lgetv %ratio.11;
+        symbol [ ratio %tmp.204 139 55 60 ];
+        %tmp.205 = mul %tmp.203 %tmp.204;
+        symbol [ toLong %tmp.206 139 62 68 ];
+        %tmp.206 = getv function %tmp.205 :toLong;
+        %tmp.207 = invoke %tmp.205 %tmp.206();
+        lputv %landingOffsetLong.10 %tmp.207;
+        symbol [ landingOffsetLong %landingOffsetLong.10 139 24 41 ];
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_137_59_140_20_stop:
+        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_137_20_140_20_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_137_20_140_20_if_end:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 143 20 ]
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_131_76_148_16_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_131_76_148_16_stop" ]
+        %actualLandingTimeLong.12 = local;
+        symbol [ actualLandingTimeLong %actualLandingTimeLong.12 143 24 45 ];
+        symbol [ _lastTimestamp %tmp.209 143 48 62 ];
+        %tmp.209 = getv ? :_lastTimestamp;
+        %tmp.210 = lgetv %landingOffsetLong.10;
+        symbol [ landingOffsetLong %tmp.210 143 65 82 ];
+        %tmp.211 = add %tmp.209 %tmp.210;
+        %tmp.212 = lgetv %emaDelayMs.2;
+        symbol [ emaDelayMs %tmp.212 143 85 95 ];
+        symbol [ toLong %tmp.213 143 96 102 ];
+        %tmp.213 = getv function %tmp.212 :toLong;
+        %tmp.214 = invoke %tmp.212 %tmp.213();
+        %tmp.215 = sub %tmp.211 %tmp.214;
+        lputv %actualLandingTimeLong.12 %tmp.215;
+        symbol [ actualLandingTimeLong %actualLandingTimeLong.12 143 24 45 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 145 20 ]
+        %tmp.216 = lgetv %actualLandingTimeLong.12;
+        symbol [ actualLandingTimeLong %tmp.216 145 35 56 ];
+        symbol [ _takeOffTime %tmp.218 145 59 71 ];
+        %tmp.218 = getv ? :_takeOffTime;
+        %tmp.219 = sub %tmp.216 %tmp.218;
+        symbol [ toFloat %tmp.220 145 73 80 ];
+        %tmp.220 = getv function %tmp.219 :toFloat;
+        %tmp.221 = invoke %tmp.219 %tmp.220();
+        %tmp.222 = 1000.0;
+        %tmp.223 = div %tmp.221 %tmp.222;
+        symbol [ _flightTime ? 145 20 31 ];
+        putv self :_flightTime %tmp.223;
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 146 20 ]
+        %tmp.224 = self;
+        symbol [ calculateResults %tmp.225 146 20 36 ];
+        %tmp.225 = getv function %tmp.224 :calculateResults;
+        invoke %tmp.224 %tmp.225();
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 147 20 ]
+        symbol [ System %tmp.226 147 20 26 ];
+        %tmp.226 = getm $.Toybox.System;
+        symbol [ println %tmp.227 147 27 34 ];
+        %tmp.227 = getv function %tmp.226 :println;
+        %tmp.228 = "Jump: H=";
+        symbol [ _height %tmp.230 147 48 55 ];
+        %tmp.230 = getv ? :_height;
+        %tmp.231 = add %tmp.228 %tmp.230;
+        %tmp.232 = " RSI=";
+        %tmp.233 = add %tmp.231 %tmp.232;
+        symbol [ _rsiMod %tmp.235 147 68 75 ];
+        %tmp.235 = getv ? :_rsiMod;
+        %tmp.236 = add %tmp.233 %tmp.235;
+        %tmp.237 = " FT=";
+        %tmp.238 = add %tmp.236 %tmp.237;
+        symbol [ _flightTime %tmp.240 147 87 98 ];
+        %tmp.240 = getv ? :_flightTime;
+        %tmp.241 = add %tmp.238 %tmp.240;
+        invoke %tmp.226 %tmp.227(%tmp.241);
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_131_76_148_16_stop:
+        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_131_16_148_16_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_131_16_148_16_if_end:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 149 16 ]
+        goto break @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_94_8_150_8_switchStmtEnd;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_94_8_150_8_defaultCodeBegin:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_94_8_150_8_switchStmtEnd:
         pop;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 145 8 ]
-        %tmp.217 = lgetv %timestamp;
-        symbol [ timestamp %tmp.217 145 25 34 ];
-        symbol [ _lastTimestamp ? 145 8 22 ];
-        putv self :_lastTimestamp %tmp.217;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 146 8 ]
-        symbol [ _filteredMag %tmp.219 146 19 31 ];
-        %tmp.219 = getv ? :_filteredMag;
-        symbol [ _lastMag ? 146 8 16 ];
-        putv self :_lastMag %tmp.219;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_62_74_147_4_stop:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 152 8 ]
+        %tmp.242 = lgetv %timestamp;
+        symbol [ timestamp %tmp.242 152 25 34 ];
+        symbol [ _lastTimestamp ? 152 8 22 ];
+        putv self :_lastTimestamp %tmp.242;
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 153 8 ]
+        symbol [ _filteredMag %tmp.244 153 19 31 ];
+        %tmp.244 = getv ? :_filteredMag;
+        symbol [ _lastMag ? 153 8 16 ];
+        putv self :_lastMag %tmp.244;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_58_74_154_4_stop:
     }
-    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 149; @symbol_functiondef = [calculateResults,149,21,37]; ]
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 156; @symbol_functiondef = [calculateResults,156,21,37]; ]
     private
     function calculateResults() as Void {
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_149_48_156_4_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 150 8 ]
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_156_48_163_4_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 157 8 ]
         %tmp.1 = 9.80665;
-        symbol [ _flightTime %tmp.3 150 29 40 ];
+        symbol [ _flightTime %tmp.3 157 29 40 ];
         %tmp.3 = getv ? :_flightTime;
         %tmp.4 = mul %tmp.1 %tmp.3;
-        symbol [ _flightTime %tmp.6 150 43 54 ];
+        symbol [ _flightTime %tmp.6 157 43 54 ];
         %tmp.6 = getv ? :_flightTime;
         %tmp.7 = mul %tmp.4 %tmp.6;
         %tmp.8 = 8.0;
         %tmp.9 = div %tmp.7 %tmp.8;
-        symbol [ _height ? 150 8 15 ];
+        symbol [ _height ? 157 8 15 ];
         putv self :_height %tmp.9;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 151 8 ]
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_151_8_155_8_if_stmt:
-        symbol [ _ttt %tmp.11 151 12 16 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 158 8 ]
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_158_8_162_8_if_stmt:
+        symbol [ _ttt %tmp.11 158 12 16 ];
         %tmp.11 = getv ? :_ttt;
         %tmp.12 = 0;
         %tmp.13 = gt %tmp.11 %tmp.12;
-        bf %tmp.13 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_151_8_155_8_if_else_false;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_151_8_155_8_if_true:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_151_22_153_8_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 152 12 ]
-        symbol [ _height %tmp.15 152 22 29 ];
+        bf %tmp.13 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_158_8_162_8_if_else_false;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_158_8_162_8_if_true:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_158_22_160_8_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 159 12 ]
+        symbol [ _height %tmp.15 159 22 29 ];
         %tmp.15 = getv ? :_height;
-        symbol [ _ttt %tmp.17 152 32 36 ];
+        symbol [ _ttt %tmp.17 159 32 36 ];
         %tmp.17 = getv ? :_ttt;
         %tmp.18 = div %tmp.15 %tmp.17;
-        symbol [ _rsiMod ? 152 12 19 ];
+        symbol [ _rsiMod ? 159 12 19 ];
         putv self :_rsiMod %tmp.18;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_151_22_153_8_stop:
-        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_151_8_155_8_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_151_8_155_8_if_else_false:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_153_15_155_8_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 154 12 ]
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_158_22_160_8_stop:
+        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_158_8_162_8_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_158_8_162_8_if_else_false:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_160_15_162_8_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 161 12 ]
         %tmp.19 = 0.0;
-        symbol [ _rsiMod ? 154 12 19 ];
+        symbol [ _rsiMod ? 161 12 19 ];
         putv self :_rsiMod %tmp.19;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_153_15_155_8_stop:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_151_8_155_8_if_end:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_149_48_156_4_stop:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_160_15_162_8_stop:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_158_8_162_8_if_end:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_156_48_163_4_stop:
     }
-    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 158; @symbol_functiondef = [getState,158,13,21]; ]
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 165; @symbol_functiondef = [getState,165,13,21]; ]
     function getState() {
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_158_24_158_41_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 158 26 ]
-        symbol [ _state %tmp.2 158 33 39 ];
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_165_24_165_41_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 165 26 ]
+        symbol [ _state %tmp.2 165 33 39 ];
         %tmp.2 = getv ? :_state;
         ret %tmp.2;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_158_24_158_41_stop:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_165_24_165_41_stop:
     }
-    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 159; @symbol_functiondef = [getHeight,159,13,22]; @symbol_return<0> = [Float,159,28,33]; ]
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 166; @symbol_functiondef = [getHeight,166,13,22]; @symbol_return<0> = [Float,166,28,33]; ]
     function getHeight() as Float {
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_159_34_159_52_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 159 36 ]
-        symbol [ _height %tmp.2 159 43 50 ];
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_166_34_166_52_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 166 36 ]
+        symbol [ _height %tmp.2 166 43 50 ];
         %tmp.2 = getv ? :_height;
         ret %tmp.2;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_159_34_159_52_stop:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_166_34_166_52_stop:
     }
-    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 160; @symbol_functiondef = [getRsiMod,160,13,22]; @symbol_return<0> = [Float,160,28,33]; ]
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 167; @symbol_functiondef = [getRsiMod,167,13,22]; @symbol_return<0> = [Float,167,28,33]; ]
     function getRsiMod() as Float {
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_160_34_160_52_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 160 36 ]
-        symbol [ _rsiMod %tmp.2 160 43 50 ];
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_167_34_167_52_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 167 36 ]
+        symbol [ _rsiMod %tmp.2 167 43 50 ];
         %tmp.2 = getv ? :_rsiMod;
         ret %tmp.2;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_160_34_160_52_stop:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_167_34_167_52_stop:
     }
-    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 161; @symbol_functiondef = [getTtt,161,13,19]; @symbol_return<0> = [Float,161,25,30]; ]
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 168; @symbol_functiondef = [getTtt,168,13,19]; @symbol_return<0> = [Float,168,25,30]; ]
     function getTtt() as Float {
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_161_31_161_46_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 161 33 ]
-        symbol [ _ttt %tmp.2 161 40 44 ];
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_168_31_168_46_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 168 33 ]
+        symbol [ _ttt %tmp.2 168 40 44 ];
         %tmp.2 = getv ? :_ttt;
         ret %tmp.2;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_161_31_161_46_stop:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_168_31_168_46_stop:
     }
-    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 162; @symbol_functiondef = [getCountdown,162,13,25]; @symbol_return<0> = [Number,162,31,37]; ]
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 169; @symbol_functiondef = [getCountdown,169,13,25]; @symbol_return<0> = [Number,169,31,37]; ]
     function getCountdown() as Number {
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_162_38_162_59_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 162 40 ]
-        symbol [ _countdown %tmp.2 162 47 57 ];
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_169_38_169_59_start:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 169 40 ]
+        symbol [ _countdown %tmp.2 169 47 57 ];
         %tmp.2 = getv ? :_countdown;
         ret %tmp.2;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_162_38_162_59_stop:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_169_38_169_59_stop:
     }
-    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 164; @symbol_functiondef = [resetToStart,164,13,25]; ]
+    [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 171; @symbol_functiondef = [resetToStart,171,13,25]; ]
     function resetToStart() as Void {
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_164_36_174_4_start:
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 165 8 ]
-        symbol [ STATE_START %tmp.2 165 17 28 ];
-        %tmp.2 = getv ? :STATE_START;
-        symbol [ _state ? 165 8 14 ];
-        putv self :_state %tmp.2;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 166 8 ]
-        %tmp.3 = 0.0;
-        symbol [ _height ? 166 8 15 ];
-        putv self :_height %tmp.3;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 167 8 ]
-        %tmp.4 = 0.0;
-        symbol [ _rsiMod ? 167 8 15 ];
-        putv self :_rsiMod %tmp.4;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 168 8 ]
-        %tmp.5 = 0L;
-        symbol [ _takeOffTime ? 168 8 20 ];
-        putv self :_takeOffTime %tmp.5;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 169 8 ]
-        %tmp.6 = 0.0;
-        symbol [ _flightTime ? 169 8 19 ];
-        putv self :_flightTime %tmp.6;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 170 8 ]
-        %tmp.7 = 0.0;
-        symbol [ _ttt ? 170 8 12 ];
-        putv self :_ttt %tmp.7;
-[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 171 8 ]
-        %tmp.8 = 0L;
-        symbol [ _startTime ? 171 8 18 ];
-        putv self :_startTime %tmp.8;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_171_36_182_4_start:
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 172 8 ]
-        %tmp.9 = 0L;
-        symbol [ _lastTimestamp ? 172 8 22 ];
-        putv self :_lastTimestamp %tmp.9;
+        symbol [ STATE_START %tmp.2 172 17 28 ];
+        %tmp.2 = getv ? :STATE_START;
+        symbol [ _state ? 172 8 14 ];
+        putv self :_state %tmp.2;
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 173 8 ]
+        %tmp.3 = 0.0;
+        symbol [ _height ? 173 8 15 ];
+        putv self :_height %tmp.3;
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 174 8 ]
+        %tmp.4 = 0.0;
+        symbol [ _rsiMod ? 174 8 15 ];
+        putv self :_rsiMod %tmp.4;
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 175 8 ]
+        %tmp.5 = 0L;
+        symbol [ _takeOffTime ? 175 8 20 ];
+        putv self :_takeOffTime %tmp.5;
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 176 8 ]
+        %tmp.6 = 0.0;
+        symbol [ _flightTime ? 176 8 19 ];
+        putv self :_flightTime %tmp.6;
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 177 8 ]
+        %tmp.7 = 0.0;
+        symbol [ _ttt ? 177 8 12 ];
+        putv self :_ttt %tmp.7;
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 178 8 ]
+        %tmp.8 = 0L;
+        symbol [ _startTime ? 178 8 18 ];
+        putv self :_startTime %tmp.8;
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 179 8 ]
+        %tmp.9 = 0L;
+        symbol [ _lastTimestamp ? 179 8 22 ];
+        putv self :_lastTimestamp %tmp.9;
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 180 8 ]
         %tmp.10 = 1.0f;
-        symbol [ _filteredMag ? 173 8 20 ];
+        symbol [ _filteredMag ? 180 8 20 ];
         putv self :_filteredMag %tmp.10;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_164_36_174_4_stop:
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc" 181 8 ]
+        %tmp.11 = 1.0f;
+        symbol [ _lastMag ? 181 8 16 ];
+        putv self :_lastMag %tmp.11;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_JumpCalculator_mc_171_36_182_4_stop:
     }
 }
 [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/JumpCalculator.mc"; @line = 1; ]

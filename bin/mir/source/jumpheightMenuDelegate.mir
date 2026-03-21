@@ -28,37 +28,47 @@ _home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightMenu
     }
     [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightMenuDelegate.mc"; @line = 12; @symbol_functiondef = [onMenuItem,12,13,23]; @symbol_param<0> = [item,12,24,28]; @symbol_param<0>_type<0> = [Symbol,12,32,38]; ]
     function onMenuItem(item as Symbol) as Void {
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightMenuDelegate_mc_12_48_16_4_start:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightMenuDelegate_mc_12_48_17_4_start:
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightMenuDelegate.mc" 13 8 ]
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightMenuDelegate_mc_13_8_15_8_if_stmt:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightMenuDelegate_mc_13_8_16_8_if_stmt:
         %tmp.1 = lgetv %item;
         symbol [ item %tmp.1 13 12 16 ];
         %tmp.3 = const :item_history;
         symbol [ item_history %tmp.3 13 21 33 const ];
         %tmp.4 = eq %tmp.1 %tmp.3;
-        bf %tmp.4 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightMenuDelegate_mc_13_8_15_8_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightMenuDelegate_mc_13_8_15_8_if_true:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightMenuDelegate_mc_13_35_15_8_start:
+        bf %tmp.4 @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightMenuDelegate_mc_13_8_16_8_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightMenuDelegate_mc_13_8_16_8_if_true:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightMenuDelegate_mc_13_35_16_8_start:
 [ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightMenuDelegate.mc" 14 12 ]
-        symbol [ WatchUi %tmp.5 14 12 19 ];
-        %tmp.5 = getm $.Toybox.WatchUi;
-        symbol [ pushView %tmp.6 14 20 28 ];
-        %tmp.6 = getv function %tmp.5 :pushView;
-        symbol [ RsiGraphView %tmp.10 14 33 45 ];
-        %tmp.10 = getv ? :RsiGraphView;
-        %tmp.7 = newc %tmp.10 ();
-        symbol [ RsiGraphDelegate %tmp.14 14 53 69 ];
-        %tmp.14 = getv ? :RsiGraphDelegate;
-        %tmp.11 = newc %tmp.14 ();
-        symbol [ WatchUi %tmp.15 14 73 80 ];
-        %tmp.15 = getm $.Toybox.WatchUi;
-        symbol [ SLIDE_LEFT %tmp.16 14 81 91 ];
-        %tmp.16 = getv %tmp.15 :SLIDE_LEFT;
-        invoke %tmp.5 %tmp.6(%tmp.7, %tmp.11, %tmp.16);
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightMenuDelegate_mc_13_35_15_8_stop:
-        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightMenuDelegate_mc_13_8_15_8_if_end;
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightMenuDelegate_mc_13_8_15_8_if_end:
-_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightMenuDelegate_mc_12_48_16_4_stop:
+        [ "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightMenuDelegate_mc_13_35_16_8_start" "_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightMenuDelegate_mc_13_35_16_8_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 14 16 20 ];
+        symbol [ RsiGraphView %tmp.8 14 27 39 ];
+        %tmp.8 = getv ? :RsiGraphView;
+        %tmp.5 = newc %tmp.8 ();
+        lputv %view.1 %tmp.5;
+        symbol [ view %view.1 14 16 20 ];
+[ "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightMenuDelegate.mc" 15 12 ]
+        symbol [ WatchUi %tmp.9 15 12 19 ];
+        %tmp.9 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.10 15 20 28 ];
+        %tmp.10 = getv function %tmp.9 :pushView;
+        %tmp.11 = lgetv %view.1;
+        symbol [ view %tmp.11 15 29 33 ];
+        symbol [ RsiGraphDelegate %tmp.15 15 39 55 ];
+        %tmp.15 = getv ? :RsiGraphDelegate;
+        %tmp.16 = lgetv %view.1;
+        symbol [ view %tmp.16 15 56 60 ];
+        %tmp.12 = newc %tmp.15 (%tmp.16);
+        symbol [ WatchUi %tmp.17 15 63 70 ];
+        %tmp.17 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_LEFT %tmp.18 15 71 81 ];
+        %tmp.18 = getv %tmp.17 :SLIDE_LEFT;
+        invoke %tmp.9 %tmp.10(%tmp.11, %tmp.12, %tmp.18);
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightMenuDelegate_mc_13_35_16_8_stop:
+        goto @_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightMenuDelegate_mc_13_8_16_8_if_end;
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightMenuDelegate_mc_13_8_16_8_if_end:
+_home_tobu_Documents_work_JumpDiagnosticsGarmin_jumpheight_source_jumpheightMenuDelegate_mc_12_48_17_4_stop:
     }
 }
 [ @file = "/home/tobu/Documents/work/JumpDiagnosticsGarmin/jumpheight/source/jumpheightMenuDelegate.mc"; @line = 1; ]

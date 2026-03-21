@@ -5,11 +5,17 @@ import Toybox.Application;
 
 class RsiGraphView extends WatchUi.View {
     private var _history as Array<Dictionary>;
+    private var _showRsi as Boolean = true;
 
     function initialize() {
         View.initialize();
         var app = Application.getApp() as jumpheightApp;
         _history = app.storageService.getHistory();
+    }
+
+    function toggleMode() as Void {
+        _showRsi = !_showRsi;
+        WatchUi.requestUpdate();
     }
 
     function onUpdate(dc as Dc) as Void {
@@ -24,7 +30,8 @@ class RsiGraphView extends WatchUi.View {
         var bottom = (height / 2) + (graphHeight / 2);
 
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(width / 2, padding, Graphics.FONT_SMALL, "RSI History (Last 7)", Graphics.TEXT_JUSTIFY_CENTER);
+        var title = _showRsi ? "RSI History" : "Height History";
+        dc.drawText(width / 2, 20, Graphics.FONT_SMALL, title, Graphics.TEXT_JUSTIFY_CENTER);
 
         if (_history.size() == 0) {
             dc.drawText(width / 2, height / 2, Graphics.FONT_TINY, "No History Yet", Graphics.TEXT_JUSTIFY_CENTER);
@@ -39,11 +46,12 @@ class RsiGraphView extends WatchUi.View {
         var count = _history.size() - startIdx;
         
         // Find Max for scaling
-        var maxRsi = 0.1; // avoid div by zero
+        var maxVal = 0.01;
+        var field = _showRsi ? "rsi" : "height";
         for (var i = startIdx; i < _history.size(); i++) {
-            var val = _history[i]["rsi"] as Float;
-            if (val > maxRsi) {
-                maxRsi = val;
+            var val = _history[i][field] as Float;
+            if (val > maxVal) {
+                maxVal = val;
             }
         }
 
@@ -51,24 +59,25 @@ class RsiGraphView extends WatchUi.View {
         var spacing = 4;
 
         for (var i = 0; i < count; i++) {
-            var val = _history[startIdx + i]["rsi"] as Float;
-            var barHeight = (val / maxRsi) * graphHeight;
+            var val = _history[startIdx + i][field] as Float;
+            var barHeight = (val / maxVal) * graphHeight;
             
             var x = padding + (i * barWidth) + spacing;
             var y = bottom - barHeight;
             
-            // Color based on value vs average/baseline? 
-            // For now just blue
-            dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_TRANSPARENT);
+            var color = _showRsi ? Graphics.COLOR_BLUE : Graphics.COLOR_ORANGE;
+            dc.setColor(color, Graphics.COLOR_TRANSPARENT);
             dc.fillRectangle(x, y, barWidth - (2 * spacing), barHeight);
             
             // Label value
             dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(x + (barWidth / 2), bottom + 5, Graphics.FONT_XTINY, val.format("%.1f"), Graphics.TEXT_JUSTIFY_CENTER);
+            var format = _showRsi ? "%.1f" : "%.2f";
+            dc.drawText(x + (barWidth / 2), bottom + 5, Graphics.FONT_XTINY, val.format(format), Graphics.TEXT_JUSTIFY_CENTER);
         }
 
-        // Draw baseline axis
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
         dc.drawLine(padding, bottom, width - padding, bottom);
+        
+        dc.drawText(width / 2, height - 30, Graphics.FONT_XTINY, "Press START to toggle", Graphics.TEXT_JUSTIFY_CENTER);
     }
 }
