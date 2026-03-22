@@ -50,8 +50,8 @@ class HeightGraphView extends WatchUi.View {
         var spacing = 4;
 
         for (var i = 0; i < count; i++) {
-            var val = _history[startIdx + i]["height"] as Float;
-            var barHeight = (val / maxVal) * graphHeight;
+            var val = (_history[startIdx + i]["height"] as Float) * 100;
+            var barHeight = (val / (maxVal * 100)) * graphHeight;
             
             var x = padding + (i * barWidth) + spacing;
             var y = bottom - barHeight;
@@ -60,7 +60,7 @@ class HeightGraphView extends WatchUi.View {
             dc.fillRectangle(x, y, barWidth - (2 * spacing), barHeight);
             
             dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(x + (barWidth / 2), bottom + 5, Graphics.FONT_XTINY, val.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(x + (barWidth / 2), bottom + 5, Graphics.FONT_XTINY, val.format("%d"), Graphics.TEXT_JUSTIFY_CENTER);
         }
 
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
@@ -77,8 +77,8 @@ class HeightGraphDelegate extends BaseDelegate {
     }
 
     function onNextPage() as Boolean {
-        var view = new SupportView();
-        WatchUi.switchToView(view, new SupportDelegate(), WatchUi.SLIDE_UP);
+        var view = new InfoView();
+        WatchUi.switchToView(view, new InfoDelegate(), WatchUi.SLIDE_UP);
         return true;
     }
 

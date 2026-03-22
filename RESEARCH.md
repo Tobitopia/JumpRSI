@@ -19,7 +19,7 @@ $$RSImod = \frac{Jump Height (JH)}{Time to Take-off (TTT)}$$
 ## 3. IMU Validity (Watch vs. Force Plates)
 Inertial Measurement Units (IMUs) have bridged the gap between lab diagnostics and field application [4].
 - **Precision:** Single-sensor systems have shown excellent agreement with gold-standard force plates, with Pearson correlations of **$r \geq 0.983$** for jump height and RSI [5].
-- **Calculation:** JumpRSI uses the **Take-off Velocity (TOV)** method [4][35], integrating the vertical acceleration signal—a more precise method than simple flight-time which can be artificially inflated by landing with tucked knees [3].
+- **Calculation:** JumpRSI uses the **Flight Time (FT)** method [3], which calculates jump height based on the duration the athlete is airborne. While the Take-off Velocity (TOV) method is theoretically more robust against "landing with tucked knees", the FT method is the established standard for wearable-based field testing when calibrated correctly.
 
 ## 4. Statistical Framework & Autoregulation
 To distinguish real "Signal" (fatigue) from "Noise" (measurement error), we use individual baselines and statistical thresholds [21].

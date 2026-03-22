@@ -27,7 +27,7 @@ class SupportView extends WatchUi.View {
         dc.drawText(width / 2, 145, Graphics.FONT_XTINY, "github.com/Tobitopia/", Graphics.TEXT_JUSTIFY_CENTER);
         dc.drawText(width / 2, 160, Graphics.FONT_XTINY, "JumpRSI", Graphics.TEXT_JUSTIFY_CENTER);
         
-        UIUtils.drawPagination(dc, 3, 5);
+        UIUtils.drawPagination(dc, 4, 5);
     }
 }
 
@@ -37,14 +37,14 @@ class SupportDelegate extends BaseDelegate {
     }
 
     function onNextPage() as Boolean {
-        var view = new InfoView();
-        WatchUi.switchToView(view, new InfoDelegate(), WatchUi.SLIDE_UP);
+        var view = new jumpheightView();
+        WatchUi.switchToView(view, new jumpheightDelegate(view), WatchUi.SLIDE_UP);
         return true;
     }
 
     function onPreviousPage() as Boolean {
-        var view = new HeightGraphView();
-        WatchUi.switchToView(view, new HeightGraphDelegate(), WatchUi.SLIDE_DOWN);
+        var view = new InfoView();
+        WatchUi.switchToView(view, new InfoDelegate(), WatchUi.SLIDE_DOWN);
         return true;
     }
 }

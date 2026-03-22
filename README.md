@@ -5,7 +5,7 @@ JumpRSI is a high-performance diagnostic tool for Garmin watches designed to mea
 It helps athletes monitor their neuromuscular readiness and explosive power daily, ensuring optimal training intensity and injury prevention.
 
 ## ✨ Features
-- **Precise Measurement:** Uses the **Take-off Velocity (TOV)** method for accurate jump height calculation [4][35].
+- **Precise Measurement:** Uses the **Flight Time (FT)** method with a specific correction factor to align with video-validated jump heights.
 - **RSImod Metric:** More than just height—it measures your movement efficiency. RSImod is highly sensitive to fatigue, often dropping by 15-20% when height only changes by 1% [27].
 - **Autoregulation Focus:** Use daily trends to decide whether to push or pull back in your training based on scientific thresholds (3-5% drop = early fatigue) [12][19].
 - **Best-of-Two Average:** Automatically calculates the average of your best two jumps out of three to filter out technical outliers.

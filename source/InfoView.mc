@@ -18,15 +18,15 @@ class InfoView extends WatchUi.View {
         dc.drawText(width / 2, 25, Graphics.FONT_SMALL, "About JumpRSI", Graphics.TEXT_JUSTIFY_CENTER);
         
         var lines = [
-            "Uses the RSImod metric,",
-            "scientifically proven to",
-            "measure power & fatigue.",
+            "JumpRSI is a diagnostic",
+            "tool for athletes to",
+            "monitor readiness via",
+            "RSImod (Jump Height /",
+            "Time to Take-off).",
             "",
-            "Full research, source",
-            "& scientific background",
-            "available on GitHub:",
-            "github.com/tobitopia/",
-            "JumpDiagnosticsGarmin"
+            "It helps identify fatigue",
+            "even when jump height",
+            "remains stable."
         ];
         
         var y = 62;
@@ -35,7 +35,7 @@ class InfoView extends WatchUi.View {
             y += 18;
         }
         
-        UIUtils.drawPagination(dc, 4, 5);
+        UIUtils.drawPagination(dc, 3, 5);
     }
 }
 
@@ -45,16 +45,15 @@ class InfoDelegate extends BaseDelegate {
         BaseDelegate.initialize();
     }
 
-
     function onNextPage() as Boolean {
-        var view = new jumpheightView();
-        WatchUi.switchToView(view, new jumpheightDelegate(view), WatchUi.SLIDE_UP);
+        var view = new SupportView();
+        WatchUi.switchToView(view, new SupportDelegate(), WatchUi.SLIDE_UP);
         return true;
     }
 
     function onPreviousPage() as Boolean {
-        var view = new SupportView();
-        WatchUi.switchToView(view, new SupportDelegate(), WatchUi.SLIDE_DOWN);
+        var view = new HeightGraphView();
+        WatchUi.switchToView(view, new HeightGraphDelegate(), WatchUi.SLIDE_DOWN);
         return true;
     }
 }

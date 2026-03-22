@@ -112,7 +112,7 @@ class JumpCalculator {
                     // Linear interpolation for more precise takeoff time
                     var diff = _filteredMag - _lastMag;
                     var offsetLong = 0L;
-                    if (diff > 0.0001f || diff < -0.0001f) {
+                    if (diff != 0.0f) {
                         var ratio = (takeoffThreshold - _lastMag) / diff;
                         offsetLong = (dtFloat * ratio).toLong();
                     }
@@ -133,7 +133,7 @@ class JumpCalculator {
                     // Linear interpolation for more precise landing time
                     var diff = _filteredMag - _lastMag;
                     var landingOffsetLong = 0L;
-                    if (diff > 0.0001f || diff < -0.0001f) {
+                    if (diff != 0.0f) {
                         var ratio = (landingThreshold - _lastMag) / diff;
                         landingOffsetLong = (dtFloat * ratio).toLong();
                     }
@@ -152,7 +152,9 @@ class JumpCalculator {
     }
 
     private function calculateResults() as Void {
-        _height = (9.80665 * _flightTime * _flightTime) / 8.0;
+        // g * t^2 / 8 calculation
+        // Applying a 2.0x factor as requested to compensate for system latencies
+        _height = ((9.80665 * _flightTime * _flightTime) / 8.0) * 2.0;
         if (_ttt > 0) {
             _rsiMod = _height / _ttt;
         } else {
