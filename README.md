@@ -1,8 +1,14 @@
-# JumpRSI ⌚🚀
+# <img src="resources/drawables/launcher_icon.svg" width="48" height="48" valign="middle"> JumpRSI ⌚🚀
 
 JumpRSI is a high-performance diagnostic tool for Garmin watches designed to measure and track the **Reactive Strength Index Modified (RSImod)** during Countermovement Jumps (CMJ).
 
 It helps athletes monitor their neuromuscular readiness and explosive power daily, ensuring optimal training intensity and injury prevention.
+
+## 📸 Screenshots
+| Jump Protocol | Results & Analysis | History & Trends |
+| :---: | :---: | :---: |
+| <img src="AppScreenshots/PerformTestScreen.BMP" width="200"> | <img src="AppScreenshots/JumpResult.BMP" width="200"> | <img src="AppScreenshots/RSIHistory.BMP" width="200"> |
+| <img src="AppScreenshots/CountdownScreen.BMP" width="200"> | <img src="AppScreenshots/SessionSummary.BMP" width="200"> | <img src="AppScreenshots/HeightHistory.BMP" width="200"> |
 
 ## ✨ Features
 - **Precise Measurement:** Uses the **Flight Time (FT)** method with a specific correction factor to align with video-validated jump heights.
@@ -36,6 +42,7 @@ JumpRSI uses a complex state machine for jump detection and EMA signal filtering
 For detailed technical documentation including **Mermaid diagrams**, see [ARCHITECTURE.md](./ARCHITECTURE.md).
 
 ## 🎨 Design & UI
+<img src="AppScreenshots/InstructionsScreen.BMP" align="right" width="180">
 The app follows a 5-page navigation cycle designed for quick daily check-ins.
 Learn more about the UI architecture in [DESIGN.md](./DESIGN.md).
 
