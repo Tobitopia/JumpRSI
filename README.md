@@ -41,8 +41,8 @@ Learn more about the UI architecture in [DESIGN.md](./DESIGN.md).
 
 ## 💖 Support & Contribute
 JumpRSI is **fully open-source**. If you find it useful, consider supporting the developer:
-- **Support (1€):** [paypal.me/tobitopia](https://paypal.me/tobitopia)
-- **Contribute:** Open issues or pull requests at [github.com/tobitopia/JumpDiagnosticsGarmin](https://github.com/tobitopia/JumpDiagnosticsGarmin)
+- **Support (1€):** [paypal.me/TBurkhardt211](https://paypal.me/TBurkhardt211)
+- **Contribute:** Open issues or pull requests at [github.com/Tobitopia/JumpRSI](https://github.com/Tobitopia/JumpRSI)
 
 ## ⚖️ License
 MIT License. See [LICENSE](./LICENSE) for details.
