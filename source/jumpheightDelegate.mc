@@ -19,18 +19,17 @@ class jumpheightDelegate extends BaseDelegate {
         else if (state == STATE_LANDED) {
             var h = app.calculator.getHeight();
             var rm = app.calculator.getRsiMod();
-            var ra = app.calculator.getRsiAct();
             var t = app.calculator.getTtt();
             
-            app.session.addJump(h, rm, ra, t);
+            app.session.addJump(h, rm, t);
             
             if (app.session.isComplete()) {
-                var avgRsiAct = app.session.getAverageBestTwoRsiAct();
+                var avgRsi = app.session.getAverageBestTwoRsi();
                 var avgHeight = app.session.getAverageBestTwoHeight();
-                app.storageService.saveTodayJump(avgRsiAct, avgHeight);
+                app.storageService.saveTodayJump(avgRsi, avgHeight);
                 
                 // Switch to SummaryView instead of resetting immediately
-                WatchUi.switchToView(new SummaryView(avgRsiAct, avgHeight), new SummaryDelegate(), WatchUi.SLIDE_LEFT);
+                WatchUi.switchToView(new SummaryView(avgRsi, avgHeight), new SummaryDelegate(), WatchUi.SLIDE_LEFT);
             } else {
                 app.calculator.startCountdown();
             }

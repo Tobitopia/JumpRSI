@@ -18,15 +18,15 @@ class InfoView extends WatchUi.View {
         dc.drawText(width / 2, 25, Graphics.FONT_SMALL, "About JumpRSI", Graphics.TEXT_JUSTIFY_CENTER);
         
         var lines = [
-            "JumpRSI uses RSIactive",
-            "(active-phase RSI) to",
+            "JumpRSI is a diagnostic",
+            "tool for athletes to",
             "monitor readiness via",
-            "the 1g upward crossing.",
+            "RSImod (Jump Height /",
+            "Time to Take-off).",
             "",
-            "This metric is more",
-            "stable than RSImod for",
-            "identifying fatigue",
-            "on 50Hz wearable sensors."
+            "It helps identify fatigue",
+            "even when jump height",
+            "remains stable."
         ];
         
         var y = 62;

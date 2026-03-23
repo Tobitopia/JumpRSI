@@ -7,9 +7,9 @@ function testBestTwoAverageHeight(logger as Logger) as Boolean {
     var session = new JumpSession();
     
     // Test with 3 different heights
-    session.addJump(0.40f, 1.0f, 1.5f, 0.40f);
-    session.addJump(0.50f, 1.0f, 1.5f, 0.50f);
-    session.addJump(0.60f, 1.0f, 1.5f, 0.60f);
+    session.addJump(0.40f, 1.0f, 0.40f);
+    session.addJump(0.50f, 1.0f, 0.50f);
+    session.addJump(0.60f, 1.0f, 0.60f);
     
     var avgHeight = session.getAverageBestTwoHeight();
     var expected = (0.60f + 0.50f) / 2.0f; // 0.55
@@ -26,34 +26,15 @@ function testBestTwoAverageRsi(logger as Logger) as Boolean {
     var session = new JumpSession();
     
     // Test with 3 different RSI values
-    session.addJump(0.40f, 0.8f, 1.2f, 0.50f);
-    session.addJump(0.40f, 1.2f, 1.8f, 0.50f);
-    session.addJump(0.40f, 1.0f, 1.5f, 0.50f);
+    session.addJump(0.40f, 0.8f, 0.50f);
+    session.addJump(0.40f, 1.2f, 0.50f);
+    session.addJump(0.40f, 1.0f, 0.50f);
     
     var avgRsi = session.getAverageBestTwoRsi();
     var expected = (1.2f + 1.0f) / 2.0f; // 1.1
     
     if (avgRsi != expected) {
         logger.error("Expected avg RSI 1.1, got " + avgRsi);
-        return false;
-    }
-    return true;
-}
-
-(:test)
-function testBestTwoAverageRsiAct(logger as Logger) as Boolean {
-    var session = new JumpSession();
-    
-    // Test with 3 different RSIactive values
-    session.addJump(0.40f, 0.8f, 1.2f, 0.50f);
-    session.addJump(0.40f, 1.2f, 1.8f, 0.50f);
-    session.addJump(0.40f, 1.0f, 1.5f, 0.50f);
-    
-    var avgRsiAct = session.getAverageBestTwoRsiAct();
-    var expected = (1.8f + 1.5f) / 2.0f; // 1.65
-    
-    if (avgRsiAct != expected) {
-        logger.error("Expected avg RSIact 1.65, got " + avgRsiAct);
         return false;
     }
     return true;

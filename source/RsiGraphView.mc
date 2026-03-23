@@ -24,7 +24,7 @@ class RsiGraphView extends WatchUi.View {
         var bottom = (height / 2) + (graphHeight / 2) - 10;
 
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(width / 2, 25, Graphics.FONT_SMALL, "RSIact History", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, 25, Graphics.FONT_SMALL, "RSI History", Graphics.TEXT_JUSTIFY_CENTER);
 
         if (_history.size() == 0) {
             dc.drawText(width / 2, height / 2, Graphics.FONT_TINY, "No History Yet", Graphics.TEXT_JUSTIFY_CENTER);

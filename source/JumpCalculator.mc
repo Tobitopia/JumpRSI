@@ -14,12 +14,10 @@ class JumpCalculator {
     private var _state = STATE_START;
     private var _height as Float = 0.0;
     private var _rsiMod as Float = 0.0;
-    private var _rsiAct as Float = 0.0;
     private var _takeOffTime as Long = 0L;
     private var _activeStartTime as Long = 0L;
     private var _flightTime as Float = 0.0;
     private var _ttt as Float = 0.0;
-    private var _att as Float = 0.0; // Active Takeoff Time (Time from 1g crossing to takeoff)
 
     private var _startTime as Long = 0L;
     private var _lastTimestamp as Long = 0L;
@@ -141,7 +139,6 @@ class JumpCalculator {
                     if (_activeStartTime == 0L) {
                         _activeStartTime = _lastTimestamp - emaDelayMs.toLong();
                     }
-                    _att = (_takeOffTime - _activeStartTime).toFloat() / 1000.0;
                 }
                 break;
 
@@ -178,38 +175,28 @@ class JumpCalculator {
         // Applying a 2.0x factor as requested to compensate for system latencies
         _height = ((9.80665 * _flightTime * _flightTime) / 8.0) * 2.0;
         
-        if (_ttt > 0) {
-            _rsiMod = _height / _ttt;
+        var activeTime = (_takeOffTime - _activeStartTime).toFloat() / 1000.0;
+        if (activeTime > 0) {
+            _rsiMod = (_height / activeTime) * 0.7;
         } else {
             _rsiMod = 0.0;
-        }
-
-        // Calculate RSIactive
-        if (_att > 0) {
-            _rsiAct = _height / _att;
-        } else {
-            _rsiAct = 0.0;
         }
     }
 
     function getState() { return _state; }
     function getHeight() as Float { return _height; }
     function getRsiMod() as Float { return _rsiMod; }
-    function getRsiAct() as Float { return _rsiAct; }
     function getTtt() as Float { return _ttt; }
-    function getAtt() as Float { return _att; }
     function getCountdown() as Number { return _countdown; }
 
     function resetToStart() as Void {
         _state = STATE_START;
         _height = 0.0;
         _rsiMod = 0.0;
-        _rsiAct = 0.0;
         _takeOffTime = 0L;
         _activeStartTime = 0L;
         _flightTime = 0.0;
         _ttt = 0.0;
-        _att = 0.0;
         _startTime = 0L;
         _lastTimestamp = 0L;
         _filteredMag = 1.0f;
