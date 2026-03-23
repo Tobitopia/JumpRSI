@@ -7,9 +7,9 @@ class JumpSession {
     function initialize() {
     }
 
-    function addJump(height as Float, rsiMod as Float, ttt as Float) as Void {
+    function addJump(height as Float, rsiMod as Float, rsiAct as Float, ttt as Float) as Void {
         if (_jumps.size() < _maxJumps) {
-            _jumps.add(new JumpData(height, rsiMod, ttt));
+            _jumps.add(new JumpData(height, rsiMod, rsiAct, ttt));
         }
     }
 
@@ -21,6 +21,22 @@ class JumpSession {
         var rsiValues = [] as Array<Float>;
         for (var i = 0; i < _jumps.size(); i++) {
             rsiValues.add(_jumps[i].rsiMod);
+        }
+
+        // Sort descending
+        sortDescending(rsiValues);
+
+        return (rsiValues[0] + rsiValues[1]) / 2.0;
+    }
+
+    function getAverageBestTwoRsiAct() as Float {
+        if (_jumps.size() < 2) {
+            return 0.0;
+        }
+
+        var rsiValues = [] as Array<Float>;
+        for (var i = 0; i < _jumps.size(); i++) {
+            rsiValues.add(_jumps[i].rsiAct);
         }
 
         // Sort descending
@@ -73,11 +89,13 @@ class JumpSession {
 class JumpData {
     var height as Float;
     var rsiMod as Float;
+    var rsiAct as Float;
     var ttt as Float;
 
-    function initialize(h as Float, r as Float, t as Float) {
+    function initialize(h as Float, r as Float, ra as Float, t as Float) {
         height = h;
         rsiMod = r;
+        rsiAct = ra;
         ttt = t;
     }
 }

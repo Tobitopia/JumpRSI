@@ -40,11 +40,11 @@ class jumpheightView extends WatchUi.View {
         } 
         else if (state == STATE_LANDED) {
             var h = _calculator.getHeight();
-            var r = _calculator.getRsiMod();
+            var r = _calculator.getRsiAct();
             
             dc.drawText(width / 2, 40, Graphics.FONT_TINY, "Result", Graphics.TEXT_JUSTIFY_CENTER);
             dc.drawText(width / 2, height_dc / 2 - 30, Graphics.FONT_MEDIUM, "Height: " + h.format("%.2f") + "m", Graphics.TEXT_JUSTIFY_CENTER);
-            dc.drawText(width / 2, height_dc / 2 + 10, Graphics.FONT_MEDIUM, "RSI: " + r.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(width / 2, height_dc / 2 + 10, Graphics.FONT_MEDIUM, "RSIact: " + r.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
             
             dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
             var msg = (_session.getJumpCount() == 2) ? "Press START to finish" : "Press START for next";
