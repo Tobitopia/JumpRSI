@@ -54,7 +54,7 @@ class SummaryView extends WatchUi.View {
         dc.drawText(width / 2, 35, Graphics.FONT_SMALL, "Session Finished", Graphics.TEXT_JUSTIFY_CENTER);
         
         dc.drawText(width / 2, 75, Graphics.FONT_TINY, "Avg Height: " + _height.format("%.2f") + "m", Graphics.TEXT_JUSTIFY_CENTER);
-        dc.drawText(width / 2, 100, Graphics.FONT_TINY, "Avg RSI: " + _rsi.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, 100, Graphics.FONT_TINY, "Avg RSImod: " + _rsi.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
         
         if (_baseline > 0) {
             var color = Graphics.COLOR_WHITE;

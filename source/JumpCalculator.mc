@@ -1,6 +1,8 @@
 import Toybox.Lang;
 import Toybox.Math;
 import Toybox.System;
+import Toybox.Timer;
+import Toybox.WatchUi;
 
 const STATE_START = 0;
 const STATE_PREPARING = 1;
@@ -15,12 +17,14 @@ class JumpCalculator {
     private var _height as Float = 0.0;
     private var _rsiMod as Float = 0.0;
     private var _takeOffTime as Long = 0L;
+    private var _activeStartTime as Long = 0L;
     private var _flightTime as Float = 0.0;
     private var _ttt as Float = 0.0;
 
     private var _startTime as Long = 0L;
     private var _lastTimestamp as Long = 0L;
     private var _countdown as Number = 0;
+    private var _timer as Timer.Timer? = null;
 
     // Pro Filter & Calibration
     private var _emaAlpha = 0.45f; // Increased from 0.35 for faster response
@@ -33,25 +37,41 @@ class JumpCalculator {
     }
     
     function startCountdown() as Void {
+        stopTimer(); // Ensure old timer is gone
         _state = STATE_PREPARING;
         _countdown = 3;
         _filteredMag = 1.0f;
         _lastMag = 1.0f;
         _restingG = 0.0f;
         _calibCount = 0;
+
+        _timer = new Timer.Timer();
+        _timer.start(method(:onTimerTick), 1000, true);
+        
+        // Also start sensor here to catch initial restingG
+        (Application.getApp() as jumpheightApp).sensorService.start();
+        
+        WatchUi.requestUpdate();
     }
 
-    function tickCountdown() as Boolean {
+    function onTimerTick() as Void {
         if (_state == STATE_PREPARING) {
             _countdown--;
             if (_countdown < 0) {
                 if (_calibCount > 0) { _restingG = _restingG / _calibCount; }
                 else { _restingG = 1.0f; }
                 _state = STATE_IDLE;
-                return true;
+                stopTimer();
             }
+            WatchUi.requestUpdate();
         }
-        return false;
+    }
+
+    function stopTimer() as Void {
+        if (_timer != null) {
+            _timer.stop();
+            _timer = null;
+        }
     }
 
     function processSample(accelMagG as Float, timestamp as Long) as Void {
@@ -95,12 +115,27 @@ class JumpCalculator {
                 if (_filteredMag < (_restingG * 0.85)) {
                     _state = STATE_UNWEIGHTING;
                     _startTime = timestamp;
+                    _activeStartTime = 0L; // Reset active start time
+                    WatchUi.requestUpdate();
                 }
                 break;
 
             case STATE_UNWEIGHTING:
+                // Detect 1g upward crossing for RSIactive
+                if (_lastMag < _restingG && _filteredMag >= _restingG) {
+                    var diff = _filteredMag - _lastMag;
+                    var offsetLong = 0L;
+                    if (diff != 0.0f) {
+                        var ratio = (_restingG - _lastMag) / diff;
+                        offsetLong = (dtFloat * ratio).toLong();
+                    }
+                    // Interpolated 1g crossing time (EMA delay compensated)
+                    _activeStartTime = _lastTimestamp + offsetLong - emaDelayMs.toLong();
+                }
+
                 if (_filteredMag > (_restingG * 1.25)) {
                     _state = STATE_LAUNCHING;
+                    WatchUi.requestUpdate();
                 }
                 break;
 
@@ -120,6 +155,13 @@ class JumpCalculator {
                     // Compensate for EMA filter lag using strictly Long for absolute time
                     _takeOffTime = _lastTimestamp + offsetLong - emaDelayMs.toLong();
                     _ttt = (_takeOffTime - _startTime).toFloat() / 1000.0;
+
+                    // If we somehow missed the 1g crossing (noise), use takeoff as fallback or previous sample
+                    if (_activeStartTime == 0L) {
+                        _activeStartTime = _lastTimestamp - emaDelayMs.toLong();
+                    }
+                    
+                    WatchUi.requestUpdate();
                 }
                 break;
 
@@ -143,6 +185,10 @@ class JumpCalculator {
                     
                     _flightTime = (actualLandingTimeLong - _takeOffTime).toFloat() / 1000.0;
                     calculateResults();
+                    
+                    // Finished! Stop sensors
+                    (Application.getApp() as jumpheightApp).sensorService.stop();
+                    WatchUi.requestUpdate();
                 }
                 break;
         }
@@ -155,8 +201,10 @@ class JumpCalculator {
         // g * t^2 / 8 calculation
         // Applying a 2.0x factor as requested to compensate for system latencies
         _height = ((9.80665 * _flightTime * _flightTime) / 8.0) * 2.0;
-        if (_ttt > 0) {
-            _rsiMod = _height / _ttt;
+        
+        var activeTime = (_takeOffTime - _activeStartTime).toFloat() / 1000.0;
+        if (activeTime > 0) {
+            _rsiMod = (_height / activeTime) * 0.7;
         } else {
             _rsiMod = 0.0;
         }
@@ -169,15 +217,18 @@ class JumpCalculator {
     function getCountdown() as Number { return _countdown; }
 
     function resetToStart() as Void {
+        stopTimer();
         _state = STATE_START;
         _height = 0.0;
         _rsiMod = 0.0;
         _takeOffTime = 0L;
+        _activeStartTime = 0L;
         _flightTime = 0.0;
         _ttt = 0.0;
         _startTime = 0L;
         _lastTimestamp = 0L;
         _filteredMag = 1.0f;
         _lastMag = 1.0f;
+        (Application.getApp() as jumpheightApp).sensorService.stop();
     }
 }

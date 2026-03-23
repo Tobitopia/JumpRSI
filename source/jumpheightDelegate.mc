@@ -18,10 +18,10 @@ class jumpheightDelegate extends BaseDelegate {
         } 
         else if (state == STATE_LANDED) {
             var h = app.calculator.getHeight();
-            var r = app.calculator.getRsiMod();
+            var rm = app.calculator.getRsiMod();
             var t = app.calculator.getTtt();
             
-            app.session.addJump(h, r, t);
+            app.session.addJump(h, rm, t);
             
             if (app.session.isComplete()) {
                 var avgRsi = app.session.getAverageBestTwoRsi();
