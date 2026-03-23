@@ -1,6 +1,8 @@
 import Toybox.Lang;
 import Toybox.Math;
 import Toybox.System;
+import Toybox.Timer;
+import Toybox.WatchUi;
 
 const STATE_START = 0;
 const STATE_PREPARING = 1;
@@ -22,6 +24,7 @@ class JumpCalculator {
     private var _startTime as Long = 0L;
     private var _lastTimestamp as Long = 0L;
     private var _countdown as Number = 0;
+    private var _timer as Timer.Timer? = null;
 
     // Pro Filter & Calibration
     private var _emaAlpha = 0.45f; // Increased from 0.35 for faster response
@@ -34,25 +37,41 @@ class JumpCalculator {
     }
     
     function startCountdown() as Void {
+        stopTimer(); // Ensure old timer is gone
         _state = STATE_PREPARING;
         _countdown = 3;
         _filteredMag = 1.0f;
         _lastMag = 1.0f;
         _restingG = 0.0f;
         _calibCount = 0;
+
+        _timer = new Timer.Timer();
+        _timer.start(method(:onTimerTick), 1000, true);
+        
+        // Also start sensor here to catch initial restingG
+        (Application.getApp() as jumpheightApp).sensorService.start();
+        
+        WatchUi.requestUpdate();
     }
 
-    function tickCountdown() as Boolean {
+    function onTimerTick() as Void {
         if (_state == STATE_PREPARING) {
             _countdown--;
             if (_countdown < 0) {
                 if (_calibCount > 0) { _restingG = _restingG / _calibCount; }
                 else { _restingG = 1.0f; }
                 _state = STATE_IDLE;
-                return true;
+                stopTimer();
             }
+            WatchUi.requestUpdate();
         }
-        return false;
+    }
+
+    function stopTimer() as Void {
+        if (_timer != null) {
+            _timer.stop();
+            _timer = null;
+        }
     }
 
     function processSample(accelMagG as Float, timestamp as Long) as Void {
@@ -97,6 +116,7 @@ class JumpCalculator {
                     _state = STATE_UNWEIGHTING;
                     _startTime = timestamp;
                     _activeStartTime = 0L; // Reset active start time
+                    WatchUi.requestUpdate();
                 }
                 break;
 
@@ -115,6 +135,7 @@ class JumpCalculator {
 
                 if (_filteredMag > (_restingG * 1.25)) {
                     _state = STATE_LAUNCHING;
+                    WatchUi.requestUpdate();
                 }
                 break;
 
@@ -139,6 +160,8 @@ class JumpCalculator {
                     if (_activeStartTime == 0L) {
                         _activeStartTime = _lastTimestamp - emaDelayMs.toLong();
                     }
+                    
+                    WatchUi.requestUpdate();
                 }
                 break;
 
@@ -162,6 +185,10 @@ class JumpCalculator {
                     
                     _flightTime = (actualLandingTimeLong - _takeOffTime).toFloat() / 1000.0;
                     calculateResults();
+                    
+                    // Finished! Stop sensors
+                    (Application.getApp() as jumpheightApp).sensorService.stop();
+                    WatchUi.requestUpdate();
                 }
                 break;
         }
@@ -190,6 +217,7 @@ class JumpCalculator {
     function getCountdown() as Number { return _countdown; }
 
     function resetToStart() as Void {
+        stopTimer();
         _state = STATE_START;
         _height = 0.0;
         _rsiMod = 0.0;
@@ -201,5 +229,6 @@ class JumpCalculator {
         _lastTimestamp = 0L;
         _filteredMag = 1.0f;
         _lastMag = 1.0f;
+        (Application.getApp() as jumpheightApp).sensorService.stop();
     }
 }

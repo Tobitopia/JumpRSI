@@ -8,7 +8,6 @@ class jumpheightApp extends Application.AppBase {
     var session;
     var sensorService;
     var storageService;
-    var timer;
 
     function initialize() {
         AppBase.initialize();
@@ -19,23 +18,12 @@ class jumpheightApp extends Application.AppBase {
     }
 
     function onStart(state) as Void {
-        sensorService.start();
-        timer = new Timer.Timer();
-        timer.start(method(:onTimer), 1000, true);
+        // Optimization: Don't start sensor or timer here
     }
 
     function onStop(state) as Void {
         sensorService.stop();
-        if (timer != null) {
-            timer.stop();
-        }
-    }
-
-    function onTimer() as Void {
-        if (calculator.getState() == STATE_PREPARING) {
-            calculator.tickCountdown();
-        }
-        WatchUi.requestUpdate();
+        calculator.stopTimer();
     }
 
     function getInitialView() {
