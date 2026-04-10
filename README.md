@@ -11,7 +11,7 @@ It helps athletes monitor their neuromuscular readiness and explosive power dail
 | <img src="AppScreenshots/CountdownScreen.BMP" width="200"> | <img src="AppScreenshots/SessionSummary.BMP" width="200"> | <img src="AppScreenshots/HeightHistory.BMP" width="200"> |
 
 ## ✨ Features
-- **Precise Measurement:** Uses the **Flight Time (FT)** method with a specific correction factor to align with video-validated jump heights.
+- **Precise Measurement:** Uses the **Flight Time (FT)** method with a specific correction factor to align with video-validated jump heights. Comparison with JumPo2 app showed a MAE of 3.83 cm (see issue #2).
 - **RSImod Metric:** More than just height—it measures your movement efficiency. RSImod is highly sensitive to fatigue, often dropping by 15-20% when height only changes by 1% [27].
 - **Autoregulation Focus:** Use daily trends to decide whether to push or pull back in your training based on scientific thresholds (3-5% drop = early fatigue) [12][19].
 - **Best-of-Two Average:** Automatically calculates the average of your best two jumps out of three to filter out technical outliers.
@@ -45,11 +45,6 @@ For detailed technical documentation including **Mermaid diagrams**, see [ARCHIT
 <img src="AppScreenshots/InstructionsScreen.BMP" align="right" width="180">
 The app follows a 5-page navigation cycle designed for quick daily check-ins.
 Learn more about the UI architecture in [DESIGN.md](./DESIGN.md).
-
-## 💖 Support & Contribute
-JumpRSI is **fully open-source**. If you find it useful, consider supporting the developer:
-- **Support (1€):** [paypal.me/TBurkhardt211](https://paypal.me/TBurkhardt211)
-- **Contribute:** Open issues or pull requests at [github.com/Tobitopia/JumpRSI](https://github.com/Tobitopia/JumpRSI)
 
 ## ⚖️ License
 MIT License. See [LICENSE](./LICENSE) for details.
