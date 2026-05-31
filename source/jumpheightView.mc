@@ -26,7 +26,13 @@ class jumpheightView extends WatchUi.View {
         if (state == STATE_START) {
             dc.drawText(width / 2, height_dc / 2 - 20, Graphics.FONT_MEDIUM, "Perform Tests", Graphics.TEXT_JUSTIFY_CENTER);
             dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(width / 2, height_dc / 2 + 20, Graphics.FONT_XTINY, "Press START to begin", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(width / 2, height_dc / 2 + 12, Graphics.FONT_XTINY, "Press START to begin", Graphics.TEXT_JUSTIFY_CENTER);
+            
+            var app = Application.getApp() as jumpheightApp;
+            if (app.sensorService.getSampleRate() < 50) {
+                dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
+                dc.drawText(width / 2, height_dc / 2 + 32, Graphics.FONT_XTINY, "Low rate: accuracy affected", Graphics.TEXT_JUSTIFY_CENTER);
+            }
         } 
         else if (state == STATE_PREPARING) {
             var count = _calculator.getCountdown();

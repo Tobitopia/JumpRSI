@@ -49,7 +49,10 @@ class JumpCalculator {
         _timer.start(method(:onTimerTick), 1000, true);
         
         // Also start sensor here to catch initial restingG
-        (Application.getApp() as jumpheightApp).sensorService.start();
+        var app = Application.getApp();
+        if (app != null && app has :sensorService && app.sensorService != null) {
+            app.sensorService.start();
+        }
         
         WatchUi.requestUpdate();
     }
@@ -75,6 +78,17 @@ class JumpCalculator {
     }
 
     function processSample(accelMagG as Float, timestamp as Long) as Void {
+        if (_lastTimestamp != 0L) {
+            var dtFloat = (timestamp - _lastTimestamp).toFloat(); // in ms
+            if (dtFloat > 0.0 && dtFloat < 500.0) {
+                // Adapt _emaAlpha to maintain a constant cutoff frequency.
+                // At 50Hz (20ms step), alpha = 0.45, giving equivalent RC = 24.44ms.
+                _emaAlpha = dtFloat / (24.44f + dtFloat);
+                if (_emaAlpha < 0.10f) { _emaAlpha = 0.10f; }
+                if (_emaAlpha > 0.80f) { _emaAlpha = 0.80f; }
+            }
+        }
+
         _filteredMag = (_emaAlpha * accelMagG) + ((1.0f - _emaAlpha) * _filteredMag);
 
         if (_state == STATE_PREPARING) {
@@ -84,6 +98,8 @@ class JumpCalculator {
                 _restingG += _filteredMag;
                 _calibCount++;
             }
+            _lastTimestamp = timestamp;
+            _lastMag = _filteredMag;
             return;
         }
 
@@ -187,7 +203,10 @@ class JumpCalculator {
                     calculateResults();
                     
                     // Finished! Stop sensors
-                    (Application.getApp() as jumpheightApp).sensorService.stop();
+                    var appInstance = Application.getApp();
+                    if (appInstance != null && appInstance has :sensorService && appInstance.sensorService != null) {
+                        appInstance.sensorService.stop();
+                    }
                     WatchUi.requestUpdate();
                 }
                 break;
@@ -229,6 +248,9 @@ class JumpCalculator {
         _lastTimestamp = 0L;
         _filteredMag = 1.0f;
         _lastMag = 1.0f;
-        (Application.getApp() as jumpheightApp).sensorService.stop();
+        var appInstance = Application.getApp();
+        if (appInstance != null && appInstance has :sensorService && appInstance.sensorService != null) {
+            appInstance.sensorService.stop();
+        }
     }
 }

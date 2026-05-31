@@ -6,9 +6,27 @@ import Toybox.Time;
 
 class SensorService {
     private var _calculator;
+    private var _sampleRate as Number = 50; // Default 50Hz for compatibility
 
     function initialize(calculator) {
         _calculator = calculator;
+        detectSampleRate();
+    }
+
+    private function detectSampleRate() as Void {
+        _sampleRate = 50; // Default starting rate
+        
+        // Dynamically check device capability
+        if (Sensor has :getMaxSampleRateForSensorType) {
+            try {
+                var maxRate = Sensor.getMaxSampleRateForSensorType(:accelerometer);
+                if (maxRate != null && maxRate > 0) {
+                    _sampleRate = maxRate;
+                }
+            } catch (e) {
+                _sampleRate = 50;
+            }
+        }
     }
 
     function start() as Void {
@@ -16,15 +34,12 @@ class SensorService {
             :period => 1,
             :accelerometer => {
                 :enabled => true,
-                :sampleRate => 50, // Reverted to 50Hz for stability
+                :sampleRate => _sampleRate,
                 :includeTimestamps => false
             }
         };
 
-        try {
-            Sensor.registerSensorDataListener(method(:onSensorData), options);
-        } catch (e) {
-        }
+        Sensor.registerSensorDataListener(method(:onSensorData), options);
     }
 
     function stop() as Void {
@@ -41,7 +56,7 @@ class SensorService {
             var z = accel.z;
             
             var baseTime = Time.now().value() * 1000L; 
-            var msPerSample = 20; // 50Hz = 20ms
+            var msPerSample = 1000.0f / _sampleRate.toFloat();
 
             for (var i = 0; i < x.size(); i++) {
                 var xF = x[i].toFloat();
@@ -49,9 +64,15 @@ class SensorService {
                 var zF = z[i].toFloat();
                 var magG = Math.sqrt(xF*xF + yF*yF + zF*zF).toFloat() / 1000.0f;
                 
-                var t = baseTime + (i.toLong() * msPerSample);
+                var t = baseTime + (i.toFloat() * msPerSample).toLong();
                 _calculator.processSample(magG, t);
             }
         }
     }
+
+    function getSampleRate() as Number {
+        detectSampleRate();
+        return _sampleRate;
+    }
 }
+
