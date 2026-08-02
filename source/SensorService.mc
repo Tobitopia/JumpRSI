@@ -47,28 +47,27 @@ class SensorService {
     }
 
     function onSensorData(sensorData as SensorData) as Void {
-        if (sensorData == null) { return; }
-        
-        var accel = sensorData.accelerometerData;
-        if (accel != null) {
+        if (sensorData != null && sensorData.accelerometerData != null) {
+            var accel = sensorData.accelerometerData;
             var x = accel.x;
             var y = accel.y;
             var z = accel.z;
-            
-            var baseTime = Time.now().value() * 1000L; 
-            var msPerSample = 1000.0f / _sampleRate.toFloat();
+            if (x != null && y != null && z != null) {
+                var baseTime = Time.now().value() * 1000L; 
+                var msPerSample = 1000.0f / _sampleRate.toFloat();
 
-            for (var i = 0; i < x.size(); i++) {
-                var xF = x[i].toFloat();
-                var yF = y[i].toFloat();
-                var zF = z[i].toFloat();
-                var t = baseTime + (i.toFloat() * msPerSample).toLong();
-                
-                if (_calculator has :processSample3D) {
-                    _calculator.processSample3D(xF, yF, zF, t);
-                } else {
-                    var magG = Math.sqrt(xF*xF + yF*yF + zF*zF).toFloat() / 1000.0f;
-                    _calculator.processSample(magG, t);
+                for (var i = 0; i < x.size(); i++) {
+                    var xF = x[i].toFloat();
+                    var yF = y[i].toFloat();
+                    var zF = z[i].toFloat();
+                    var t = baseTime + (i.toFloat() * msPerSample).toLong();
+                    
+                    if (_calculator has :processSample3D) {
+                        _calculator.processSample3D(xF, yF, zF, t);
+                    } else {
+                        var magG = Math.sqrt(xF*xF + yF*yF + zF*zF).toFloat() / 1000.0f;
+                        _calculator.processSample(magG, t);
+                    }
                 }
             }
         }
