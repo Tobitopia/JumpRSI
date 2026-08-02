@@ -13,26 +13,25 @@ class InfoView extends WatchUi.View {
         dc.clear();
 
         var width = dc.getWidth();
+        var height = dc.getHeight();
         
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(width / 2, 25, Graphics.FONT_SMALL, "About JumpRSI", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, (height * 0.12).toNumber(), Graphics.FONT_SMALL, "About JumpRSI", Graphics.TEXT_JUSTIFY_CENTER);
         
         var lines = [
-            "JumpRSI is a diagnostic",
-            "tool for athletes to",
+            "Diagnostic tool to",
             "monitor readiness via",
-            "RSImod (Jump Height /",
-            "Time to Take-off).",
+            "RSImod (Height / TTT).",
             "",
-            "It helps identify fatigue",
-            "even when jump height",
-            "remains stable."
+            "Detects fatigue even when",
+            "height stays stable."
         ];
         
-        var y = 62;
+        var y = (height * 0.28).toNumber();
+        var spacing = (height * 0.08).toNumber();
         for (var i = 0; i < lines.size(); i++) {
             dc.drawText(width / 2, y, Graphics.FONT_XTINY, lines[i], Graphics.TEXT_JUSTIFY_CENTER);
-            y += 18;
+            y += spacing;
         }
         
         UIUtils.drawPagination(dc, 3, 5);

@@ -16,29 +16,29 @@ class InstructionsView extends WatchUi.View {
         var height = dc.getHeight();
 
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(width / 2, 20, Graphics.FONT_SMALL, "Instructions", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, (height * 0.10).toNumber(), Graphics.FONT_SMALL, "Instructions", Graphics.TEXT_JUSTIFY_CENTER);
         
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-        var spacing = 18;
-        var startY = 48;
-        dc.drawText(width / 2, startY, Graphics.FONT_XTINY, "1. Arms to hips", Graphics.TEXT_JUSTIFY_CENTER);
-        dc.drawText(width / 2, startY + spacing, Graphics.FONT_XTINY, "2. Stand still for 3s", Graphics.TEXT_JUSTIFY_CENTER);
-        dc.drawText(width / 2, startY + (spacing * 2), Graphics.FONT_XTINY, "3. Perform CM jump", Graphics.TEXT_JUSTIFY_CENTER);
+        var spacing = (height * 0.085).toNumber();
+        var startY = (height * 0.25).toNumber();
+        dc.drawText(width / 2, startY, Graphics.FONT_XTINY, "1. Hands on hips", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, startY + spacing, Graphics.FONT_XTINY, "2. Hold still 3s", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, startY + (spacing * 2), Graphics.FONT_XTINY, "3. Perform CMJ", Graphics.TEXT_JUSTIFY_CENTER);
         
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(width / 2, startY + (spacing * 3) + 2, Graphics.FONT_XTINY, "Saves avg. of best 2 of 3", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, startY + (spacing * 3), Graphics.FONT_XTINY, "Best 2 of 3 saved", Graphics.TEXT_JUSTIFY_CENTER);
         
         dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(width / 2, startY + (spacing * 4) + 6, Graphics.FONT_XTINY, "Scroll down for example", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, startY + (spacing * 4), Graphics.FONT_XTINY, "Swipe down for demo", Graphics.TEXT_JUSTIFY_CENTER);
 
         var app = Application.getApp() as jumpheightApp;
         if (app.sensorService.getSampleRate() < 50) {
             dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(width / 2, startY + (spacing * 5) + 8, Graphics.FONT_XTINY, "Low rate: accuracy affected", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(width / 2, startY + (spacing * 5), Graphics.FONT_XTINY, "Low rate (<50Hz)", Graphics.TEXT_JUSTIFY_CENTER);
         }
 
         dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(width / 2, height - 35, Graphics.FONT_XTINY, "Press START to begin", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, (height * 0.88).toNumber(), Graphics.FONT_XTINY, "Press START", Graphics.TEXT_JUSTIFY_CENTER);
     }
 }
 

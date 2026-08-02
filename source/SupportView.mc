@@ -12,20 +12,21 @@ class SupportView extends WatchUi.View {
         dc.clear();
 
         var width = dc.getWidth();
+        var height = dc.getHeight();
         
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(width / 2, 25, Graphics.FONT_SMALL, "Support & Help", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, (height * 0.12).toNumber(), Graphics.FONT_SMALL, "Support & Help", Graphics.TEXT_JUSTIFY_CENTER);
         
         dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(width / 2, 65, Graphics.FONT_XTINY, "Support Developer (1€)", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, (height * 0.28).toNumber(), Graphics.FONT_XTINY, "Support Dev (1€)", Graphics.TEXT_JUSTIFY_CENTER);
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(width / 2, 85, Graphics.FONT_XTINY, "paypal.me/TBurkhardt211", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, (height * 0.38).toNumber(), Graphics.FONT_XTINY, "paypal.me/TBurkhardt211", Graphics.TEXT_JUSTIFY_CENTER);
 
         dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(width / 2, 125, Graphics.FONT_XTINY, "Contribute / Issues", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, (height * 0.54).toNumber(), Graphics.FONT_XTINY, "GitHub / Issues", Graphics.TEXT_JUSTIFY_CENTER);
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(width / 2, 145, Graphics.FONT_XTINY, "github.com/Tobitopia/", Graphics.TEXT_JUSTIFY_CENTER);
-        dc.drawText(width / 2, 160, Graphics.FONT_XTINY, "JumpRSI", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, (height * 0.64).toNumber(), Graphics.FONT_XTINY, "github.com/Tobitopia/", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(width / 2, (height * 0.72).toNumber(), Graphics.FONT_XTINY, "JumpRSI", Graphics.TEXT_JUSTIFY_CENTER);
         
         UIUtils.drawPagination(dc, 4, 5);
     }
