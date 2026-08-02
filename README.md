@@ -34,11 +34,11 @@ JumpRSI is built on the foundation of vertical jump analysis as an objective mar
 ## ⚠️ Current Challenges & Limitations
 While designed with scientific rigor, users should be aware of the following technical challenges:
 - **No External Validation:** This specific implementation has not yet been cross-validated against lab-grade force plates or high-speed optoelectric systems.
-- **Sensor Noise:** Consumer-grade accelerometers in watches are susceptible to high-frequency noise and vibration. While we use EMA filtering to mitigate this, some "shaking" or sudden wrist movements can still affect takeoff and landing detection.
+- **Sensor Noise & Orientation:** Consumer-grade accelerometers in watches are susceptible to high-frequency noise and vibration. JumpRSI uses a **3D Gravity Vector Projection algorithm** ($\mathbf{a} \cdot \mathbf{\hat{g}}_{rest}$) combined with an adaptive low-pass EMA filter. This prevents positive noise rectification in free fall and eliminates arbitrary correction multipliers.
 - **Experimental Status:** This tool is intended for **relative trend monitoring** (comparing your today's score to your own baseline) rather than as a source of absolute, medically-certified data.
 
 ## 🏗️ Technical Architecture
-JumpRSI uses a complex state machine for jump detection and EMA signal filtering for high precision.
+JumpRSI uses a 3D gravity vector orientation projection algorithm, sample-rate adaptive EMA filtering, sub-sample linear interpolation, and a state machine for jump phase detection.
 For detailed technical documentation including **Mermaid diagrams**, see [ARCHITECTURE.md](./ARCHITECTURE.md).
 
 ## 🎨 Design & UI

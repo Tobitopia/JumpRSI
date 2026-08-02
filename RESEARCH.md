@@ -17,9 +17,10 @@ $$RSImod = \frac{Jump Height (JH)}{Time to Take-off (TTT)}$$
 - **Sensitivity:** Jump height might change by only 1%, while RSImod can drop by **15-20%** under the same fatigue stimulus, acting as a much more sensitive "early warning" system for the athlete.
 
 ## 3. IMU Validity (Watch vs. Force Plates)
-Inertial Measurement Units (IMUs) have bridged the gap between lab diagnostics and field application [4].
 - **Precision:** Single-sensor systems have shown excellent agreement with gold-standard force plates, with Pearson correlations of **$r \geq 0.983$** for jump height and RSI [5].
-- **Calculation:** JumpRSI uses the **Flight Time (FT)** method [3], which calculates jump height based on the duration the athlete is airborne. While the Take-off Velocity (TOV) method is theoretically more robust against "landing with tucked knees", the FT method is the established standard for wearable-based field testing when calibrated correctly.
+- **Calculation:** JumpRSI uses the **Flight Time (FT)** method [3], which calculates jump height based on the duration the athlete is airborne.
+- **Orientation Vector Projection & Zero-Mean Noise Non-Rectification:** Traditional 3D Euclidean magnitude ($\sqrt{x^2+y^2+z^2}$) rectifies zero-mean noise into a positive baseline shift during free fall ($0g$), distorting flight time. JumpRSI projects 3D acceleration onto the resting gravity unit vector ($\mathbf{a} \cdot \mathbf{\hat{g}}_{rest}$). This linear projection allows zero-mean noise to cancel naturally during free fall ($0.0g$), enabling pure physics calculation ($h = \frac{g \cdot t_{flight}^2}{8}$) without arbitrary correction multipliers.
+- **Biomechanical Rotation Resilience:** Hands-on-hips protocol creates a forward torso pitch rotation of up to $25^\circ$ during unweighting. Because $\cos(25^\circ) = 0.906$, the projected vector retains $>90\%$ of vertical acceleration. During flight, true acceleration is zero ($\mathbf{a} \approx 0$), making in-air thresholding virtually immune to pitch rotation.
 
 ## 4. Statistical Framework & Autoregulation
 To distinguish real "Signal" (fatigue) from "Noise" (measurement error), we use individual baselines and statistical thresholds [12].

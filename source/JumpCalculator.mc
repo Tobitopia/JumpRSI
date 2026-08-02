@@ -26,11 +26,17 @@ class JumpCalculator {
     private var _countdown as Number = 0;
     private var _timer as Timer.Timer? = null;
 
-    // Pro Filter & Calibration
-    private var _emaAlpha = 0.45f; // Increased from 0.35 for faster response
+    // Pro Filter & 3D Gravity Vector Calibration
+    private var _emaAlpha = 0.45f; // Adapted per sample rate
     private var _filteredMag = 1.0f;
     private var _lastMag = 1.0f;
     private var _restingG = 1.0f;
+    private var _restingX = 0.0f;
+    private var _restingY = 0.0f;
+    private var _restingZ = 0.0f;
+    private var _unitX = 0.0f;
+    private var _unitY = 0.0f;
+    private var _unitZ = 1.0f;
     private var _calibCount = 0;
 
     function initialize() {
@@ -43,6 +49,12 @@ class JumpCalculator {
         _filteredMag = 1.0f;
         _lastMag = 1.0f;
         _restingG = 0.0f;
+        _restingX = 0.0f;
+        _restingY = 0.0f;
+        _restingZ = 0.0f;
+        _unitX = 0.0f;
+        _unitY = 0.0f;
+        _unitZ = 1.0f;
         _calibCount = 0;
 
         _timer = new Timer.Timer();
@@ -61,8 +73,22 @@ class JumpCalculator {
         if (_state == STATE_PREPARING) {
             _countdown--;
             if (_countdown < 0) {
-                if (_calibCount > 0) { _restingG = _restingG / _calibCount; }
-                else { _restingG = 1.0f; }
+                if (_calibCount > 0) {
+                    var avgX = _restingX / _calibCount.toFloat();
+                    var avgY = _restingY / _calibCount.toFloat();
+                    var avgZ = _restingZ / _calibCount.toFloat();
+                    var mag = Math.sqrt(avgX*avgX + avgY*avgY + avgZ*avgZ).toFloat();
+                    if (mag > 0.0f) {
+                        _unitX = avgX / mag;
+                        _unitY = avgY / mag;
+                        _unitZ = avgZ / mag;
+                        _restingG = mag / 1000.0f;
+                    } else {
+                        _restingG = 1.0f;
+                    }
+                } else {
+                    _restingG = 1.0f;
+                }
                 _state = STATE_IDLE;
                 stopTimer();
             }
@@ -75,6 +101,23 @@ class JumpCalculator {
             _timer.stop();
             _timer = null;
         }
+    }
+
+    function processSample3D(xF as Float, yF as Float, zF as Float, timestamp as Long) as Void {
+        if (_state == STATE_PREPARING) {
+            if (_countdown <= 2) {
+                _restingX += xF;
+                _restingY += yF;
+                _restingZ += zF;
+                _calibCount++;
+            }
+            _lastTimestamp = timestamp;
+            return;
+        }
+
+        // Project 3D acceleration onto resting gravity unit vector (Signed Vertical Acceleration in Gs)
+        var accelVertG = (xF * _unitX + yF * _unitY + zF * _unitZ) / 1000.0f;
+        processSample(accelVertG, timestamp);
     }
 
     function processSample(accelMagG as Float, timestamp as Long) as Void {
@@ -217,13 +260,12 @@ class JumpCalculator {
     }
 
     private function calculateResults() as Void {
-        // g * t^2 / 8 calculation
-        // Applying a 2.0x factor as requested to compensate for system latencies
-        _height = ((9.80665 * _flightTime * _flightTime) / 8.0) * 2.0;
+        // Pure physics calculation: h = g * t_flight^2 / 8
+        _height = (9.80665 * _flightTime * _flightTime) / 8.0;
         
         var activeTime = (_takeOffTime - _activeStartTime).toFloat() / 1000.0;
         if (activeTime > 0) {
-            _rsiMod = (_height / activeTime) * 0.7;
+            _rsiMod = _height / activeTime;
         } else {
             _rsiMod = 0.0;
         }

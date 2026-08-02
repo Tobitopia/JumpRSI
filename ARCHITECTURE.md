@@ -19,19 +19,26 @@ graph TD
 ```
 
 ## 2. Signal Processing & Precision
-To achieve sub-millisecond precision with a 50Hz (20ms) sensor rate, we use two key techniques:
+To achieve high precision across variable sensor rates (25Hz - 100Hz), we combine 3D vector calibration, low-pass EMA filtering, and sub-sample linear interpolation:
 
-### EMA (Exponential Moving Average) Filter
-We apply a low-pass EMA filter ($\alpha = 0.45$) to the raw magnitude to reduce sensor noise while maintaining responsiveness:
+### 3D Gravity Vector Orientation Calibration ($\mathbf{a} \cdot \mathbf{\hat{g}}$)
+Standard 3D Euclidean vector magnitude ($\sqrt{x^2+y^2+z^2}$) is non-negative and **rectifies** zero-mean sensor noise into a positive bias (shifting $0g$ free-fall to $\sim 0.1g$). To prevent this:
+1. During the 3-second calibration phase (`STATE_PREPARING`), the app records the mean resting 3D acceleration vector $\mathbf{g}_{rest} = (\bar{x}, \bar{y}, \bar{z})$ and calculates its unit direction vector $\mathbf{\hat{g}} = \frac{\mathbf{g}_{rest}}{\|\mathbf{g}_{rest}\|}$.
+2. For each incoming sample $(x, y, z)$, we compute the **projected signed vertical acceleration**:
+   $$a_{vert} = \mathbf{a} \cdot \mathbf{\hat{g}} = \frac{x \bar{x} + y \bar{y} + z \bar{z}}{\|\mathbf{g}_{rest}\|}$$
+3. This linear, signed projection allows zero-mean noise to cancel naturally during free fall ($0.0g$) and preserves pure physics calculation ($h = \frac{g \cdot t_{flight}^2}{8}$) without arbitrary correction multipliers.
+
+### Adaptive EMA (Exponential Moving Average) Filter
+We apply a sample-rate adaptive low-pass EMA filter ($\alpha = 0.45$ at 50Hz, constant $RC = 24.44\text{ms}$) to the projected vertical signal to reduce sensor noise while maintaining constant cutoff frequency:
 $$y[n] = \alpha \cdot x[n] + (1 - \alpha) \cdot y[n-1]$$
-We also compensate for the filter's phase lag ($\tau$) when calculating timestamps.
+Filter phase lag $\tau = \frac{1 - \alpha}{\alpha} \cdot \Delta t$ is subtracted from all transition timestamps for phase-accurate event timing.
 
-### Linear Interpolation
-When a threshold is crossed (e.g., the 0.4G takeoff threshold), we don't just use the current sample's timestamp. We interpolate between the current and last sample to find the exact moment the threshold was crossed:
-$$t_{precise} = t_{prev} + (t_{curr} - t_{prev}) \cdot \frac{Threshold - mag_{prev}}{mag_{curr} - mag_{prev}}$$
+### Sub-Sample Linear Interpolation
+When a threshold is crossed (e.g. $0.40g$ takeoff threshold or $1.60g$ landing threshold), we interpolate between adjacent samples for exact sub-millisecond timestamping:
+$$t_{precise} = t_{prev} + (t_{curr} - t_{prev}) \cdot \frac{Threshold - signal_{prev}}{signal_{curr} - signal_{prev}} - \tau_{ema}$$
 
 ## 3. System Data Flow
-The following diagram shows how data flows from the Garmin sensors to persistent storage.
+The following diagram shows how 3D data flows from the Garmin sensors to persistent storage.
 
 ```mermaid
 sequenceDiagram
@@ -40,10 +47,11 @@ sequenceDiagram
     participant JS as JumpSession
     participant SS as StorageService
     
-    S->>C: processSample(mag, timestamp)
-    C->>C: Update EMA Filter
+    S->>C: processSample3D(x, y, z, timestamp)
+    C->>C: Project onto Resting Unit Vector (a · g_unit)
+    C->>C: Update Adaptive EMA Filter
     alt Jump Phase Changed
-        C->>C: Update State
+        C->>C: Update State Machine
     else State is LANDED
         C->>JS: addJump(height, rsi, ttt)
         alt Jump Count == 3

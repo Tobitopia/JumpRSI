@@ -62,10 +62,14 @@ class SensorService {
                 var xF = x[i].toFloat();
                 var yF = y[i].toFloat();
                 var zF = z[i].toFloat();
-                var magG = Math.sqrt(xF*xF + yF*yF + zF*zF).toFloat() / 1000.0f;
-                
                 var t = baseTime + (i.toFloat() * msPerSample).toLong();
-                _calculator.processSample(magG, t);
+                
+                if (_calculator has :processSample3D) {
+                    _calculator.processSample3D(xF, yF, zF, t);
+                } else {
+                    var magG = Math.sqrt(xF*xF + yF*yF + zF*zF).toFloat() / 1000.0f;
+                    _calculator.processSample(magG, t);
+                }
             }
         }
     }

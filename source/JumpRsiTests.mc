@@ -96,7 +96,7 @@ function testJumpVariableSampleRates(logger as Logger) as Boolean {
     var height_100 = calc_100.getHeight();
     var ft_100 = calc_100.getTtt(); // or flight time (tested via height)
     
-    if (height_100 < 0.60f || height_100 > 0.80f) {
+    if (height_100 < 0.30f || height_100 > 0.50f) {
         logger.error("Invalid jump height calculated at 100Hz: " + height_100);
         return false;
     }
@@ -105,7 +105,7 @@ function testJumpVariableSampleRates(logger as Logger) as Boolean {
 
     // --- 50Hz Dataset Simulation ---
     var mags_50 = [1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.9733f, 0.9467f, 0.92f, 0.8933f, 0.8667f, 0.84f, 0.8133f, 0.7867f, 0.76f, 0.7333f, 0.7067f, 0.68f, 0.6533f, 0.6267f, 0.6f, 0.68f, 0.76f, 0.84f, 0.92f, 1.0f, 1.08f, 1.16f, 1.24f, 1.32f, 1.4f, 1.48f, 1.56f, 1.64f, 1.72f, 1.8f, 1.5f, 1.2f, 0.9f, 0.6f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 1.18f, 2.26f, 2.728f, 2.584f, 2.44f, 2.296f, 2.152f, 2.008f, 1.864f, 1.72f, 1.576f, 1.432f, 1.288f, 1.144f] as Array<Float>;
-    var times_50 = [0L, 20L, 40L, 60L, 80L, 100L, 120L, 140L, 160L, 180L, 200L, 220L, 240L, 260L, 280L, 300L, 320L, 340L, 360L, 380L, 400L, 420L, 440L, 460L, 480L, 500L, 520L, 540L, 560L, 580L, 600L, 620L, 640L, 660L, 680L, 700L, 720L, 740L, 760L, 780L, 800L, 820L, 840L, 860L, 880L, 900L, 920L, 940L, 960L, 980L, 1000L, 1020L, 1040L, 1060L, 1080L, 1100L, 1120L, 1140L, 1160L, 1180L, 1200L, 1220L, 1240L, 1260L, 1280L, 1300L, 1320L, 1340L, 1360L, 1380L, 1400L, 1420L, 1440L, 1460L, 1480L, 1500L, 1520L, 1540L, 1560L, 1580L, 1600L, 1620L, 1640L, 1660L, 1680L, 1700L, 1720L, 1740L, 1760L, 1780L, 1800L, 1820L, 1840L, 1860L, 1880L, 1900L, 1920L, 1940L, 1960L, 1980L, 2000L, 2020L, 2040L, 2060L, 2080L, 2100L, 2120L, 2140L, 2160L, 2180L, 2200L, 2220L, 2240L, 2260L, 2280L, 2300L, 2320L, 2340L, 2360L, 2380L, 2400L, 2420L, 2440L, 2460L, 2480L] as Array<Long>;
+    var times_50 = [0L, 20L, 40L, 60L, 80L, 100L, 120L, 140L, 160L, 180L, 200L, 220L, 240L, 260L, 280L, 300L, 320L, 340L, 360L, 380L, 400L, 420L, 440L, 460L, 480L, 500L, 520L, 540L, 560L, 580L, 600L, 620L, 640L, 660L, 680L, 700L, 720L, 740L, 760L, 780L, 800L, 820L, 840L, 860L, 880L, 900L, 920L, 940L, 960L, 980L, 1000L, 1020L, 1040L, 1060L, 1080L, 1100L, 1120L, 1140L, 1160L, 1180L, 1200L, 1220L, 1240L, 1260L, 1280L, 1300L, 1320L, 1340L, 1360L, 1380L, 1400L, 1420L, 1440L, 1460L, 1480L, 1500L, 1520L, 1540L, 1560L, 1580L, 1600L, 1620L, 1640L, 1660L, 1680L, 1700L, 1720L, 1740L, 1760L, 1780L, 1800L, 1820L, 1840L, 1860L, 1880L, 1900L, 1920L, 1940L, 1960L, 1980L, 2000L, 2020L, 2040L, 2060L, 2080L, 2100L, 2120L, 2140L, 2160L, 2180L, 2200L, 2220L, 2240L, 2260L, 2280L, 2300L, 2320L, 2340L, 2360L, 2380L, 2400L, 2440L, 2480L] as Array<Long>;
     
     var calc_50 = new JumpCalculator();
     // Simulate transitioning past Preparing state directly
@@ -127,7 +127,7 @@ function testJumpVariableSampleRates(logger as Logger) as Boolean {
     var height_50 = calc_50.getHeight();
     var ft_50 = calc_50.getTtt(); // or flight time (tested via height)
     
-    if (height_50 < 0.60f || height_50 > 0.80f) {
+    if (height_50 < 0.30f || height_50 > 0.50f) {
         logger.error("Invalid jump height calculated at 50Hz: " + height_50);
         return false;
     }
@@ -158,7 +158,7 @@ function testJumpVariableSampleRates(logger as Logger) as Boolean {
     var height_25 = calc_25.getHeight();
     var ft_25 = calc_25.getTtt(); // or flight time (tested via height)
     
-    if (height_25 < 0.60f || height_25 > 0.80f) {
+    if (height_25 < 0.30f || height_25 > 0.50f) {
         logger.error("Invalid jump height calculated at 25Hz: " + height_25);
         return false;
     }
